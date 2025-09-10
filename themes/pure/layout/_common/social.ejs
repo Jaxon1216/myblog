@@ -1,0 +1,26 @@
+<% 
+// 添加完整的空值校验
+const tooltipClass = theme.profile.social?.link_tooltip ? 'class="hint--top"' : '';
+%>
+<% if (theme.profile.social?.links){ %>
+    <ul class="social-links">
+        <% Object.entries(theme.profile.social.links).forEach(([platform, url]) => { %>
+            <% if (typeof url === 'string' && url.trim()) { %>
+                <li>
+                    <a href="<%- url_for(url) %>" 
+                       target="_blank" 
+                       title="<%= titlecase(platform) %>" 
+                       <%- tooltipClass %>>
+                        <% if (platform === 'tiktok') { %>
+                        <svg class="icon icon-tiktok" width="1em" height="1em" viewBox="0 0 48 48" fill="currentColor" aria-hidden="true" focusable="false">
+                            <path d="M35 14.5c-3.9-1.2-7-4.3-8.2-8.2h-5.2v23.1c0 3.3-2.7 6-6 6-1.3 0-2.5-.4-3.5-1.1-1.8-1.2-2.9-3.2-2.9-5.4 0-3.6 2.9-6.5 6.5-6.5 0.5 0 1 .1 1.5.2v-5.2c-0.5-0.1-1-0.1-1.5-0.1-6.5 0-11.8 5.3-11.8 11.8 0 4 2 7.5 5.1 9.6 1.9 1.3 4.2 2.1 6.7 2.1 6.5 0 11.8-5.3 11.8-11.8V20c2.4 2.1 5.6 3.3 9 3.3v-5.6c-1.1 0-2.2-.1-3.2-.2z"></path>
+                        </svg>
+                        <% } else { %>
+                        <i class="icon icon-<%= platform %>"></i>
+                        <% } %>
+                    </a>
+                </li>
+            <% } %>
+        <% }) %>
+    </ul>
+<% } %>
