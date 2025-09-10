@@ -101,10 +101,10 @@ theme: pure
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
-deploy:
-  type: git
-  repo: git@github.com:Jaxon1216/Jaxon1216.github.io.git
-  branch: main
+#deploy:
+ # type: git
+#  repo: git@github.com:Jaxon1216/Jaxon1216.github.io.git
+ # branch: main
 
 avatar_style:
   radius: true
