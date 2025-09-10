@@ -173,9 +173,9 @@ pv:
   busuanzi:
     enable: true  # 不蒜子统计
   leancloud:
-    enable: false  # leancloud统计
-    app_id: # leancloud <AppID>
-    app_key: # leancloud <AppKey>
+    enable: false  # leancloud统计（可选，需要注册 LeanCloud 账号）
+    app_id: # 替换为你的 LeanCloud App ID
+    app_key: # 替换为你的 LeanCloud App Key
         
 # wordcount
 postCount:
@@ -185,9 +185,9 @@ postCount:
 
 # Plugins
 plugins:
-  google_analytics: # enter the tracking ID for your Google Analytics
+  google_analytics: G-32MVXTQCXQ # Google Analytics 跟踪 ID
   google_site_verification: # enter Google site verification code
-  baidu_analytics: # enter Baidu Analytics hash key
+  baidu_analytics: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx # 替换为你的百度统计 hash key
   tencent_analytics: 
   
 # Miscellaneous
@@ -229,7 +229,7 @@ profile:
   # My Personal Links
   links:
     Github: https://github.com/Jaxon1216
-    Blog: https://jaxon1216.github.io/
+    Blog: https://jiangxu.net/
     TikTok: https://www.tiktok.com/@jaxon1216
     # 微博: 
     # 花瓣: 
@@ -245,7 +245,7 @@ profile:
   # My Personal Works
   works:
     name:
-      link: https://jaxon1216.github.io/
+      link: https://jiangxu.net/
       date: 2025
   # My Personal Projects
   projects:
