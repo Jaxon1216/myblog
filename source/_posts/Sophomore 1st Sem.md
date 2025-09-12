@@ -1,6 +1,6 @@
 ---
 title: Sophomore 1st Sem
-date: 2025-09-10 13:30:32
+date: 2025-09-12 19:30:32
 categories: 
 - diary
 tags:
