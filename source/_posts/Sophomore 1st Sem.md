@@ -33,8 +33,8 @@ IDEA:
 | 2025-09-13 | Saturday |1.3h 660|1.5h 栈模版代码|20min单词 20min YouTube跟读 | | |
 | 2025-09-15 | Monday |2h 660|1.5h 栈刷题| | | |
 | 2025-09-16 | Tuesday | | | | |全天课|
-| 2025-09-17 | Wednesday |1.3h 660 |3.5h data structures|30min YouTube | 20min jogging 60 深蹲 60 箭步蹲| 开始旷课|
-| 2025-09-18 | Thursday | | | | | |
+| 2025-09-17 | Wednesday |1.3h 660|3.5h data structures|30min YouTube 15min 单词 | 20min jogging 60x深蹲 60x弓步蹲| 开始旷课|
+| 2025-09-18 | Thursday |40min 660 1.3h 30讲|3h 队列题|30min YouTube 15min 单词| |优化做题习惯|
 | 2025-09-19 | Friday | | | | | |
 | 2025-09-20 | Saturday | | | | | |
 | 2025-09-21 | Sunday | | | | | |

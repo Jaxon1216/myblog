@@ -24,6 +24,11 @@ git remote -v
 ### 插入链接
 - 作者：``[jx's blog]``+``(https://jiangxu.net/ "个人博客")``
 
-
+### 导出为pdf
+- 在md文件页面 ```cmd+Shift+P```
 # Linux
 - pwd 查看当前路径
+
+# 快捷键
+- 撤销 ```cmd``` + ```z```
+- 左移 ```cmd``` + ```[```
