@@ -1,6 +1,6 @@
 ---
 title: confusion
-date: 2025-08-28 15:20:10
+date: 2025-09-17 15:20:10
 categories:
   - study
 tags:
@@ -51,7 +51,7 @@ tags:
 - `break;` 只退出当前循环/`switch`，函数还会继续往下执行。
 - `return 0;` 是“有返回值的函数”返回整数 0。
 
-### 最小示例
+#### 最小示例
 
 ```cpp
 void LinkedList::ascinsert(eleType value) {
@@ -71,7 +71,7 @@ void LinkedList::ascinsert(eleType value) {
 }
 ```
 
-### 如果把第二个 `return` 换成 `break` 会怎样？
+#### 如果把第二个 `return` 换成 `break` 会怎样？
 
 ```cpp
 void LinkedList::ascinsert(eleType value){
@@ -90,7 +90,7 @@ void LinkedList::ascinsert(eleType value){
 
 - 核心原因：`break` 只离开循环，函数没有结束；而 `return` 结束整个函数。
 
-### `return;` 和 `return 0;`
+####  `return;` 和 `return 0;`
 
 - `return 0;`：用于有返回值的函数，返回整数 0。
 - `return;`：用于 `void` 函数，只退出函数，不返回值。
@@ -101,10 +101,67 @@ int add(int a, int b) { return a + b; }
 void ascinsert(eleType v) { /* ... */ return; }
 ```
 
-### 速查表
+#### 速查表
 
 | 语句        | 适用场景           | 作用                    |
 | ----------- | ------------------ | ----------------------- |
 | `break;`    | 循环或 `switch` 内 | 跳出当前循环/`switch`   |
 | `return;`   | `void` 函数        | 立即结束整个函数        |
 | `return 0;` | 返回 `int` 的函数  | 结束函数并返回 `0`      |
+
+### delete
+
+#### delete
+
+```cpp
+int* p = new int(5);    // 单个对象
+delete p;               // 正确：不需要[]
+
+int* arr = new int[10]; // 数组
+delete[] arr;           // 必须加[]
+
+// 错误示范
+int* wrong = new int[10];
+delete wrong;           // 未使用[] → 内存泄漏/未定义行为
+```
+
+- 不需要加`[]`的情况：
+  1. 释放**单个对象**时用`delete`
+  2. 当指针是`nullptr`时（`delete nullptr`安全但无意义）
+
+- 必须加`[]`的情况：
+  - 释放数组时用`delete[]`
+  - 与`new[]`严格配对使用
+
+- 核心原则：`new`和`delete`形式必须匹配
+
+### c中的打印
+```c
+if(x >= 10) 
+    printf("%c", 'A' + x - 10);
+else 
+    printf("%d", x);
+```
+
+`printf` 是 C 语言中用于格式化输出的标准函数。格式说明符以 `%` 开头，指定如何显示后续参数。
+
+在上面的代码中：
+- `%c` 是字符格式说明符，它将整数值转换为对应的 ASCII 字符。`'A' + x - 10` 计算出 A-F 对应的字符。
+- `%d` 是十进制整数格式说明符，直接输出数字。
+
+其他常见的格式说明符：
+- `%s`: 字符串
+- `%f`: 浮点数
+- `%x`: 十六进制数（小写 a-f）
+- `%X`: 十六进制数（大写 A-F）
+- `%p`: 指针地址
+
+C++ 中通常使用 `cout` 进行输出：
+```cpp
+if(x >= 10) 
+    cout << static_cast<char>('A' + x - 10);
+else 
+    cout << x;
+```
+
+C 的 `printf` 需要手动指定格式，而 C++ 的 `cout` 会根据变量类型自动选择格式。
