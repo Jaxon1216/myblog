@@ -35,8 +35,8 @@ IDEA:
 | 2025-09-16 | Tuesday | | | | |全天课|
 | 2025-09-17 | Wednesday |1.3h 660|3.5h data structures|30min YouTube 15min 单词 | 20min jogging 60x深蹲 60x弓步蹲| 开始旷课|
 | 2025-09-18 | Thursday |40min 660 1.3h 30讲|3h 队列题|30min YouTube 15min 单词| |优化做题习惯|
-| 2025-09-19 | Friday | | | | | |
-| 2025-09-20 | Saturday | | | | | |
+| 2025-09-19 | Friday |2h 30讲 |1.5h 数据结构| |5km 慢跑 | |
+| 2025-09-20 | Saturday | | | |1.5h 游泳| |
 | 2025-09-21 | Sunday | | | | | |
 | 2025-09-22 | Monday | | | | | |
 | 2025-09-23 | Tuesday | | | | | |
