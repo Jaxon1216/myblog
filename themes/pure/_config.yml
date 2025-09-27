@@ -33,7 +33,7 @@ site:
     url: ../images/logo.png
   title: Hexo # 页面title
   favicon: /favicon.png
-  board: <p>用文字留住青春 反思中看清自己</p> # 站点公告
+  board: <p>行胜于言</p> # 站点公告
   copyright: false # 底部版权信息
 
 # config

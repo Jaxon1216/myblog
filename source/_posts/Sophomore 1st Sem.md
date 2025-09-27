@@ -1,26 +1,25 @@
 ---
 title: Sophomore 1st Sem
-date: 2025-09-12 19:30:32
+date: 2025-09-26 19:30:32
 categories: 
 - diary
 tags:
 - 学习记录
 ---
 Goals:
-- 线代基础，高数基础，线代强化，660，张宇30。
-- 数据结构英雄课程过一遍，考研王道课程再来一遍。
+- 线代基础，高数基础，660，张宇30。
+- 数据结构英雄课程过一遍，。
 - 按照考研强度准备六级，包括口语。
-- 大英赛，数学竞赛。
+- 数学竞赛。
 Events:
 - 9到10月报名蓝桥杯
 - 11月六级 http://cet-bm.neea.edu.cn
 - 11月转专业https://jwc.cugb.edu.cn/c/2024-10-29/812158.shtml
-- 
-IDEA:
+
 - 
 # September
 
-| Date | Day | Math | Code | English | Exercise | Note |
+| Date | Day | Math | Code | English | Exercise | Note / screen time |
 |------|-----|------|------|---------|----------|------|
 | 2025-09-01 | Monday | 3h 线性表示，线性相关无关及其秩| | | 1.5h 游泳，还是没学会换气| |
 | 2025-09-02 | Tuesday | 3h 做题，线性方程组解的性质和判定| | 20min英语趣配音| 2h 俯卧撑100个，跑步4km| 明天一定早早起|
@@ -37,13 +36,9 @@ IDEA:
 | 2025-09-18 | Thursday |40min 660 1.3h 30讲|3h 队列题|30min YouTube 15min 单词| |优化做题习惯|
 | 2025-09-19 | Friday |2h 30讲 |1.5h 数据结构| |5km 慢跑 | |
 | 2025-09-20 | Saturday | | | |1.5h 游泳| |
-| 2025-09-21 | Sunday | | | | | |
-| 2025-09-22 | Monday | | | | | |
-| 2025-09-23 | Tuesday | | | | | |
-| 2025-09-24 | Wednesday | | | | | |
-| 2025-09-25 | Thursday | | | | | |
-| 2025-09-26 | Friday | | | | | |
-| 2025-09-27 | Saturday | | | | | |
+| 2025-09-21至26 | 反复感冒摆烂，就学了两三百个单词 |
+| 2025-09-26 | Friday |1h 基础三十讲 |25min blog相关|24min 六级单词|4km 6分配| |
+| 2025-09-27 | Saturday | |25min blog |1h 配音 20min 单词 30min youtube| |昨晚宿舍集体熬夜早上起不来|
 | 2025-09-28 | Sunday | | | | | |
 | 2025-09-29 | Monday | | | | | |
 | 2025-09-30 | Tuesday | | | | | |
