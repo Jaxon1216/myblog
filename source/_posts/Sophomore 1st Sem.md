@@ -6,20 +6,63 @@ categories:
 tags:
 - 学习记录
 ---
-Goals:
-- 线代基础，高数基础，660，张宇30。
+
+## 目录
+
+- [小目标](#Goals)
+- [十月记录](#October)
+- [九月记录](#september)
+
+
+# Goals:
 - 数据结构英雄课程过一遍，。
-- 按照考研强度准备六级，包括口语。
+- 按照雅思强度准备六级，包括口语。
 - 数学竞赛。
-Events:
-- 9到10月报名蓝桥杯
 - 11月六级 http://cet-bm.neea.edu.cn
 - 11月转专业https://jwc.cugb.edu.cn/c/2024-10-29/812158.shtml
 
-- 
+
+
+# October
+
+| Date | Day | Math | Code | English | Outdoor | Note |
+|------|-----|------|------|---------|----------|------|
+| 2025-10-01 | Wednesday |2h 函数结束|1h 串源码复现理解|每日20min单词不再记录| | |
+| 2025-10-02 | Thursday |1.5h 数列结束|30min 串源码答疑/10min几个Linux命令/30min Google analysis，html学习材料准备|30min ted 20min youtube|没咋出宿舍| |
+| 2025-10-03 | Friday | | | | | |
+| 2025-10-04 | Saturday | | | | | |
+| 2025-10-05 | Sunday | | | | | |
+| 2025-10-06 | Monday | | | | | |
+| 2025-10-07 | Tuesday | | | | | |
+| 2025-10-08 | Wednesday | | | | | |
+| 2025-10-09 | Thursday | | | | | |
+| 2025-10-10 | Friday | | | | | |
+| 2025-10-11 | Saturday | | | | | |
+| 2025-10-12 | Sunday | | | | | |
+| 2025-10-13 | Monday | | | | | |
+| 2025-10-14 | Tuesday | | | | | |
+| 2025-10-15 | Wednesday | | | | | |
+| 2025-10-16 | Thursday | | | | | |
+| 2025-10-17 | Friday | | | | | |
+| 2025-10-18 | Saturday | | | | | |
+| 2025-10-19 | Sunday | | | | | |
+| 2025-10-20 | Monday | | | | | |
+| 2025-10-21 | Tuesday | | | | | |
+| 2025-10-22 | Wednesday | | | | | |
+| 2025-10-23 | Thursday | | | | | |
+| 2025-10-24 | Friday | | | | | |
+| 2025-10-25 | Saturday | | | | | |
+| 2025-10-26 | Sunday | | | | | |
+| 2025-10-27 | Monday | | | | | |
+| 2025-10-28 | Tuesday | | | | | |
+| 2025-10-29 | Wednesday | | | | | |
+| 2025-10-30 | Thursday | | | | | |
+| 2025-10-31 | Friday | | | | | |
+
+
 # September
 
-| Date | Day | Math | Code | English | Exercise | Note / screen time |
+| Date | Day | Math | Code | English | Outdoor | Note |
 |------|-----|------|------|---------|----------|------|
 | 2025-09-01 | Monday | 3h 线性表示，线性相关无关及其秩| | | 1.5h 游泳，还是没学会换气| |
 | 2025-09-02 | Tuesday | 3h 做题，线性方程组解的性质和判定| | 20min英语趣配音| 2h 俯卧撑100个，跑步4km| 明天一定早早起|
@@ -36,9 +79,8 @@ Events:
 | 2025-09-18 | Thursday |40min 660 1.3h 30讲|3h 队列题|30min YouTube 15min 单词| |优化做题习惯|
 | 2025-09-19 | Friday |2h 30讲 |1.5h 数据结构| |5km 慢跑 | |
 | 2025-09-20 | Saturday | | | |1.5h 游泳| |
-| 2025-09-21至26 | 反复感冒摆烂，就学了两三百个单词 |
 | 2025-09-26 | Friday |1h 基础三十讲 |25min blog相关|24min 六级单词|4km 6分配| |
-| 2025-09-27 | Saturday | |25min blog |1h 配音 20min 单词 30min youtube| |昨晚宿舍集体熬夜早上起不来|
-| 2025-09-28 | Sunday | | | | | |
-| 2025-09-29 | Monday | | | | | |
-| 2025-09-30 | Tuesday | | | | | |
+| 2025-09-27 | Saturday | |25min blog |1h 英语配音 20min 单词 30min youtube| |昨晚宿舍集体熬夜早上起不来|
+| 2025-09-28 | Sunday |1.5h 基础30讲|30min blog 50min 串源码理解|30min单词 | | |
+| 2025-09-29 | Monday |2h 三十讲| 30min 串的存储结构，复杂度|30min 配音| | |
+| 2025-09-30 | Tuesday | 1.5h 三十讲| | | | |
