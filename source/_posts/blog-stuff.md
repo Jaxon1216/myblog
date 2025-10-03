@@ -15,6 +15,11 @@ tags:
 
 - 关键词：Hexo `permalink`、`:title`、`slug`、`front-matter` 覆盖、`pretty_urls`
 
+> 更改之前
+<img src="/img/linkformatbf.png" alt="before" width="400">
+
+> 更改之后
+<img src="/img/linkformataf.png" alt="after" width="400">
 ### 具体的技术问题
 
 1) 这是什么，为什么要改？

@@ -1,6 +1,6 @@
 ---
 title: tools
-date: 2025-09-01 15:20:10
+date: 2025-10-01 15:20:10
 categories:
   - study
 tags:
@@ -15,6 +15,7 @@ tags:
   - [Git 分支配置与远程仓库URL不匹配](#git-分支配置与远程仓库-url-不匹配)
 - [md](#md)
   - [插入链接](#插入链接)
+  - [插入图片](#插入图片)
   - [导出为pdf](#导出为pdf)
   - [写目录](#写目录)
 - [Linux](#linux)
@@ -37,6 +38,23 @@ git remote -v
 # md
 ### 插入链接
 - 作者：``[jx's blog]``+``(https://jiangxu.net/ "个人博客")``
+
+### 插入图片
+- 将图片放到 `source/img/`（发布后路径为 `/img/`）
+- 桌面图片复制到项目：
+```bash
+cp ~/Desktop/screenshot.png /Users/jiangxu/Documents/code/myblog/source/img/
+```
+> 也可以在访达直接拖拽吧
+- 在 Markdown 中引用：
+```markdown
+![截图说明](/img/screenshot.png)
+```
+- 需要控制大小（可选）：
+```html
+<img src="/img/screenshot.png" alt="截图说明" width="600">
+```
+- 文件名尽量用英文与连字符，避免空格。
 
 ### 导出为pdf
 - 在md文件页面 ```cmd+Shift+P```
