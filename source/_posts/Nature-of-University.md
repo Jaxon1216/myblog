@@ -3,6 +3,10 @@ title: Nature of University
 date: 2025-10-03 00:47:06
 tags: 
 ---
+#### 声明
+- 可能引人不适，请谨慎观看
+- 虚构演绎，仅供娱乐
+- 内容纯属虚构不涉及不隐喻任何团体组织和自然人
 #### 参考
 - [上海交通大学生存手册](https://github.com/SurviveSJTU/SurviveSJTUManual/blob/master/SUMMARY.md)
 - [不可全信不可全不信](https://v.douyin.com/mUDKTfj_V94/)
