@@ -3,9 +3,98 @@ title: blog stuff
 date: 2025-10-02 19:45:06
 tags:
 ---
-# 目录
-- [Google analysis](#配置Google-analysis)
+## 目录
 - [postlink](#postlink)
+- [Google analysis](#配置Google-analysis)
+- [html](#html)
+---
+## postlink
+### 我的稿子（把文章链接改成 postname，无日期）
+
+我希望把文章地址从带日期的结构改为仅使用文章名。例如当前这篇示例是带日期的：`https://www.jiangxu.net/2025/08/14/study-materials/`（参考链接见文末）。目标是变为：`https://www.jiangxu.net/study-materials/`。
+
+- 关键词：Hexo `permalink`、`:title`、`slug`、`front-matter` 覆盖、`pretty_urls`、301 重定向、Vercel。
+
+### 具体的技术问题（从 0 到能解释原理）
+
+1) 这是什么，为什么要改？
+- 在 Hexo 里，`permalink` 决定每篇文章最终生成的访问路径。默认常见的是 `:year/:month/:day/:title/`，更偏向博客时间线；改成 `:title/` 可以获得更短、更“永久”的链接，便于记忆与分享。
+
+2) 名词解释（够用就这些）
+- permalink：固定链接模板，支持占位符（如 `:title`）。
+- title vs slug：`title` 是文章标题，`slug` 是 URL 里使用的“短名称”。中文标题会直接出现在 URL 中（或被转义）。为保证简洁稳定，建议在 front-matter 里显式写 `slug`（英文/拼音）。
+- front-matter 覆盖：单篇文章的 `permalink` 字段可以覆盖全局策略。
+- pretty_urls：去除 `index.html`/`.html` 的外观选项，不改变目录式链接本质。
+
+3) 工作原理（Hexo 渲染 → 最终 URL）
+- Hexo 根据 `_config.yml` 的 `permalink` 模板，为每篇文章计算目标路径；例如 `:title/` 会在 `public/study-materials/index.html` 生成文件，访问时即 `https://域名/study-materials/`。
+- 主题里常用 `post.permalink`/`page.permalink` 读取该最终地址，变化后会自动跟随，无需改主题模板。
+
+4) 如何修改（不改主题，只动 Hexo 主配置）
+
+- 打开站点根目录的 `_config.yml`，把 `permalink` 改为仅使用文章名：
+
+```yaml
+# URL
+url: https://jiangxu.net/
+permalink: :title/
+pretty_urls:
+  trailing_index: false   # 去掉末尾的 index.html（目录式链接更干净）
+  trailing_html: true     # 保持目录式，不使用 .html 直出
+```
+
+- 对中文标题或想自定义 URL 的文章，在 front-matter 里增加 `slug`：
+
+```md
+---
+title: 学习资料
+slug: study-materials
+date: 2025-08-14 00:00:00
+---
+```
+
+- 只想个别文章自定义完整路径（覆盖全局模板），可在该文 front-matter 指定 `permalink`：
+
+```md
+---
+title: 特殊文章
+permalink: my-special-post/
+---
+```
+
+- 生成与本地验证：
+
+```bash
+hexo clean && hexo generate && hexo server
+# 打开 http://localhost:4000 验证地址是否变为 /postname/
+```
+
+5) 迁移与 SEO（老链接到新链接）
+- 改链接结构会导致旧地址 404。推荐做 301 永久重定向，把老格式 `/:year/:month/:day/:slug/` 指向新格式 `/:slug/`。
+- Vercel 可用 `vercel.json` 声明重定向（部署到 Vercel 场景）：
+
+```json
+{
+  "redirects": [
+    { "source": "/:year/:month/:day/:slug/", "destination": "/:slug/", "permanent": true }
+  ]
+}
+```
+
+- 站内链接：你的 `_config.yml` 里 `relative_link: true`（相对链接）已开启，通常无需大规模替换；若手写了绝对旧链接，建议批量替换。
+- 搜索引擎：更新/提交 `sitemap` 有助于加速索引更新（如使用 `hexo-generator-sitemap` 插件）。
+
+6) 常见问题与排查
+- 重名冲突：`permalink: :title/` 下，两个同名标题会竞争同一路径。给其中一个加 `slug` 解决。
+- 中文/符号 URL：建议写 `slug`，避免 URL 编码或不稳定字符。
+- 分类在路径里？若你想保留分类，可用 `:categories/:title/` 模板。
+- 本地没生效：确认已 `hexo clean`，并非浏览器缓存；命令行无错误后再测试。
+
+7) 打个比方（更好理解）
+- 旧格式像“带日期的报纸档案柜”（年/月/日/标题）；新格式像“书名直达的书签”。加上 301 就像前台小哥告诉老访客“移到新书架啦，这边请”。
+
+> 示例当前地址（旧格式）：[`https://www.jiangxu.net/2025/08/14/study-materials/`](https://www.jiangxu.net/2025/08/14/study-materials/)
+---
 
 ## 配置Google analysis
 ### 我的稿子（GA4 接入与埋点，面试口吻）
@@ -129,9 +218,8 @@ flowchart LR
 - 把 GA4 想成快递系统：`gtag.js` 是前台小哥，`dataLayer` 是待寄包裹清单，`gtag('config')` 就是告诉快递“寄到哪个仓库（Measurement ID）”。当你触发 `page_view` 或自定义事件，就像把包裹交给快递（`/g/collect`），最终入库到你的 GA4 Property；`Realtime/DebugView` 就是仓库的即时签收台。
 - 再打一个：整页跳转像“走出这家店再进另一家”；PJAX/SPA 像“在同一家店换区域”。前者每次进店系统自然记一笔（自动 `page_view`），后者要你自己按一次计数器（手动上报）。
 
-# postlink
-
-# HTML
+---
+## HTML
 
 
 ### 引用于Google analysis部分
