@@ -4,11 +4,11 @@ date: 2025-10-02 19:45:06
 tags:
 ---
 ## 目录
-- [x] [postlink](#postlink)
+- [x] [linkformat](#linkformat)
 - [Google analysis](#配置Google-analysis)
 - [html](#html)
 ---
-## postlink
+## linkformat
 ### 把文章链接改成 postname，无日期（已实操，已注释）
 
 我希望把文章地址从带日期的结构改为仅使用文章名。例如当前这篇示例是带日期的：`https://www.jiangxu.net/2025/08/14/study-materials/`（参考链接见文末）。目标是变为：`https://www.jiangxu.net/study-materials/`。
