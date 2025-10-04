@@ -129,16 +129,16 @@ hexo clean && hexo generate && hexo server
 - GA4 是网站“访问统计与行为分析”的系统。它记录“有人来过哪一页、做了什么动作”。有了它，能回答“哪篇文章更受欢迎、用户从哪里来、点了哪些按钮”。
 
 2) 名词解释（最常见的就这些）
-- GA4 Property：你的数据容器，所有事件最终汇总到这里。
-- Measurement ID：形如 `G-XXXXXXXXXX`，告诉 GA4 “发到哪个容器”。
-- gtag.js：Google 的前端 SDK，负责把事件打包并发送。
-- dataLayer：浏览器里的“事件队列”，`gtag()` 把配置与事件都 push 进去。
-- page_view：页面浏览事件；SPA/PJAX 不会自动刷新页面，需要手动上报。
-- Event：通用事件（名字 + 参数），比如 `click_outbound`、`copy_code`。
-- Client ID（_ga）：匿名访客 ID（存在一方 Cookie），用于区分不同用户。
-- DebugView/Realtime：调试与实时数据查看界面。
-- Consent Mode：在未授权广告/个性化时，限制数据存储与上报行为。
-- PJAX/SPA：不整页刷新，地址变了但页面没重载。
+- []GA4 Property：你的数据容器，所有事件最终汇总到这里。
+- []Measurement ID：形如 `G-XXXXXXXXXX`，告诉 GA4 “发到哪个容器”。
+- []gtag.js：Google 的前端 SDK，负责把事件打包并发送。
+- []dataLayer：浏览器里的“事件队列”，`gtag()` 把配置与事件都 push 进去。
+- []page_view：页面浏览事件；SPA/PJAX 不会自动刷新页面，需要手动上报。
+- []Event：通用事件（名字 + 参数），比如 `click_outbound`、`copy_code`。
+- []Client ID（_ga）：匿名访客 ID（存在一方 Cookie），用于区分不同用户。
+- []DebugView/Realtime：调试与实时数据查看界面。
+- []Consent Mode：在未授权广告/个性化时，限制数据存储与上报行为。
+- []PJAX/SPA：不整页刷新，地址变了但页面没重载。
 
 3) 工作原理（浏览器 → GA4）
 - 首次加载：页面拉取 `gtag.js` → 初始化 `dataLayer` → `gtag('config', MeasurementID, ...)`。
@@ -226,10 +226,10 @@ hexo clean && hexo generate && hexo server
 
 9) 数据流转图（GA4 上报链路）
 ```mermaid
-flowchart LR
+graph LR
   A[Browser] --> G[gtag.js + dataLayer]
-  G -->|config (Measurement ID)| C[GA Collect endpoint /g/collect]
-  G -->|page_view & events| C
+  G -- "config: Measurement ID" --> C[GA Collect endpoint /g/collect]
+  G -- "page_view and events" --> C
   C --> P[GA4 Property]
   P --> R[Realtime & DebugView]
 ```

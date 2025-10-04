@@ -9,7 +9,7 @@ tags:
 - 内容纯属虚构不涉及不隐喻任何团体组织和自然人
 #### 参考
 - [上海交通大学生存手册](https://github.com/SurviveSJTU/SurviveSJTUManual/blob/master/SUMMARY.md)
-- [不可全信不可全不信](https://v.douyin.com/mUDKTfj_V94/)
+- [一位dy博主不可全信不可全不信](https://v.douyin.com/mUDKTfj_V94/)
 # 站岗四年：大学其实是一家公司（我们只是门口的礼仪小姐）
 
 >《上海交通大学生存手册》里写了这样一句话，第一次看见时只当耸人听闻。等到真走进大学，才知字字见骨。
