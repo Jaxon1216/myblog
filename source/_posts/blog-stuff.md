@@ -5,8 +5,8 @@ tags:
 ---
 ## 目录
 - [x] [linkformat](#linkformat)
-- [Google analysis](#配置Google-analysis)
-- [html](#html)
+- [x] [Google analysis](#配置Google-analysis)
+- [] [html](#HTML)
 ---
 ## linkformat
 ### 把文章链接改成 postname，无日期（已实操，已注释）
@@ -25,10 +25,9 @@ tags:
 1) 这是什么，为什么要改？
 - 在 Hexo 里，`permalink` 决定每篇文章最终生成的访问路径。默认常见的是 `:year/:month/:day/:title/`，更偏向博客时间线；改成 `:title/` 可以获得更短、更“永久”的链接，便于记忆与分享。
 
-2) 名词解释（够用就这些）
+2) 名词解释
 - [x] permalink：固定链接模板，支持占位符（如 `:title`）。
 - [x] title vs slug：`title` 是文章标题，`slug` 是 URL 里使用的“短名称”。中文标题会直接出现在 URL 中（或被转义）。为保证简洁稳定，建议在 front-matter 里显式写 `slug`（英文/拼音）。
-> 下面的对比表
 - [x] front-matter 覆盖：单篇文章的 `permalink` 字段可以覆盖全局策略。
 > 全站用一种规则，但某一篇你想要特别的 URL，就在这篇的 front-matter 里写 permalink，它会直接生效
 - [x] pretty_urls：去除 `index.html`/`.html` 的外观选项，不改变目录式链接本质。
@@ -49,18 +48,7 @@ pretty_urls:
   trailing_index: false   # 去掉末尾的 index.html（目录式链接更干净）
   trailing_html: true     # 保持目录式，不使用 .html 直出
 ```
-- 补充：`trailing_index` / `trailing_html` 对照表
 
-| 模板（permalink） | 配置 | 结果示例 |
-| --- | --- | --- |
-| `:title/` | `trailing_index: true` | `/foo/` |
-| `:title/` | `trailing_index: false` | `/foo/`（无变化） |
-| `:title/index.html` | `trailing_index: true` | `/foo/index.html` |
-| `:title/index.html` | `trailing_index: false` | `/foo/` |
-| `:title.html` | `trailing_html: true` | `/foo.html` |
-| `:title.html` | `trailing_html: false` | `/foo` |
-
-> 注：`:title.html` 仅受 `trailing_html` 影响，与 `trailing_index` 无关。
 
 - 对中文标题或想自定义 URL 的文章，在 front-matter 里增加 `slug`：
 
@@ -71,7 +59,7 @@ slug: study-materials
 date: 2025-08-14 00:00:00
 ---
 ```
-- 只想个别文章自定义完整路径（覆盖全局模板），可在该文 front-matter 指定 `permalink`：
+
 
 - slug 与 URL 情况对照表
 
@@ -92,59 +80,53 @@ title: 特殊文章
 permalink: my-special-post/
 ---
 ```
-
-- 生成与本地验证：
-
-```bash
-hexo clean && hexo generate && hexo server
-# 打开 http://localhost:4000 验证地址是否变为 /postname/
-```
-
-
-- 站内链接：你的 `_config.yml` 里 `relative_link: true`（相对链接）已开启，通常无需大规模替换；若手写了绝对旧链接，建议批量替换。
-- 搜索引擎：更新/提交 `sitemap` 有助于加速索引更新（如使用 `hexo-generator-sitemap` 插件）。
-
-6) 常见问题与排查
+5) 常见问题与排查
 - 重名冲突：`permalink: :title/` 下，两个同名标题会竞争同一路径。给其中一个加 `slug` 解决。
 - 中文/符号 URL：建议写 `slug`，避免 URL 编码或不稳定字符。
 - 分类在路径里？若你想保留分类，可用 `:categories/:title/` 模板。
 - 本地没生效：确认已 `hexo clean`，并非浏览器缓存；命令行无错误后再测试。
 
-7) 打个比方（更好理解）
-- 旧格式像“带日期的报纸档案柜”（年/月/日/标题）；新格式像“书名直达的书签”。加上 301 就像前台小哥告诉老访客“移到新书架啦，这边请”。
-
-> 示例当前地址（旧格式）：[`https://www.jiangxu.net/2025/08/14/study-materials/`](https://www.jiangxu.net/2025/08/14/study-materials/)
----
 
 ## 配置Google analysis
-### 我的稿子（GA4 接入与埋点，面试口吻）
+### 我的说明
+我给博客加了一个“计数器”。它能记录：有人打开了哪一页、做了哪些关键动作。
+- 整页跳转时，它会自动记一次“看了一页”。
+- 我还加了两个小统计：点出去的链接、复制代码。这样更容易看出哪些内容有用。
+- 我能在后台的“实时”页面马上看到有没有上报成功。
 
-我在 Hexo 静态博客里完成了 GA4 埋点闭环：用 `gtag.js` 与 `dataLayer` 绑定 `Measurement ID`，整页跳转开启自动 `page_view`，PJAX/SPA 关闭 `send_page_view` 改为路由变化时手动上报，确保 `page_path/page_location/page_title` 与会话归因准确。我为关键交互落了自定义事件（`click_outbound` 出站点击、`copy_code` 代码复制），通过 Realtime 与 DebugView 验证链路；在合规上启用 Consent Mode 默认策略，并在 CSP 中放行 `googletagmanager.com` 与 `google-analytics.com`。同时准备了大陆访问的加载失败容错与替代统计作为对照，避免数据断点。
+我用到的：
+- GA4：谷歌的统计系统
+- Measurement ID：类似你家门牌号，告诉数据送到哪
+- gtag.js：放在页面上的统计代码
+- dataLayer：给统计代码传消息的“队列”
+- page_view：记录“看了一页”
+- 事件（event）：记录“做了一个动作”，比如点链接、复制
+- Realtime/DebugView：后台用来看数据有没有进来
 
-- 关键词：GA4 Property、Measurement ID、`gtag.js`、`dataLayer`、`page_view`、自定义事件、PJAX/SPA、Consent Mode、CSP、Realtime/DebugView、`/g/collect`、Client ID（`_ga`）。
-
-### 具体的技术问题（从 0 到能解释原理）
+### 具体的技术问题
 
 1) 这是什么，为什么要用它？
 - GA4 是网站“访问统计与行为分析”的系统。它记录“有人来过哪一页、做了什么动作”。有了它，能回答“哪篇文章更受欢迎、用户从哪里来、点了哪些按钮”。
 
 2) 名词解释（最常见的就这些）
-- []GA4 Property：你的数据容器，所有事件最终汇总到这里。
-- []Measurement ID：形如 `G-XXXXXXXXXX`，告诉 GA4 “发到哪个容器”。
-- []gtag.js：Google 的前端 SDK，负责把事件打包并发送。
-- []dataLayer：浏览器里的“事件队列”，`gtag()` 把配置与事件都 push 进去。
-- []page_view：页面浏览事件；SPA/PJAX 不会自动刷新页面，需要手动上报。
-- []Event：通用事件（名字 + 参数），比如 `click_outbound`、`copy_code`。
-- []Client ID（_ga）：匿名访客 ID（存在一方 Cookie），用于区分不同用户。
-- []DebugView/Realtime：调试与实时数据查看界面。
-- []Consent Mode：在未授权广告/个性化时，限制数据存储与上报行为。
-- []PJAX/SPA：不整页刷新，地址变了但页面没重载。
+- [x] GA4 Property：你的数据容器，所有事件最终汇总到这里。
+- [x] Measurement ID：形如 `G-XXXXXXXXXX`，告诉 GA4 “发到哪个容器”。
+- [x] gtag.js：Google 提供的统计代码（SDK：给开发者用的一包工具），负责把信息打包并发送。
+- [x] dataLayer：浏览器里的“事件队列”，`gtag()` 把配置与事件都 push 进去。
+- [x] page_view：页面浏览事件；SPA/PJAX 不会自动刷新页面，需要手动上报。
+- [x] Event：通用事件（名字 + 参数），比如 `click_outbound`、`copy_code`。
+- [x] Client ID（_ga）：匿名访客 ID（存在一方 Cookie），用于区分不同用户。
+- [x] DebugView/Realtime：调试与实时数据查看界面。
+- [x] Cookie：浏览器为网站保存的一小段文字，网站下次访问时能认出“还是你”。
+- [x] Client ID：存放在 Cookie 里的匿名编号，用来区分不同访客（不含个人信息）。
+- [x] CSP：内容安全策略，像“白名单”，只允许从指定域加载脚本/发请求；未放行会被浏览器拦截。
+- [x] 第一次访问：gtag.js 没找到编号 → 生成一个新的 Client ID → 写进 Cookie。
+- [x] 以后访问：浏览器会自动把 Cookie 带上；gtag.js 读取 Cookie 里的 Client ID → 识别是同一位访客。
 
-3) 工作原理（浏览器 → GA4）
-- 首次加载：页面拉取 `gtag.js` → 初始化 `dataLayer` → `gtag('config', MeasurementID, ...)`。
-- 事件上报：`gtag('event', 'page_view' | 'your_event', params)` → 发送到 `https://www.google-analytics.com/g/collect?...`。
-- 汇总与展示：GA4 后台按会话与事件模型汇总，Realtime/DebugView 可即时查看。
-- SPA 场景：路由变化时手动发 `page_view`，否则数据会偏低。
+3) 数据流转图（GA4 上报链路）
+> 自制，边画图边理解约2h
+> <img src="/img/gaflowchart.png" alt="Google analysis流程图" width="800">
+
 
 4) 如何接入（整页跳转站点）
 ```html
@@ -157,86 +139,28 @@ hexo clean && hexo generate && hexo server
 </script>
 ```
 
-5) 如何接入（PJAX/SPA）
-```html
-<script>
-  gtag('config', 'G-XXXXXXXXXX', { send_page_view: false });
-  function sendPageView() {
-    gtag('event', 'page_view', {
-      page_title: document.title,
-      page_location: location.href,
-      page_path: location.pathname + location.search + location.hash
-    });
-  }
-  document.addEventListener('pjax:complete', sendPageView);
-  window.addEventListener('hashchange', sendPageView);
-  sendPageView();
-</script>
-```
+### 举例 
 
-6) 常用自定义事件（可直接用）
-```html
-<!-- 出站链接点击 -->
-<script>
-  document.addEventListener('click', function (e) {
-    const a = e.target.closest && e.target.closest('a');
-    if (!a) return;
-    const isExternal = a.host && a.host !== location.host;
-    if (isExternal) {
-      gtag('event', 'click_outbound', {
-        event_category: 'engagement',
-        event_label: a.href
-      });
-    }
-  });
-</script>
+访客Y第一次打开（访客浏览器）
 
-<!-- 代码复制 -->
-<script>
-  document.addEventListener('copy', function () {
-    gtag('event', 'copy_code', {
-      content_type: 'code',
-      page_path: location.pathname
-    });
-  });
-</script>
-```
+- 访客浏览器：请求你的博客页面；页面里包含 `gtag.js`（从 Google 官网域名加载）。
+- gtag.js：在访客浏览器里执行，初始化 `dataLayer` 事件队列。
+- Cookie / Client ID：如果没有发现 `_ga`，就生成新的 Client ID，并把它写进 Cookie。
+- Measurement ID：调用 `gtag('config', 'G-XXXXXXXXXX', ...)`，把数据归到你自己的 GA4 Property。
+- Consent Mode：按默认规则限制可发送内容（更保守的上报）。
+- CSP：需放行 `googletagmanager.com` 与 `google-analytics.com`，否则浏览器会拦截统计请求。
+- page_view：
+  - 整页跳转主题：自动发送一次 `page_view`。
+- 事件：用户操作（如 `click_outbound`、`copy_code`）由 `gtag.js` 打包为“事件”。
+- 发送目的地：请求直接从“访客浏览器”发到“Google 官网” `google-analytics.com/g/collect`，不会经过你的服务器。
+- 入库与查看：数据进入你的 GA4 数据仓库（Property），你能在 Realtime/DebugView 里立刻看到。
 
-7) 调试与合规（建议 Preview/生产分开）
-```html
-<!-- 调试：Preview/本地可开，生产关闭 -->
-<script> gtag('config', 'G-XXXXXXXXXX', { debug_mode: true }); </script>
+访客Y第二次打开（不同点，其它相同）
 
-<!-- 合规：Consent Mode 缺省策略与 CSP 提醒 -->
-<script>
-  gtag('consent', 'default', {
-    ad_user_data: 'denied',
-    ad_personalization: 'denied',
-    ad_storage: 'denied',
-    analytics_storage: 'granted'
-  });
-  // CSP 需放行 https://www.googletagmanager.com 与 https://www.google-analytics.com
-</script>
-```
+- 访客浏览器：会自动带上上次保存的 Cookie。
+- gtag.js：读取到已有的 Client ID（不再新建），继续用同一个编号上报。
+- 其余步骤与第一次相同；由于 Client ID 相同，GA4 会把两次访问识别为同一位访客（除非清除了 Cookie、换了设备或浏览器）。
 
-8) 常见问题与排查
-- 无数据：检查 Measurement ID、控制台错误、广告拦截、CSP、网络失败。
-- 双倍上报：避免主题配置与手动注入同时启用。
-- SPA 数据偏低：未手动补发 `page_view`。
-
-9) 数据流转图（GA4 上报链路）
-```mermaid
-graph LR
-  A[Browser] --> G[gtag.js + dataLayer]
-  G -- "config: Measurement ID" --> C[GA Collect endpoint /g/collect]
-  G -- "page_view and events" --> C
-  C --> P[GA4 Property]
-  P --> R[Realtime & DebugView]
-```
-
-10) 打个比方（更好理解）
-- 把 GA4 想成快递系统：`gtag.js` 是前台小哥，`dataLayer` 是待寄包裹清单，`gtag('config')` 就是告诉快递“寄到哪个仓库（Measurement ID）”。当你触发 `page_view` 或自定义事件，就像把包裹交给快递（`/g/collect`），最终入库到你的 GA4 Property；`Realtime/DebugView` 就是仓库的即时签收台。
-- 再打一个：整页跳转像“走出这家店再进另一家”；PJAX/SPA 像“在同一家店换区域”。前者每次进店系统自然记一笔（自动 `page_view`），后者要你自己按一次计数器（手动上报）。
 
 ---
 ## HTML

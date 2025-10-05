@@ -29,8 +29,8 @@ tags:
 |------|-----|------|------|---------|----------|------|
 | 2025-10-01 | Wednesday |2h 函数结束|1h 串源码复现理解|每日20min单词不再记录| | |
 | 2025-10-02 | Thursday |1.5h 数列结束|30min 串源码答疑/10min几个Linux命令/30min Google analysis，html学习材料准备|30min ted 20min youtube|没咋出宿舍| |
-| 2025-10-03 | Friday | | | | | |
-| 2025-10-04 | Saturday | | | | | |
+| 2025-10-03 | Friday |2h 导数|2h link-format|30min ted|晚上散步30nin| |
+| 2025-10-04 | Saturday | |3h ga| |晚上出去跟室友搓了一顿| |
 | 2025-10-05 | Sunday | | | | | |
 | 2025-10-06 | Monday | | | | | |
 | 2025-10-07 | Tuesday | | | | | |
