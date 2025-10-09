@@ -78,21 +78,6 @@ cp ~/Desktop/screenshot.png /Users/jiangxu/Documents/code/myblog/source/img/
 
 # 流程图
 
-### 常用图形与语义（draw.io / diagrams.net）
-| 形状 | 英文 | 含义/用法 |
-| --- | --- | --- |
-| 椭圆 | Terminator | 开始 / 结束 |
-| 矩形 | Process | 处理步骤 / 任务 |
-| 菱形 | Decision | 条件判断；分支线上标注“是/否”或“Y/N” |
-| 平行四边形 | Input/Output | 输入 / 输出 |
-| 双竖边矩形 | Predefined Process / Subprocess | 子流程；可链接到另一页/文档 |
-| 圆角菱形 | Preparation | 准备 / 初始化 |
-| 连接符（小圆） | On-page/Off-page Connector | 同页/跨页连接 |
-| 波浪底矩形 | Document | 文档 / 结果文件 |
-| 圆柱体 | Database / Storage | 数据库 / 持久化存储 |
-| 延时 | Delay | 等待 / 延时 |
-| 注释 | Annotation / Note | 补充说明；用虚线连到被注释对象 |
-
 ### 连线与布局
 | 主题 | 建议/操作 |
 | --- | --- |

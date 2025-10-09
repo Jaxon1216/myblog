@@ -27,37 +27,37 @@ tags:
 
 | Date | Day | Math | Code | English | Outdoor | Note |
 |------|-----|------|------|---------|----------|------|
-| 2025-10-01 | Wednesday |2h 函数结束|1h 串源码复现理解|每日20min单词不再记录| | |
-| 2025-10-02 | Thursday |1.5h 数列结束|30min 串源码答疑/10min几个Linux命令/30min Google analysis，html学习材料准备|30min ted 20min youtube|没咋出宿舍| |
-| 2025-10-03 | Friday |2h 导数|2h link-format|30min ted|晚上散步30nin| |
-| 2025-10-04 | Saturday | |3h ga| |晚上出去跟室友搓了一顿| |
-| 2025-10-05 | Sunday | | | | | |
-| 2025-10-06 | Monday | | | | | |
-| 2025-10-07 | Tuesday | | | | | |
-| 2025-10-08 | Wednesday | | | | | |
-| 2025-10-09 | Thursday | | | | | |
-| 2025-10-10 | Friday | | | | | |
-| 2025-10-11 | Saturday | | | | | |
-| 2025-10-12 | Sunday | | | | | |
-| 2025-10-13 | Monday | | | | | |
-| 2025-10-14 | Tuesday | | | | | |
-| 2025-10-15 | Wednesday | | | | | |
-| 2025-10-16 | Thursday | | | | | |
-| 2025-10-17 | Friday | | | | | |
-| 2025-10-18 | Saturday | | | | | |
-| 2025-10-19 | Sunday | | | | | |
-| 2025-10-20 | Monday | | | | | |
-| 2025-10-21 | Tuesday | | | | | |
-| 2025-10-22 | Wednesday | | | | | |
-| 2025-10-23 | Thursday | | | | | |
-| 2025-10-24 | Friday | | | | | |
-| 2025-10-25 | Saturday | | | | | |
-| 2025-10-26 | Sunday | | | | | |
-| 2025-10-27 | Monday | | | | | |
-| 2025-10-28 | Tuesday | | | | | |
-| 2025-10-29 | Wednesday | | | | | |
-| 2025-10-30 | Thursday | | | | | |
-| 2025-10-31 | Friday | | | | | |
+| 2025-10-01 | Wednesday |2h 函数结束|1h 串源码复现理解|每日25min扇贝单词| | |
+| 2025-10-02 | Thursday |1.5h 数列结束|30min 串源码答疑/10min几个Linux命令/30min Google analysis，html学习材料准备|每日25min扇贝单词|没咋出宿舍| |
+| 2025-10-03 | Friday |2h 导数|2h link-format|每日25min扇贝单词|晚上散步30nin| |
+| 2025-10-04 | Saturday | |3h ga|每日25min扇贝单词|晚上出去跟室友搓了一顿| |
+| 2025-10-05 | Sunday |1.5h 三十讲|45min blog|每日25min扇贝单词| | |
+| 2025-10-06 | Monday |1.5h 三十讲| |每日25min扇贝单词| | |
+| 2025-10-07 | Tuesday | | |每日25min扇贝单词| | |
+| 2025-10-08 | Wednesday | | |每日25min扇贝单词|1h 游泳| |
+| 2025-10-09 | Thursday |1h 三十讲| |每日25min扇贝单词| | |
+| 2025-10-10 | Friday | | |每日25min扇贝单词| | |
+| 2025-10-11 | Saturday | | |每日25min扇贝单词| | |
+| 2025-10-12 | Sunday | | |每日25min扇贝单词| | |
+| 2025-10-13 | Monday | | |每日25min扇贝单词| | |
+| 2025-10-14 | Tuesday | | |每日25min扇贝单词| | |
+| 2025-10-15 | Wednesday | | |每日25min扇贝单词| | |
+| 2025-10-16 | Thursday | | |每日25min扇贝单词| | |
+| 2025-10-17 | Friday | | |每日25min扇贝单词| | |
+| 2025-10-18 | Saturday | | |每日25min扇贝单词| | |
+| 2025-10-19 | Sunday | | |每日25min扇贝单词| | |
+| 2025-10-20 | Monday | | |每日25min扇贝单词| | |
+| 2025-10-21 | Tuesday | | |每日25min扇贝单词| | |
+| 2025-10-22 | Wednesday | | |每日25min扇贝单词| | |
+| 2025-10-23 | Thursday | | |每日25min扇贝单词| | |
+| 2025-10-24 | Friday | | |每日25min扇贝单词| | |
+| 2025-10-25 | Saturday | | |每日25min扇贝单词| | |
+| 2025-10-26 | Sunday | | |每日25min扇贝单词| | |
+| 2025-10-27 | Monday | | |每日25min扇贝单词| | |
+| 2025-10-28 | Tuesday | | |每日25min扇贝单词| | |
+| 2025-10-29 | Wednesday | | |每日25min扇贝单词| | |
+| 2025-10-30 | Thursday | | |每日25min扇贝单词| | |
+| 2025-10-31 | Friday | | |每日25min扇贝单词| | |
 
 
 # September
