@@ -141,8 +141,8 @@ comment:
     language: zh-CN
     
   valine: # Valine. https://valine.js.org
-    appid:  # your leancloud application appid
-    appkey:  # your leancloud application appkey
+    appid:  hZ1VFfxf5vPE29u8ce5kpDop-MdYXbMMI # your leancloud application appid
+    appkey:  8G557D53kpZDCPZvuPdmUgXB # your leancloud application appkey
     notify: false # mail notifier , https://github.com/xCss/Valine/wiki
     verify: false # Verification code
     placeholder:  hello i'm jiangxu. # comment box placeholder

@@ -6,7 +6,7 @@ tags:
 ## 目录
 - [x] [linkformat](#linkformat)
 - [x] [Google analysis](#配置Google-analysis)
-- [] [html](#HTML)
+- [] [Comment System](#comment-system)
 ---
 ## linkformat
 ### 把文章链接改成 postname，无日期（已实操，已注释）
@@ -20,6 +20,7 @@ tags:
 
 > 更改之后
 <img src="/img/linkformataf.png" alt="after" width="400">
+
 ### 具体的技术问题
 
 1) 这是什么，为什么要改？
@@ -163,97 +164,120 @@ permalink: my-special-post/
 
 
 ---
-## HTML
+## comment sysytem
+### 给老师的一段话（概述）
 
+老师您好，我是正在转专业的学生。我在博客里开通“评论”功能，是想把自学过程中的疑问与收获沉淀下来，也方便向老师与同学请教、接受批改与反馈。配置评论让我动手理解了网站前端的基本结构：主题模板如何预留评论位置、配置文件如何驱动功能启停、以及如何把外部服务（例如 LeanCloud）安全地“接到”我的页面里。我会注意不收集不必要的个人信息，只用它来进行学术讨论与学习交流。
 
-### 引用于Google analysis部分
-下面这段是你文件里正在用的 GA4 初始化脚本。先贴代码，再逐行讲。
+### 配置教程与可学到的技术点（基于 theme: `pure` 与评论 `valine`）
 
-```html
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){ dataLayer.push(arguments); }
-  gtag('js', new Date());
-  gtag('config', 'G-XXXXXXXXXX', { send_page_view: true });
-</script>
+下面是完全零基础也能照做的步骤，全部不需要写代码，只修改配置即可。
+
+1) 选择评论系统（我们用 Valine）
+- 主题 `pure` 已内置 Disqus/Gitalk/Valine 等多种评论系统。你当前主题配置里已经选了 `valine`，所以我们沿用它。
+- 你可以在主题配置文件里看到开关：
+
+```166:154:/Users/jiangxu/Documents/code/myblog/themes/pure/_config.yml
+# Comment
+comment:
+  type: valine  # 启用哪种评论系统
+  valine:
+    appid:  # your leancloud application appid
+    appkey:  # your leancloud application appkey
+    placeholder:  hello i'm jiangxu.
 ```
 
-逐行解释：
+2) 注册 LeanCloud，拿到 `AppID` 和 `AppKey`
+- 打开浏览器，注册并登录 LeanCloud（国际版更稳定，建议使用国际站）。
+- 新建一个应用（随意命名，例如 `myblog-comments`）。
+- 在应用设置里找到并复制 `AppID` 与 `AppKey`。
+- Valine 首次运行时会自动创建数据表，无需手工建表。
 
-- `<script async src="..."></script>`：告诉浏览器去下载并执行一个外部的 JavaScript 文件。
-  - `src`：脚本的网络地址，这里是 Google 的 `gtag.js`。
-  - `id=G-XXXXXXXXXX`：把你的 GA4 Measurement ID 传给脚本（上线前要替换成你自己的）。
-  - `async`：异步加载，不会卡住页面渲染，脚本加载完就执行。
+3) 把密钥填进主题配置
+- 打开文件：`themes/pure/_config.yml`。
+- 在 `comment.valine.appid` 与 `comment.valine.appkey` 填入你从 LeanCloud 拿到的值；占位符可按需调整，比如 `placeholder: 欢迎留言交流学习~`。
+- 保存后即可。
 
-- `<script> ... </script>`：内联脚本，标签之间的内容是要在本页直接执行的 JavaScript。
+4) 评论容器与脚本已经在主题里就绪（无需改模板）
+- 文章页底部已渲染评论容器：
 
-- `window.dataLayer = window.dataLayer || [];`
-  - `window`：浏览器的全局“储物柜”，挂在它上面的变量全站都能访问。
-  - `dataLayer`：GA 常用的“事件队列”（数组），其他代码会往里放事件。
-  - `|| []`：如果 `window.dataLayer` 已存在就用它，否则用一个新的空数组。
-
-- `function gtag(){ dataLayer.push(arguments); }`
-  - `function gtag(){ ... }`：定义一个名为 `gtag` 的函数（可重复调用的“小程序”）。
-  - `dataLayer.push(...)`：把内容追加到事件队列的末尾。
-  - `arguments`：函数内置的“实参列表”，代表你 `gtag(...)` 传入的所有参数。
-  - 合起来：以后每次 `gtag(...)`，等于把一条“事件/配置”丢进队列，等 GA 读取上报。
-
-- `gtag('js', new Date());`
-  - 调用 `gtag` 并传两个参数：`'js'` 和当前时间 `new Date()`。
-  - 含义：告知 GA “脚本初始化于某个时间点”。
-
-- `gtag('config', 'G-XXXXXXXXXX', { send_page_view: true });`
-  - 第1个参数 `'config'`：声明“这是配置”。
-  - 第2个参数 `'G-XXXXXXXXXX'`：你的 Measurement ID（要替换成真实值）。
-  - 第3个参数 `{ send_page_view: true }`：配置对象；`true` 表示自动发送一次页面浏览（`page_view`）。
-  - 适用：整页跳转的站点用它最方便；如果是 PJAX/SPA，请改为 `false`，并在路由变化时手动上报。
-
-常用语法小抄：
-
-- 分号 `;`：一条语句的结束。
-- 字符串 `'...'`/`"..."`：一段文本。
-- 数组 `[]`：有序列表，`.push(x)` 追加一个元素。
-- 对象 `{ key: value }`：键值集合（类似“字典”）。
-- 函数 `function name(){}`：定义；`name(...)`：调用。
-- 逻辑或 `a || b`：取第一个“真”的值（`a`不存在/为假时，用`b`）。
-
-—— 实操提示：把两处 `G-XXXXXXXXXX` 都换成你的 Measurement ID，只保留一份 GA 代码（不要“主题自带 + 手动注入”同时存在）。
-
-### 拓展：如果你的主题是 PJAX/SPA（无整页刷新）
-
-SPA/PJAX 路由变化不会触发自动 `page_view`。做法：关闭自动上报，自己在路由变化时补发。
-
-```html
-<script>
-  // 1) 关闭自动 page_view
-  gtag('config', 'G-XXXXXXXXXX', { send_page_view: false });
-
-  // 2) 定义一个“手动上报”的函数
-  function sendPageView() {
-    gtag('event', 'page_view', {
-      page_title: document.title,
-      page_location: location.href,
-      page_path: location.pathname + location.search + location.hash
-    });
-  }
-
-  // 3) 在你的主题里找到“路由切换完成”的时机去调用它
-  document.addEventListener('pjax:complete', sendPageView); // 示例事件名
-  window.addEventListener('hashchange', sendPageView);      // 如使用哈希路由
-
-  // 4) 首次进入也补发一次
-  sendPageView();
-</script>
+```17:20:/Users/jiangxu/Documents/code/myblog/themes/pure/layout/_partial/post/comment.ejs
+  <% } else if (theme.comment.type === 'valine') { %>
+    <div id="vcomments"></div>
+  <% } %>
 ```
 
-为什么要这么做？
+- 对应的初始化脚本也已内置，会把你在配置里填的 `appid/appkey/placeholder` 等传给 Valine：
 
-- 整页跳转：浏览器会重新加载页面，自动 `page_view` 足够。
-- PJAX/SPA：页面没有被“刷新”，需要你自己按“计数器”（手动上报），否则 GA 以为你没换页，数据会偏低。
+```2:7:/Users/jiangxu/Documents/code/myblog/themes/pure/layout/_script/_comment/valine.ejs
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/valine"></script>
+  <script type="text/javascript">
+  var GUEST = ['nick', 'mail', 'link'];
+  var meta = '<%= theme.comment.valine.meta %>';
+```
 
-### 比喻理解（帮你建立直觉）
+5) 确保文章开启评论
+- Hexo 对文章默认是开启评论的；若你在某篇 front‑matter 里显式写了 `comments: false`，请删掉或改为：
 
-- 快递系统：`gtag.js` 是前台小哥，`dataLayer` 是待寄的“单子”，`gtag('config', MeasurementID)` 告诉小哥“寄到哪个仓库”。你触发 `page_view` 或自定义事件，就像把包裹交给小哥（请求发到 `/g/collect`），最后入库到你的 GA4 Property；`Realtime/DebugView` 就是仓库的即时签收台。
-- 逛商场：整页跳转像“出这家店再进另一家”，系统自然记一笔；PJAX/SPA 像“在同一家店换区域”，这时需要你手动按一下记步器（手动上报）。
+```md
+---
+title: 某篇文章
+comments: true
+---
+```
 
+6) 本地预览与部署
+- 本地预览：
+  - 运行：`hexo clean && hexo g && hexo s`
+  - 打开浏览器访问本地地址，进入任意文章页，滚动到页面底部，应该能看到评论框。
+- 部署上线：按你平时的发布方式（如 `hexo g -d` 或 Vercel 自动部署）。
+
+7) 常见问题（遇到看这里）
+- 页面没显示评论框：检查主题配置里的 `comment.type` 是否为 `valine`，以及该文章 `comments` 是否为 `true`。
+- 初始化报错或加载很慢：有时 `cdn1.lncld.net` 或 `cdn.jsdelivr.net` 在部分网络环境下不稳定，稍后再试或切换网络。如果长期不稳定，可考虑迁移到 Gitalk（需 GitHub OAuth）等方案。
+- 留言不入库：确认 LeanCloud 应用使用的“国际版/国内版”与你的脚本域相匹配；核对 `AppID/AppKey` 是否粘贴完整。
+
+8) 我能学到的技术点（零基础友好）
+- 配置驱动的前端能力：不改代码，通过改 YAML 配置实现功能启停与参数化。
+- 模板与占位容器：主题在文章底部放了一个 `#vcomments` 容器，脚本会把评论 UI 挂载进去。
+- 第三方 SDK 初始化：Valine 作为“无后端评论系统”，用浏览器直接连到 LeanCloud 保存数据。
+- 资源加载与网络调试：评论依赖的 JS 从 CDN 加载，学会在浏览器开发者工具里看 Network 面板排查问题。
+- 安全与隐私常识：仅填必要的 `AppID/AppKey`，不收集敏感信息，按需关闭邮件通知。
+
+做到这里，你已经完成了一个完整的小型“前端集成”任务：读配置 → 连接外部服务 → 本地验证 → 上线发布。后续如果你想尝试别的评论系统（例如 Gitalk），只要把 `comment.type` 改为 `gitalk` 并按照它的字段填写 `ClientID/ClientSecret` 等即可。
+
+### 评论原理：思维导图
+
+```mermaid
+mindmap
+  root(评论系统原理 Valine LeanCloud 主题 pure)
+    页面结构 Where
+      评论容器 vcomments
+      显示控制 front-matter comments
+    脚本初始化 How
+      加载CDN av-min.js 和 valine.js
+      注入参数 appid appkey placeholder meta
+      初始化 使用 Valine 初始化 并挂载 vcomments
+    数据流 Flow
+      用户填写并提交
+      Valine 使用 AppID 和 AppKey 请求 LeanCloud
+      LeanCloud 写入或创建数据表
+      页面加载时拉取并渲染
+    账号与权限 Auth
+      访客 匿名 可选 nick mail link
+      站长 控制台审查和删除
+      Key 用途 标识应用 非管理员密码
+    安全与稳定 SLA
+      依赖 CDN 和 LeanCloud 可用性
+      网络限制 可能加载失败
+      隐私 最小化收集字段
+    与主题的关系 Integration
+      主题职责 容器 选择系统 传配置
+      切换系统 修改 comment.type 并配置密钥
+    学到的点 Learning
+      配置驱动 与 模板占位
+      浏览器SDK 直连后端
+      CDN加载 与 排障
+      同一容器 可接入多种实现
+```
