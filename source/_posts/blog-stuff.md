@@ -198,6 +198,18 @@ comment:
 - 在 `comment.valine.appid` 与 `comment.valine.appkey` 填入你从 LeanCloud 拿到的值；占位符可按需调整，比如 `placeholder: 欢迎留言交流学习~`。
 - 保存后即可。
 
+3.1) （重要）按应用区域填写 serverURLs
+- 若出现“点击发表后按钮变灰卡住”的情况，多为区域/白名单问题。请在同一文件加入 `serverURLs`：
+
+```142:152:/Users/jiangxu/Documents/code/myblog/themes/pure/_config.yml
+  valine:
+    appid:  hZ1VFfxf5vPE29u8ce5kpDop-MdYXbMMI
+    appkey:  8G557D53kpZDCPZvuPdmUgXB
+    serverURLs: https://hz1vffxf.api.lncldglobal.com
+    placeholder:  hello i'm jiangxu.
+    pageSize: 10
+```
+
 4) 评论容器与脚本已经在主题里就绪（无需改模板）
 - 文章页底部已渲染评论容器：
 
@@ -217,6 +229,25 @@ comment:
   var meta = '<%= theme.comment.valine.meta %>';
 ```
 
+- 我已为你补充了区域与路径的关键初始化参数，确保手机与电脑使用同一评论线程：
+
+```8:22:/Users/jiangxu/Documents/code/myblog/themes/pure/layout/_script/_comment/valine.ejs
+  // 归一化页面路径，避免 index.html/尾斜杠差异造成“不同线程”
+  var pagePath = window.location.pathname.replace(/index\.html$/, '/');
+  if (!/\/$/.test(pagePath)) { pagePath += '/'; }
+  new Valine({
+    el: '#vcomments',
+    appId: '<%= theme.comment.valine.appid %>',
+    appKey: '<%= theme.comment.valine.appkey %>',
+    <% if (theme.comment.valine.serverURLs) { %>
+    serverURLs: '<%= theme.comment.valine.serverURLs %>',
+    <% } %>
+    pageSize: '<%= theme.comment.valine.pageSize %>' || 10,
+    visitor: <%= theme.comment.valine.visitor %>,
+    path: pagePath
+  });
+```
+
 5) 确保文章开启评论
 - Hexo 对文章默认是开启评论的；若你在某篇 front‑matter 里显式写了 `comments: false`，请删掉或改为：
 
@@ -233,10 +264,22 @@ comments: true
   - 打开浏览器访问本地地址，进入任意文章页，滚动到页面底部，应该能看到评论框。
 - 部署上线：按你平时的发布方式（如 `hexo g -d` 或 Vercel 自动部署）。
 
+6.1) 手机/局域网联调（可选）
+- 启动可被手机访问的本地服务：`hexo s -i 0.0.0.0`
+- 在 mac 终端查 IP：`ipconfig getifaddr en0`（或 `en1`）
+- 手机访问：`http://<你的电脑IP>:4000`
+- LeanCloud “安全域名/Referer 白名单”需包含：
+  - `http://localhost:4000`
+  - `http://127.0.0.1:4000`
+  - `http://<你的电脑IP>:4000`
+
 7) 常见问题（遇到看这里）
 - 页面没显示评论框：检查主题配置里的 `comment.type` 是否为 `valine`，以及该文章 `comments` 是否为 `true`。
 - 初始化报错或加载很慢：有时 `cdn1.lncld.net` 或 `cdn.jsdelivr.net` 在部分网络环境下不稳定，稍后再试或切换网络。如果长期不稳定，可考虑迁移到 Gitalk（需 GitHub OAuth）等方案。
-- 留言不入库：确认 LeanCloud 应用使用的“国际版/国内版”与你的脚本域相匹配；核对 `AppID/AppKey` 是否粘贴完整。
+- 留言不入库/按钮变灰：
+  - 确认 `serverURLs` 为你应用所在区域提供的域名（如 `https://hz1vffxf.api.lncldglobal.com`）。
+  - LeanCloud 白名单需包含你的访问来源（本地/局域网 IP/线上域名），否则返回 401/403。
+  - 电脑能看到、手机看不到的多因“页面路径不一致”，已通过 `path` 归一化解决。
 
 8) 我能学到的技术点（零基础友好）
 - 配置驱动的前端能力：不改代码，通过改 YAML 配置实现功能启停与参数化。
