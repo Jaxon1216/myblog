@@ -143,6 +143,9 @@ comment:
   valine: # Valine. https://valine.js.org
     appid:  hZ1VFfxf5vPE29u8ce5kpDop-MdYXbMMI # your leancloud application appid
     appkey:  8G557D53kpZDCPZvuPdmUgXB # your leancloud application appkey
+    # 可选：若评论提交卡住或地区访问异常，填入 LeanCloud 提供的 API 域名
+    # 例：https://xxxxxx.api.lncldglobal.com
+    serverURLs: https://hz1vffxf.api.lncldglobal.com
     notify: false # mail notifier , https://github.com/xCss/Valine/wiki
     verify: false # Verification code
     placeholder:  hello i'm jiangxu. # comment box placeholder

@@ -164,12 +164,12 @@ permalink: my-special-post/
 
 
 ---
-## comment sysytem
-### 给老师的一段话（概述）
+## Comment System
+### 我的说明
 
 老师您好，我是正在转专业的学生。我在博客里开通“评论”功能，是想把自学过程中的疑问与收获沉淀下来，也方便向老师与同学请教、接受批改与反馈。配置评论让我动手理解了网站前端的基本结构：主题模板如何预留评论位置、配置文件如何驱动功能启停、以及如何把外部服务（例如 LeanCloud）安全地“接到”我的页面里。我会注意不收集不必要的个人信息，只用它来进行学术讨论与学习交流。
 
-### 配置教程与可学到的技术点（基于 theme: `pure` 与评论 `valine`）
+### 具体的技术问题
 
 下面是完全零基础也能照做的步骤，全部不需要写代码，只修改配置即可。
 
@@ -247,37 +247,20 @@ comments: true
 
 做到这里，你已经完成了一个完整的小型“前端集成”任务：读配置 → 连接外部服务 → 本地验证 → 上线发布。后续如果你想尝试别的评论系统（例如 Gitalk），只要把 `comment.type` 改为 `gitalk` 并按照它的字段填写 `ClientID/ClientSecret` 等即可。
 
-### 评论原理：思维导图
+### 数据流转图（评论链路）
 
 ```mermaid
-mindmap
-  root(评论系统原理 Valine LeanCloud 主题 pure)
-    页面结构 Where
-      评论容器 vcomments
-      显示控制 front-matter comments
-    脚本初始化 How
-      加载CDN av-min.js 和 valine.js
-      注入参数 appid appkey placeholder meta
-      初始化 使用 Valine 初始化 并挂载 vcomments
-    数据流 Flow
-      用户填写并提交
-      Valine 使用 AppID 和 AppKey 请求 LeanCloud
-      LeanCloud 写入或创建数据表
-      页面加载时拉取并渲染
-    账号与权限 Auth
-      访客 匿名 可选 nick mail link
-      站长 控制台审查和删除
-      Key 用途 标识应用 非管理员密码
-    安全与稳定 SLA
-      依赖 CDN 和 LeanCloud 可用性
-      网络限制 可能加载失败
-      隐私 最小化收集字段
-    与主题的关系 Integration
-      主题职责 容器 选择系统 传配置
-      切换系统 修改 comment.type 并配置密钥
-    学到的点 Learning
-      配置驱动 与 模板占位
-      浏览器SDK 直连后端
-      CDN加载 与 排障
-      同一容器 可接入多种实现
+flowchart LR
+  A[页面 文章页包含 vcomments 容器] --> B[脚本 加载 av-min.js 和 valine.js]
+  B --> C[初始化 使用 AppID AppKey 配置 Valine]
+  C --> D[用户填写并提交评论]
+  D --> E[Valine 请求 LeanCloud API]
+  E --> F[LeanCloud 写入并返回评论数据]
+  F --> G[页面拉取并渲染评论列表]
+  subgraph 权限与安全
+    H[访客 匿名 可选 nick mail link]
+    I[站长 控制台审查删除]
+    J[Key 用途 标识应用 非管理员密码]
+  end
+  C -. 读取主题配置 .- B
 ```

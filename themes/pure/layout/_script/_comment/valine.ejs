@@ -13,11 +13,15 @@
     notify: <%= theme.comment.valine.notify %>,
     appId: '<%= theme.comment.valine.appid %>',
     appKey: '<%= theme.comment.valine.appkey %>',
+    <% if (theme.comment.valine.serverURLs) { %>
+    serverURLs: '<%= theme.comment.valine.serverURLs %>',
+    <% } %>
     placeholder: '<%= theme.comment.valine.placeholder %>',
     avatar: '<%= theme.comment.valine.avatar %>',
     meta: meta,
     pageSize: '<%= theme.comment.valine.pageSize %>' || 10,
-    visitor: <%= theme.comment.valine.visitor %>
+    visitor: <%= theme.comment.valine.visitor %>,
+    path: window.location.pathname
   });
   </script>
 <% } %>
