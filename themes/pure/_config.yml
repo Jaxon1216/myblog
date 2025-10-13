@@ -8,6 +8,7 @@ menu:
   Books: books  # 豆瓣书单
   Links: links  # 友链
   About: about  # 关于
+  Demo: demo  # 练习页
 
 # Enable/Disable menu icons
 menu_icons:
@@ -20,6 +21,7 @@ menu_icons:
   books: icon-book-fill
   links: icon-friendship
   about: icon-cup-fill
+  demo: icon-code
 
 # rss
 rss: /atom.xml
