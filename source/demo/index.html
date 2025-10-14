@@ -6,25 +6,99 @@
   <title>Jaxon profile</title>
 </head>
 <body>
+
   <h1>Jaxon</h1>
+  <!-- Heading level 1 -->
+  <h2>个人信息</h2>
+  <form>
+  <label>查阅人：</label><input type="text" placeholder="请输入您的姓名">
+  <br><br>
+  <!-- Line Break -->
+  <!-- 换行 -->
+  <label>查阅日期：</label><input type="password" placeholder="坚持是幸运的密码">
+  <!-- 文字加文本框 -->
+  
+  <br><br>
+  <label>阅后建议：</label><br><textarea></textarea>
+  <br><br>
+  <input type="checkbox">我已阅读并同意<a href="#">用户协议</a>
+  <!-- Anchor -->
+  <br><br>
+  <button>别点这个</button>
+  <button type="reset">重新填写</button>
+  </form>
+  <!-- 没加form标签reset功能就失效 -->
   <hr>
-  <strong>江旭</strong>，<em>共青团员</em>，班级生活委员，<a href="#">中国地质大学（北京）工程技术学院2024级</a> <del>安全工程专业</del>学生
+  <!-- Horizontal Rule -->
+  <h3>你对我了解多少？</h3>
+  <label>猜姓名：</label>
+    <select>
+      <option>zh</option>
+      <option>yr</option>
+      <option>jx</option>
+      <option>lzt</option>
+      <option>ylc</option>
+      <option>yxl</option>
+      <option>ycy</option>
+      <option>ycy</option>
+    </select>
+  <br><br>
+  <label>性别：</label>
+    <input type="radio" name="sex" checked>男
+    <label> <input type="radio" name="sex">女 </label>
+    <!-- 单选功能，默认选中功能,并且第二种点文字也能勾选-->
+  <br>
+  <strong>共青团员</strong>，<em>班级生活委员</em>，<a href="#">北地工程技术学院2024级</a> <del>安全工程专业</del>学生
+  <!-- Emphasis -->
+
   <img src="/img/avatar.png" alt="头像" title="Jaxon的头像" width="300">
+  <!-- Image -->
   <!-- 这里为什么不是./开头 -->
+  <!-- 这是站点根路径写法 -->
+
   <h2>学习经历</h2>
-  <p>在学习上，他已养成优良习惯。高等数学94分，英语四级536分，综合绩点3.43/4.0。预计十月底他将学完数据结构以及前端三剑客的基础。</p>
+  <p>在学习上，他已养成优良的学习习惯。</p> 
+  <!-- Paragraph -->
+  <table border="1">
+    <tr>
+    <!-- Table Row -->
+      <th>高等数学</th>
+      <!-- Table Header Cell -->
+      <th>英语四级</th>
+      <th>程序设计</th>
+      <th>综合绩点</th>
+    </tr>
+    <tr>
+      <td>94</td>
+      <!-- Table Data Cell -->
+      <td>536</td>
+      <td>91</td>
+      <td>3.43/4.0</td>
+    </tr>
+  </table>
   <p>在科技实践方面，他热爱编程，积极自学C++与数据结构，累计完成杭电OJ洛谷力扣题200余道，独立搭建个人技术博客并完成迁移（GitHub Pages→Vercel），熟练掌握Git与VS Code等开发工具。2025年，他向信息工程学院正式提出转入软件工程专业的申请，以系统学习计算机科学知识、强化工程实践能力。</p>
   
-  <h2>主要成就</h2>
-  •	2024年校级大学生数学竞赛三等奖
-	<br>•	<ins>原创《高等数学思维导图》《必背公式手册》《计算机复习资料》</ins>等学习资料，累计帮助200+同学
-	<br>•	搭建个人技术博客与代码资源库，其中<a href="https://www.jiangxu.net/Nature-of-University/" target="_blank">大学的本质</a>浏览量超600次
-	<br>•	链接格式重构：无日期 permalink、slug 策略与 pretty_urls，使路由稳定可读。
-	<br>•	访客统计体系搭建：GA4 嵌码与事件埋点（出站/复制），支持 Realtime/DebugView 验证与归因。
-	<br>•	博客评论系统接入：Valine+LeanCloud（serverURLs/白名单/path 归一化），保障手机与桌面一致性。
+  <h2>主要项目</h2>
+    <ol>
+    <!-- Ordered List -->
+      <li>2024年校级大学生数学竞赛三等奖</li>
+      <!-- List Item -->
+      <li><ins>原创《高等数学思维导图》《必背公式手册》《计算机复习资料》</ins>等学习资料，累计帮助200+同学</li>
+      <!-- Inserted Text -->
+      <li>搭建个人技术博客与代码资源库，其中<a href="https://www.jiangxu.net/Nature-of-University/" target="_blank">大学的本质</a>浏览量超600次</li>
+      <li>链接格式重构：无日期 permalink、slug 策略与 pretty_urls，使路由稳定可读。</li>
+      <li>访客统计体系搭建：GA4 嵌码与事件埋点（出站/复制），支持 Realtime/DebugView 验证与归因。</li>
+      <li>博客评论系统接入：Valine+LeanCloud（serverURLs/白名单/path 归一化），保障手机与桌面一致性。</li>
+    </ol>
 
   <h2>其他</h2>
-  <br>•	自立自强，成长于农村家庭，自小学起独立住校。通过家教、勤工助学、线上题解录制等方式自力更生，暑期家教收入4000元覆盖半学期生活开支。
-	<br>•	秉持“学业为基、奉献为翼”的人生理念，立志以专业知识回报社会与家庭。
+    <ul>
+    <!-- Unordered List -->
+      <li>自立自强，成长于农村家庭，自小学起独立住校。通过家教、勤工助学、等方式自力更生，一年总收入近六千元。</li>
+      <li>秉持“学业为基、奉献为翼”的人生理念，立志以专业知识回报社会与家庭。</li>
+    </ul>
+    <hr>
+    <h2>profile</h2>
+    
 </body>
 </html>
