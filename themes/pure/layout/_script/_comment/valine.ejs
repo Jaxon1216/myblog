@@ -7,9 +7,12 @@
   meta = meta.split(',').filter(function(item) {
     return GUEST.indexOf(item) > -1;
   });
-  // Normalize page path to ensure same thread across desktop/mobile
-  var pagePath = window.location.pathname.replace(/index\.html$/, '/');
-  if (!/\/$/.test(pagePath)) { pagePath += '/'; }
+  // Prefer server-rendered canonical key if available; fallback to normalized path
+  var pagePath = window.__VALINE_KEY__ || (function(){
+    var p = window.location.pathname.replace(/index\.html$/, '/');
+    if (!/\/$/.test(p)) p += '/';
+    return p;
+  })();
   new Valine({
     el: '#vcomments',
     verify: <%= theme.comment.valine.verify %>,

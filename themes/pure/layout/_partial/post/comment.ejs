@@ -16,6 +16,14 @@
            
     <% } else if (theme.comment.type === 'valine') { %>
       <div id="vcomments"></div>
+    <script>
+      // Use Hexo-rendered route as the canonical Valine key to keep desktop/mobile consistent
+      (function(){
+        var key = '<%- url_for(post.path) %>'.replace(/index\.html$/, '/');
+        if (!/\/$/.test(key)) key += '/';
+        window.__VALINE_KEY__ = key;
+      })();
+    </script>
     <% } %>
   </section>
 <% } %>
