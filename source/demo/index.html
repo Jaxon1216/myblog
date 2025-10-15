@@ -4,26 +4,59 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jaxon profile</title>
+  <style>
+    h1 {
+      /* 标签选择器 */
+      text-align: center;
+      font-weight: normal !important;
+      /* 400和这个咋不管用呢 有更高级别的选择器盖过去了，加个!important*/
+      font-size: 30px !important;
+    }
+    p {
+      text-indent: 2em;
+      /* 缩进 */
+      color: #333 ;
+      line-height: 30px !important;
+    }
+    .laiyuan {
+      font-size: 12px ;
+      text-align: left;
+      color: #999 ;
+      /* 类选择器 */
+    }
+    .pic {
+      text-align: center;
+    }
+    table {
+      font-size: 16px !important;
+      color: #000 ;
+      line-height: 30px !important;
+      text-align: center;
+      font-family: sans-serif;
+      background-color: rgb(155, 248, 219);
+    }
+  </style>
 </head>
 <body>
 
-  <h1>Jaxon</h1>
+  <h1>Jaxon | 前端学习Lab</h1>
   <!-- Heading level 1 -->
-  <h2>个人信息</h2>
+  <div class="laiyuan">来源：jiangxu.net | 2025年10月</div>
+  <br>
   <form>
   <label>查阅人：</label><input type="text" placeholder="请输入您的姓名">
-  <br><br>
-  <!-- Line Break -->
+
   <!-- 换行 -->
-  <label>查阅日期：</label><input type="password" placeholder="坚持是幸运的密码">
+  <label>查阅密码：</label><input type="password" placeholder="坚持是幸运的密码">
   <!-- 文字加文本框 -->
   
-  <br><br>
+  <br>  
+  <!-- Line Break -->
   <label>阅后建议：</label><br><textarea></textarea>
-  <br><br>
+  <br>
   <input type="checkbox">我已阅读并同意<a href="#">用户协议</a>
   <!-- Anchor -->
-  <br><br>
+
   <button>别点这个</button>
   <button type="reset">重新填写</button>
   </form>
@@ -31,6 +64,8 @@
   <hr>
   <!-- Horizontal Rule -->
   <h3>你对我了解多少？</h3>
+  
+<div>
   <label>猜姓名：</label>
     <select>
       <option>zh</option>
@@ -38,11 +73,9 @@
       <option>jx</option>
       <option>lzt</option>
       <option>ylc</option>
-      <option>yxl</option>
-      <option>ycy</option>
       <option>ycy</option>
     </select>
-  <br><br>
+  <br>
   <label>性别：</label>
     <input type="radio" name="sex" checked>男
     <label> <input type="radio" name="sex">女 </label>
@@ -50,14 +83,19 @@
   <br>
   <strong>共青团员</strong>，<em>班级生活委员</em>，<a href="#">北地工程技术学院2024级</a> <del>安全工程专业</del>学生
   <!-- Emphasis -->
-
-  <img src="/img/avatar.png" alt="头像" title="Jaxon的头像" width="300">
+  <div class="pic">
+  <img src="/img/avatar.png" alt="头像" title="Jaxon的头像" width="100">
   <!-- Image -->
   <!-- 这里为什么不是./开头 -->
   <!-- 这是站点根路径写法 -->
+  </div>
+  tmd本来想把图片放在右上角的
+</div>
+  
+
 
   <h2>学习经历</h2>
-  <p>在学习上，他已养成优良的学习习惯。</p> 
+  <p><strong>在学习上：</strong>他已养成优良的学习习惯。</p> 
   <!-- Paragraph -->
   <table border="1">
     <tr>
@@ -76,7 +114,7 @@
       <td>3.43/4.0</td>
     </tr>
   </table>
-  <p>在科技实践方面，他热爱编程，积极自学C++与数据结构，累计完成杭电OJ洛谷力扣题200余道，独立搭建个人技术博客并完成迁移（GitHub Pages→Vercel），熟练掌握Git与VS Code等开发工具。2025年，他向信息工程学院正式提出转入软件工程专业的申请，以系统学习计算机科学知识、强化工程实践能力。</p>
+  <p><strong>在科技实践方面：</strong>他热爱编程，积极自学C++与数据结构，累计完成杭电OJ洛谷力扣题200余道，独立搭建个人技术博客并完成迁移（GitHub Pages→Vercel），熟练掌握Git与VS Code等开发工具。2025年，他向信息工程学院正式提出转入软件工程专业的申请，以系统学习计算机科学知识、强化工程实践能力。</p>
   
   <h2>主要项目</h2>
     <ol>
