@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jaxon profile</title>
   <style>
+   
     h1 {
       /* 标签选择器 */
       text-align: center;
@@ -12,7 +13,7 @@
       /* 400和这个咋不管用呢 有更高级别的选择器盖过去了，加个!important*/
       font-size: 30px !important;
     }
-    p {
+    .p1 {
       text-indent: 2em;
       /* 缩进 */
       color: #333 ;
@@ -23,6 +24,36 @@
       text-align: left;
       color: #999 ;
       /* 类选择器 */
+    }
+    body {
+      background-color: #f1f1f1;
+    }
+    .product {
+
+      margin: 10px auto;
+      padding: 70px;
+
+      width: 330px;
+      height: 380px;
+      background-color: #fff  !important;
+      text-align: center;
+      /* 利用继承性 */
+      border-radius: 10px;
+
+    }
+    .product h4 {
+      margin-top: 20px;
+      margin-bottom: 12px;
+      font-size: 18px;
+      color: #3a36f6;
+      font-weight: 400;
+    }
+   
+    
+    .product p {
+      font-size: 12px;
+      color: #555;
+
     }
     .pic {
       text-align: center;
@@ -73,14 +104,19 @@
   <!-- Heading level 1 -->
   <div class="laiyuan">来源：jiangxu.net | 2025年10月</div>
   <form>
-    <div>
+    <div daohang>
       <a href="#" class="daohang">HTML</a>
       <a href="#" class="daohang">CSS</a>
       <a href="#" class="daohang">JavaScript</a>
       <a href="#" class="daohang">Vue</a>
       <a href="#" class="daohang">React</a>
-      <br>
-      <hr>
+      <div class="product">
+        <img src="https://cdn.simpleicons.org/github" alt="">
+        <a href="https://github.com/Jaxon1216"><h4>个人仓库</h4></a>
+        <p>一些数据结构的题单</p>
+      </div>
+    </div>
+    <h3>表单测试</h3>
       <div class="biaodan">
         <label>查阅人：</label><input type="text" placeholder="请输入您的姓名">
         <br>
@@ -149,7 +185,7 @@
       <td>3.43/4.0</td>
     </tr>
   </table>
-  <p><strong>在科技实践方面：</strong>他热爱编程，积极自学C++与数据结构，累计完成杭电OJ洛谷力扣题200余道，独立搭建个人技术博客并完成迁移（GitHub Pages→Vercel），熟练掌握Git与VS Code等开发工具。2025年，他向信息工程学院正式提出转入软件工程专业的申请，以系统学习计算机科学知识、强化工程实践能力。</p>
+  <p class="p1"><strong>在科技实践方面：</strong>他热爱编程，积极自学C++与数据结构，累计完成杭电OJ洛谷力扣题200余道，独立搭建个人技术博客并完成迁移（GitHub Pages→Vercel），熟练掌握Git与VS Code等开发工具。2025年，他向信息工程学院正式提出转入软件工程专业的申请，以系统学习计算机科学知识、强化工程实践能力。</p>
   
   <h2>主要项目</h2>
     <ol>
