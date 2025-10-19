@@ -5,7 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jaxon profile</title>
   <style>
-   
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      /* 内减模式，防止撑大盒子 */
+    }
     h1 {
       /* 标签选择器 */
       text-align: center;
@@ -13,34 +18,110 @@
       /* 400和这个咋不管用呢 有更高级别的选择器盖过去了，加个!important*/
       font-size: 30px !important;
     }
+    .box {
+      border: 1px solid #000;
+      padding: 8px;
+      border-radius: 10px;
+      display: flex;
+    }
+    .box2 {
+      margin: 50px auto;
+      padding: 25px;
+      width: 500px;
+      height: 300px;
+      display: flex;
+      background-color: pink;
+      border: 1px solid #000;
+      border-radius: 10px;
+    }
+    .box2 ul {
+      display: flex;
+      flex-wrap: wrap;
+      /* 弹性盒子换行显示 */
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      justify-content: space-between;
+      /* 主轴对齐方式 */
+      align-content: space-between;
+      /* 行之间的间距 */
+      background-color: skyblue;
+      list-style: none;
+      /* 去除那个点点 */
+    }
+    
+   .box2 li {
+    display: flex;
+    width: 200px; /* 减去一半的gap宽度 */
+    height: 90px;
+    background-color: #fff;
+    /* border: 2px solid #2E7D32; */
+    /* border-radius: 8px; */
+    display: flex;
+    /* align-items: center;
+    justify-content: center; */
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+   }
+   
+   .box2 li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+   }
+   .pic1 {
+    /* text-align: center; */
+    /* background-position: left top; */
+    margin-right: 10px;
+    /* 图文间距 */
+   }
+   .text1 a{
+    color: #298b80;
+    /* margin-top: 5px;a 标签默认是 display: inline，行内元素的 margin-top 和 margin-bottom 不会生效，只有 margin-left 和 margin-right 会生效。
+     */
+    margin-top: 10px;
+    font-weight:400;
+    display: block;
+    /* 改成block就可以margin-top了 */
+   }
+   .text1 p {
+    color: #555;
+    font-size: 10px;
+   }
+
+
+   
     .p1 {
-      text-indent: 2em;
-      /* 缩进 */
-      color: #333 ;
+      text-indent: 2em; /* 缩进 */
+      color: #333;
       line-height: 30px !important;
     }
+
     .laiyuan {
-      font-size: 12px ;
+      font-size: 12px;
       text-align: left;
-      color: #999 ;
+      color: #999;
       /* 类选择器 */
     }
+
     body {
       background-color: #f1f1f1;
     }
+
     .product {
-
       margin: 10px auto;
-      padding: 70px;
-
-      width: 330px;
-      height: 380px;
-      background-color: #fff  !important;
-      text-align: center;
-      /* 利用继承性 */
+      /* 水平居中 */
+      padding-top: 40px;
+      /* 把图片下移 */
+      width: 270px;
+      height: 253px;
+      background-color: #fff !important;
+      text-align: center; /* 利用继承性 */
       border-radius: 10px;
-
     }
+
     .product h4 {
       margin-top: 20px;
       margin-bottom: 12px;
@@ -48,13 +129,12 @@
       color: #3a36f6;
       font-weight: 400;
     }
-   
-    
+
     .product p {
       font-size: 12px;
       color: #555;
-
     }
+
     .pic {
       text-align: center;
       background-position: right top;
@@ -64,86 +144,145 @@
       background-color: #c2f1c1;
       background-position: right top;
     }
+
     table {
       font-size: 16px !important;
-      color: #000 ;
+      color: #000;
       line-height: 30px !important;
       text-align: center;
       font-family: sans-serif;
       background-color: rgb(155, 248, 219);
     }
-    .daohang{
+
+    .diyi {
+      border: 1px #000;
+    }
+
+    .daohang {
       display: block;
       width: 120px;
       height: 80px;
       background-color: #3064bb;
       color: #fff !important;
       text-align: center;
-      text-decoration: none;
-      /* 去除下划线 */
+      text-decoration: none; /* 去除下划线 */
       line-height: 80px;
       font-size: 18px;
     }
+
     .daohang:hover {
       background-color: #608dd9;
       color: #b716aa !important;
     }
+
     .lanmu2 {
       background-color: #ffffff;
       background-image: url(/img/avatar.png);
       background-repeat: no-repeat;
       background-position: right top;
-      background-size: contain;
-      /* 这个size很重要 */
+      background-size: contain; /* 这个size很重要 */
     }
   </style>
 </head>
 <body>
-
   <h1>Jaxon | 前端Lab</h1>
   <!-- Heading level 1 -->
   <div class="laiyuan">来源：jiangxu.net | 2025年10月</div>
+
   <form>
-    <div daohang>
-      <a href="#" class="daohang">HTML</a>
-      <a href="#" class="daohang">CSS</a>
-      <a href="#" class="daohang">JavaScript</a>
-      <a href="#" class="daohang">Vue</a>
-      <a href="#" class="daohang">React</a>
-      <div class="product">
-        <img src="https://cdn.simpleicons.org/github" alt="">
-        <a href="https://github.com/Jaxon1216"><h4>个人仓库</h4></a>
-        <p>一些数据结构的题单</p>
+    <div class="box">
+      <div>
+        <a href="#" class="daohang">HTML</a>
+        <a href="#" class="daohang">CSS</a>
+        <a href="#" class="daohang">JavaScript</a>
+        <a href="#" class="daohang">Vue</a>
+        <a href="#" class="daohang">React</a>
+      </div>
+      <div class="box2">
+        <!-- 写法ul>li*4 -->
+       <ul>
+        <li>
+          <div class="pic1">
+            <img src="https://cdn.simpleicons.org/github" alt="" width="90">
+          </div>
+          <div class="text1">
+            <a href="#">题单</a>
+            <p>链表，栈，队列</p>
+          </div>
+        </li>
+        <li>
+          <div class="pic1">
+            <img src="https://cdn.simpleicons.org/github" alt="" width="90">
+          </div>
+          <div class="text1">
+            <a href="#">题单</a>
+            <p>链表，栈，队列</p>
+          </div>
+        </li>
+        <li>
+          <div class="pic1">
+            <img src="https://cdn.simpleicons.org/github" alt="" width="90">
+          </div>
+          <div class="text1">
+            <a href="#">题单</a>
+            <p>链表，栈，队列</p>
+          </div>
+        </li>
+        <li>
+          <div class="pic1">
+            <img src="https://cdn.simpleicons.org/github" alt="" width="90">
+          </div>
+          <div class="text1">
+            <a href="#">题单</a>
+            <p>链表，栈，队列</p>
+          </div>
+        </li>
+       </ul>
       </div>
     </div>
+
+    <div class="product">
+      <img src="https://cdn.simpleicons.org/github" alt="" width="100" height="100">
+      <a href="https://github.com/Jaxon1216">
+        <h4>个人仓库</h4>
+      </a>
+      <p>一些数据结构的题单</p>
+    </div>
+
     <h3>表单测试</h3>
-      <div class="biaodan">
-        <label>查阅人：</label><input type="text" placeholder="请输入您的姓名">
-        <br>
-        <!-- 空格 -->
-        <label>查阅密码：</label><input type="password" placeholder="坚持是幸运的密码">
-        <!-- 文字加文本框 -->
-        
-        <br>  
-        <!-- Line Break -->
-        <label>阅后建议：</label><br><textarea></textarea>
-        <br>
-        <input type="checkbox">我已阅读并同意<a href="#">用户协议</a>
-        <!-- Anchor -->
-        <br>
-        <button>别点这个</button>
-        <button type="reset">重新填写</button>
-      </div>
+
+    <div class="biaodan">
+      <label>查阅人：</label>
+      <input type="text" placeholder="请输入您的姓名">
+      <br>
+      <!-- 空格 -->
+      <label>查阅密码：</label>
+      <input type="password" placeholder="坚持是幸运的密码">
+      <!-- 文字加文本框 -->
+      <br>
+      <!-- Line Break -->
+      <label>阅后建议：</label>
+      <br>
+      <textarea></textarea>
+      <br>
+      <input type="checkbox">我已阅读并同意
+      <a href="#">用户协议</a>
+      <!-- Anchor -->
+      <br>
+      <button>别点这个</button>
+      <button type="reset">重新填写</button>
+    </div>
     </div>
   </form>
   <!-- 没加form标签reset功能就失效 -->
-  
+
   <hr>
   <!-- Horizontal Rule -->
+
   <h3>下拉菜单测试</h3>
-  
-<div class="lanmu2">
-  <label>户籍地：</label>
+
+  <div class="lanmu2">
+    <label>户籍地：</label>
     <select>
       <option>上海</option>
       <option>北京</option>
@@ -151,26 +290,32 @@
       <option>深圳</option>
       <option>杭州</option>
     </select>
-  <br>
-  <label>性别：</label>
+    <br>
+    <label>性别：</label>
     <input type="radio" name="sex" checked>男
-    <label> <input type="radio" name="sex">女 </label>
-    <!-- 单选功能，默认选中功能,并且第二种点文字也能勾选-->
-  <br>
-  <strong>共青团员</strong>，<em>班级生活委员</em>， <del><a href="#">北地工程技术学院2024级</a><br>安全工程专业</del>学生
-  <!-- Emphasis -->
-  
-  
-</div>
-  
-
+    <label>
+      <input type="radio" name="sex">女
+    </label>
+    <!-- 单选功能，默认选中功能,并且第二种点文字也能勾选 -->
+    <br>
+    <strong>共青团员</strong>，
+    <em>班级生活委员</em>，
+    <del>
+      <a href="#">北地工程技术学院2024级</a>
+      <br>
+      安全工程专业
+    </del>
+    学生
+    <!-- Emphasis -->
+  </div>
 
   <h2>学习经历</h2>
-  <p><strong>在学习上：</strong>他已养成优良的学习习惯。</p> 
+  <p><strong>在学习上：</strong>他已养成优良的学习习惯。</p>
   <!-- Paragraph -->
+
   <table>
     <tr>
-    <!-- Table Row -->
+      <!-- Table Row -->
       <th>高等数学</th>
       <!-- Table Header Cell -->
       <th>英语四级</th>
@@ -185,29 +330,33 @@
       <td>3.43/4.0</td>
     </tr>
   </table>
+
   <p class="p1"><strong>在科技实践方面：</strong>他热爱编程，积极自学C++与数据结构，累计完成杭电OJ洛谷力扣题200余道，独立搭建个人技术博客并完成迁移（GitHub Pages→Vercel），熟练掌握Git与VS Code等开发工具。2025年，他向信息工程学院正式提出转入软件工程专业的申请，以系统学习计算机科学知识、强化工程实践能力。</p>
-  
+
   <h2>主要项目</h2>
-    <ol>
+  <ol>
     <!-- Ordered List -->
-      <li>2024年校级大学生数学竞赛三等奖</li>
-      <!-- List Item -->
-      <li><ins>原创《高等数学思维导图》《必背公式手册》《计算机复习资料》</ins>等学习资料，累计帮助200+同学</li>
-      <!-- Inserted Text -->
-      <li>搭建个人技术博客与代码资源库，其中<a href="https://www.jiangxu.net/Nature-of-University/" target="_blank">大学的本质</a>浏览量超600次</li>
-      <li>链接格式重构：无日期 permalink、slug 策略与 pretty_urls，使路由稳定可读。</li>
-      <li>访客统计体系搭建：GA4 嵌码与事件埋点（出站/复制），支持 Realtime/DebugView 验证与归因。</li>
-      <li>博客评论系统接入：Valine+LeanCloud（serverURLs/白名单/path 归一化），保障手机与桌面一致性。</li>
-    </ol>
+    <li>2024年校级大学生数学竞赛三等奖</li>
+    <!-- List Item -->
+    <li><ins>原创《高等数学思维导图》《必背公式手册》《计算机复习资料》</ins>等学习资料，累计帮助200+同学</li>
+    <!-- Inserted Text -->
+    <li>搭建个人技术博客与代码资源库，其中
+      <a href="https://www.jiangxu.net/Nature-of-University/" target="_blank">大学的本质</a>浏览量超600次
+    </li>
+    <li>链接格式重构：无日期 permalink、slug 策略与 pretty_urls，使路由稳定可读。</li>
+    <li>访客统计体系搭建：GA4 嵌码与事件埋点（出站/复制），支持 Realtime/DebugView 验证与归因。</li>
+    <li>博客评论系统接入：Valine+LeanCloud（serverURLs/白名单/path 归一化），保障手机与桌面一致性。</li>
+  </ol>
 
   <h2>其他</h2>
-    <ul>
+  <ul>
     <!-- Unordered List -->
-      <li>自立自强，成长于农村家庭，自小学起独立住校。通过家教、勤工助学、等方式自力更生，一年总收入近六千元。</li>
-      <li>秉持“学业为基、奉献为翼”的人生理念，立志以专业知识回报社会与家庭。</li>
-    </ul>
-    <hr>
-    <h2>profile</h2>
-    
+    <li>自立自强，成长于农村家庭，自小学起独立住校。通过家教、勤工助学、等方式自力更生，一年总收入近六千元。</li>
+    <li>秉持“学业为基、奉献为翼”的人生理念，立志以专业知识回报社会与家庭。</li>
+  </ul>
+
+  <hr>
+
+  <h2>profile</h2>
 </body>
 </html>
