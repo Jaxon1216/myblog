@@ -75,19 +75,8 @@ cp ~/Desktop/screenshot.png /Users/jiangxu/Documents/code/myblog/source/img/
 # 快捷键
 - 撤销 ```cmd``` + ```z```
 - 左移 ```cmd``` + ```[```
-
+- 在html内输入 ```.name```之后，光标在标签中间，可以按```cmd```+```return```换到下一行行首
 # 流程图
-
-### 连线与布局
-| 主题 | 建议/操作 |
-| --- | --- |
-| 连线类型 | 使用正交连线（Orthogonal）保持直角转折、减少视觉噪音 |
-| 连接点与拐点 | 悬停形状边缘蓝点连线；双击连线加拐点；拖动黄色手柄统一连线间距 |
-| 线条标注 | 选中连线直接输入文字；在判断分支线上标注“是/否” |
-| 对齐与分布 | Arrange → Align/Distribute；Tidy up 一键整理网格化布局 |
-| 网格与吸附 | View → Grid、Snap to Grid 打开更易对齐 |
-| 分组与图层 | Cmd+G 分组、Cmd+Shift+G 取消；右键锁定；View → Layers 分离背景/说明/主流程 |
-| 样式统一 | 右侧 Format 面板统一线条粗细（如 1.5–2px）、箭头、字体、颜色 |
 
 ### 导出与协作
 | 项目 | 建议 |

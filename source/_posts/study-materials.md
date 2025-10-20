@@ -7,7 +7,7 @@ tags:
   - 资料
 ---
 
-- 作者blog：[jx's blog](https://jianxgu.net/ "个人博客")
+- 作者blog：[jx's blog](https://jiangxu.net/ "个人博客")
 - github地址：[cpp-notes](https://github.com/Jaxon1216/cpp-notes)
 
 ## 目录

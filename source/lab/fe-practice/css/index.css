@@ -1,0 +1,10 @@
+/* 首页样式 */
+/* 版心 */
+.wrapper {
+  margin: 0 auto;
+  width: 1200px;
+}
+
+body {
+  background-color: #f3f5f7 !important;
+}
