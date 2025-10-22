@@ -8,7 +8,7 @@ menu:
   Books: books  # 豆瓣书单
   Links: links  # 友链
   About: about  # 关于
-  Demo: demo  # 练习页
+  Demo: lab  # 练习页
 
 # Enable/Disable menu icons
 menu_icons:
