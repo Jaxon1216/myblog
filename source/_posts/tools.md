@@ -26,10 +26,37 @@ tags:
 # git 
 ### 修改远程仓库地址
 - 查看远程仓库指向
+
+```bash
 git remote -v
+```
+
+- 基础
+
+  - `git commit`(创建并指向新的子节点) 与 parent 节点
+  - `git branch`
+  - `git checkout`(换*)，简洁版本（`git checkout -b <your-branch-name>`）
+  - `git merge`(差不多把对面分支连到自己身上，)
+  - `git rebase` 对面(把自己搞个副本作为对面子级)
+
+- 进阶：
+
+  - 分离 head：head, 直接 checkout 目前分支所指的记录，head 就指过去了
+  - 相对引用：`checkout 目标^`（把目标移动到目标的父级, 或者 `～1`），感觉有点单向链表，结构体指针的味道，分支是命名指针，head 是指向指针的指针，commit 链就是单向链表
+  - `git branch -f` (force) `main HEAD~3`：main 强制指向 (head 的父级上 3 个单位)，（不需要换过去分支，便捷）
+  - `git reset HEAD~1`，回到父级，但是子级还在但是未加入暂存区，对于远程无效
+  - `git revert HEAD` (当前*)，一个新的提交，引入了更改，状态与上上级相同，远程有效
+
+- 最后一个 git pull，让 gpt 来：
+
+  - `git fetch`：只更新远程指针，不动你本地分支。从远处拿过来，
+  - `git pull`：fetch + merge（最常用）
+  - `git pull --rebase`：fetch + rebase（让你的提交排在远程节点后面）
+  - `git push`：把你本地的节点推到远程（相当于反向传递链表）。
+
 
 ### 正确删除文件
-- git rm -r name //remove, recursive递归, 定位到根目录，name直接从下一级开始。
+- `git rm -r name` // remove, recursive 递归, 定位到根目录，name 直接从下一级开始。
 ### Git 分支配置与远程仓库 URL 不匹配
 - 当看到推送目标与预期不符时，检查 git config branch.<分支名>.remote 配置
 - 确保分支的远程仓库配置与 git remote -v 显示的 URL 一致
@@ -38,7 +65,7 @@ git remote -v
 
 # md
 ### 插入链接
-- 作者：``[jx's blog]``+``(https://jiangxu.net/ "个人博客")``
+- 作者：`[jx's blog]` + `(https://jiangxu.net/ "个人博客")`
 
 ### 插入图片
 - 将图片放到 `source/img/`（发布后路径为 `/img/`）
@@ -58,24 +85,24 @@ cp ~/Desktop/screenshot.png /Users/jiangxu/Documents/code/myblog/source/img/
 - 文件名尽量用英文与连字符，避免空格。
 
 ### 导出为pdf
-- 在md文件页面 ```cmd+Shift+P```
+- 在 md 文件页面 `cmd+Shift+P`
 
 ### 写目录
-- ```- [显示在目录中的文字](#实际标题的锚点格式)```
+- `- [显示在目录中的文字](#实际标题的锚点格式)`
 - 锚点格式为：去掉标题中所有标点（含数字后的点），空格换为连字符`-`，保留中文和数字，不区分大小写。
 
 # Linux
-- pwd 查看当前路径
-- rm -d name/directory 删除空目录
-- rm -r //recursive递归，删除非空目录
-- rm -f //force
-- rm -rf //-r和-f一起
+- `pwd` 查看当前路径
+- `rm -d name/directory` 删除空目录
+- `rm -r` // recursive 递归，删除非空目录
+- `rm -f` // force
+- `rm -rf` // -r 和 -f 一起
 # Hexo
-- hexo new "postname",
+- `hexo new "postname"`,
 # 快捷键
-- 撤销 ```cmd``` + ```z```
-- 左移 ```cmd``` + ```[```
-- 在html内输入 ```.name```之后，光标在标签中间，可以按```cmd```+```return```换到下一行行首
+- 撤销 `cmd` + `z`
+- 左移 `cmd` + `[`
+- 在 html 内输入 `.name` 之后，光标在标签中间，可以按 `cmd` + `return` 换到下一行行首
 # 流程图
 
 ### 导出与协作

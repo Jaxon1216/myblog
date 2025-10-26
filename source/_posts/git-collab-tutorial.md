@@ -6,7 +6,27 @@ tags:
   - Git
   - 教程
 ---
+# 自己在网站学的
+比较形象一点：
+- 基础
+git commit(创建并指向新的子节点) 与 parent节点, git branch, git checkout(换*)，简洁版本（git checkout -b <your-branch-name>）, 
+git merge(差不多把对面分支连到自己身上，)
+git rebase 对面(把自己搞个副本作为对面子级)
 
+
+- 进阶：
+分离head：head,直接checkout目前分支所指的记录，head就指过去了
+相对引用：checkout 目标^（把目标移动到目标的父级,或者～1），感觉有点单向链表，结构体指针的味道，分支是命名指针，head是指向指针的指针，commit链就是单向链表
+git branch -f(force) main HEAD~3 main强制指向 (head的父级上3个单位)，（不需要换过去分支，便捷）
+git reset head~1 ,回到父级，但是子级还在但是未加入暂存区，对于远程无效
+git revert head(当前*), 一个新的提交，引入了更改，状态与上上级相同，远程有效
+
+最后一个 git pull，让gpt来：
+git fetch	只更新远程指针，不动你本地分支。从远处拿过来，
+git pull	fetch + merge（最常用）
+git pull --rebase	fetch + rebase（让你的提交排在远程节点后面）
+git push	把你本地的节点推到远程（相当于反向传递链表）。
+# gpt5写的教程
 ## 适用对象与课程目标
 
 本教程面向刚会 `add/commit/push` 的初学者，目标是帮助你成长为能够独立管理分支、解决冲突并通过 Pull Request 参与团队协作的开发者。全篇采取“知识讲解 + 实验操作步骤 + 练习任务”的方式，强调“版本控制思想”和“团队协作习惯”。

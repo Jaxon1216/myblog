@@ -51,10 +51,10 @@ tags:
 | 2025-10-20 | Monday |1h 线代 30min三十讲|2.5h css 40min数据结构 |每日25min扇贝单词|1h 健身| |
 | 2025-10-21 | Tuesday |1.5h线代 |1.5h css 1h数据结构看书加网课 |每日25min扇贝单词| | |
 | 2025-10-22 | Wednesday |1.3h 三十讲 |2h css，40min算法竞赛看书，1h刷题|每日25min扇贝单词，纸质雅思单词20min| | |
-| 2025-10-23 | Thursday | | |每日25min扇贝单词| | |
-| 2025-10-24 | Friday | | |每日25min扇贝单词| | |
-| 2025-10-25 | Saturday | | |每日25min扇贝单词| | |
-| 2025-10-26 | Sunday | | |每日25min扇贝单词| | |
+| 2025-10-23 | Thursday |40min线性代数 40min三十讲 |3h算法题 40min算法书  |每日25min扇贝单词| | |
+| 2025-10-24 | Friday |40min 三十讲 |2.5h 线性代数 1hcss |每日25min扇贝单词| | |
+| 2025-10-25 | Saturday |1.5h 三十讲  |1.5h算法书 30mincss |每日25min扇贝单词| | |
+| 2025-10-26 | Sunday |1.5h 线性代数 40min三十讲 |1.5h git 40mincsss 40min算法书 20min blog |每日25min扇贝单词| | |
 | 2025-10-27 | Monday | | |每日25min扇贝单词| | |
 | 2025-10-28 | Tuesday | | |每日25min扇贝单词| | |
 | 2025-10-29 | Wednesday | | |每日25min扇贝单词| | |
