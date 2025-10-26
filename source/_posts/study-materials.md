@@ -25,7 +25,7 @@ tags:
 > 若失效请联系q3465192960
 
 
-### 考研最全汇总
+### 考研最全汇总（主要用这个）
 - 公共课(数学英语政治)
 `链接:`https://pan.baidu.com/s/1zgpGTRLMNmOZdvWCP0cEYQ?pwd=6666
 
@@ -40,6 +40,16 @@ tags:
 
 ### Code
 
+#### 工具类
+- 查知识点（语言）：[菜鸟教程](https://www.cainiaojc.com/)
+- 查算法（也有语言）： [oiwiki](https://oiwiki.com/)
+- 粘贴代码，避免一大串代码发在群里问别人：[便利贴](https://paste.org.cn/)
+- 在线编译：[在线编译](https://www.jyshare.com/compile/12/)
+- 学习路线：[roadmap](https://roadmap.sh/)
+- 大厂算法，八股文：[代码随想录](https://programmercarl.com/ke/bishi.html)
+- 软件开发工程师0基础半年入职亚马逊学了什么：[参考](https://github.com/jwasham/coding-interview-university/blob/main/translations/README-cn.md)
+- 
+#### 课程类
 - 抖音英雄
 `链接:`https://pan.baidu.com/s/1F79nOTr-lSiADpp8n5AhrQ?pwd=mkd5 
 
@@ -60,10 +70,6 @@ tags:
 - **26张宇基础30讲**  
   复制整段内容，打开最新版「夸克APP」即可获取  
   `链接：`https://pan.quark.cn/s/4c425e839d51
-
-- **考研真相**  
-  `链接:` https://pan.baidu.com/s/1mmp2vJbaR3gpBObRAIquqA  
-  `提取码:` euas
 
 - **660**
   `链接：`https://pan.baidu.com/s/1hm8vY1rgw6cA0Ve4OSWa6A?pwd=2tcr

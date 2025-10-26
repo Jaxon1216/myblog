@@ -1,0 +1,97 @@
+---
+layout: false
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .service {
+        margin: 100px auto;
+        /* 版心 */
+        width: 1190px;
+        height: 42px;
+        /* background-color: pink; */
+    }
+    li{
+        list-style: none;
+    }
+
+
+    .service ul {
+        display: flex;
+    }
+
+    .service li {
+        padding-left: 40px;
+        display: flex;
+        width: 297px;
+        height: 42px;
+        /* background-color: skyblue; */
+    }
+
+    /* css精灵🧚‍♀️登场 */
+    /* 步骤：画盒子，背景图，然后小图左上角坐标，变负号background-position */
+    .service li h5 {
+        margin-right: 10px;
+        width: 36px;
+        height: 42px;
+        /* background-color: pink; */
+        background: url(./img/images/imagesday8/sprite.png) 0 -192px;
+        
+    }
+
+    .service li:nth-child(2) h5 {
+        background-position: -41px -192px;
+    }
+
+    .service li:nth-child(3) h5 {
+        background-position: -82px -192px;
+    }
+
+    .service li:nth-child(4) h5 {
+        background-position: -123px -192px;
+    }
+
+    .service li p {
+        font-size: 18px;
+        color: 444px;
+        font-weight: 700;
+        line-height: 42px;
+    }
+
+
+    
+</style>
+</head>
+<body>
+    <div class="service">
+        <ul>
+            <li>
+                <h5></h5>
+                <p>品类齐全，轻松购物</p>
+            </li>
+            <li>
+                <h5></h5>
+                <p>品类齐全，轻松购物</p>
+            </li>
+            <li>
+                <h5></h5>
+                <p>品类齐全，轻松购物</p>
+            </li>
+            <li>
+                <h5></h5>
+                <p>品类齐全，轻松购物</p>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -9,17 +9,19 @@ tags:
 
 ## 目录
 
-- [小目标](#Goals)
+- [todolist](#todolist)
 - [十月记录](#October)
 - [九月记录](#september)
 
 
-# Goals:
-- 数据结构英雄课程过一遍，。
-- 按照雅思强度准备六级，包括口语。
-- 数学竞赛。
-- 11月六级 http://cet-bm.neea.edu.cn
-- 11月转专业https://jwc.cugb.edu.cn/c/2024-10-29/812158.shtml
+# todolist:
+- 算法竞赛经典同时css
+- 数据结构
+- todo mvc同时苏轼地图，jquery,javascript-es5,web-component,
+- 11月8日数学竞赛。
+- [11月12日转专业面试](https://jwc.cugb.edu.cn/c/2024-10-29/812158.shtml)
+- [11月23日六级](http://cet-bm.neea.edu.cn)
+- js-es6,vue,react,计组
 
 
 
