@@ -1,5 +1,5 @@
 ---
-title: Sophomore 1st Sem
+title: Todolist
 date: 2025-10-26 22:30:30
 categories:
   - study
@@ -7,7 +7,7 @@ tags:
   - plan
 ---
 ## 学习清单
-- [x]git
+- [x] git
 - 算法竞赛经典（第二版）
 - css
 - 数据结构
@@ -18,8 +18,8 @@ tags:
 - todo mvc
 
 ## 重要事件
-
+- 11月7-11日，纸质（审批表2，成绩单1，个人自述，奖项复印件；电子（审批表，信息登记表，命名格式发邮箱）[转专业材料](https://sai.cugb.edu.cn/c/2024-11-05/812704.shtml)
 - 11月8日数学竞赛。
-- [转专业材料](https://sai.cugb.edu.cn/c/2024-11-05/812704.shtml)
+
 - [11月12日转专业面试](https://jwc.cugb.edu.cn/c/2024-10-29/812158.shtml)
 - [11月23日六级](http://cet-bm.neea.edu.cn)
