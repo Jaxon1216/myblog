@@ -10,9 +10,9 @@ tags:
 ## 目录
 
 - [todolist](#todolist)
+- [十一月记录](#November)
 - [十月记录](#October)
 - [九月记录](#september)
-
 
 # todolist:
 - 算法竞赛经典同时css
@@ -22,6 +22,42 @@ tags:
 - [11月12日转专业面试](https://jwc.cugb.edu.cn/c/2024-10-29/812158.shtml)
 - [11月23日六级](http://cet-bm.neea.edu.cn)
 - js-es6,vue,react,计组
+
+
+# November
+
+| Date | Day | Math | Code | English | Outdoor | Note |
+|------|-----|------|------|---------|----------|------|
+| 2025-11-01 | Saturday | | | | | |
+| 2025-11-02 | Sunday | | | | | |
+| 2025-11-03 | Monday | | | | | |
+| 2025-11-04 | Tuesday | | | | | |
+| 2025-11-05 | Wednesday | | | | | |
+| 2025-11-06 | Thursday | | | | | |
+| 2025-11-07 | Friday | | | | | |
+| 2025-11-08 | Saturday | | | | | |
+| 2025-11-09 | Sunday | | | | | |
+| 2025-11-10 | Monday | | | | | |
+| 2025-11-11 | Tuesday | | | | | |
+| 2025-11-12 | Wednesday | | | | | |
+| 2025-11-13 | Thursday | | | | | |
+| 2025-11-14 | Friday | | | | | |
+| 2025-11-15 | Saturday | | | | | |
+| 2025-11-16 | Sunday | | | | | |
+| 2025-11-17 | Monday | | | | | |
+| 2025-11-18 | Tuesday | | | | | |
+| 2025-11-19 | Wednesday | | | | | |
+| 2025-11-20 | Thursday | | | | | |
+| 2025-11-21 | Friday | | | | | |
+| 2025-11-22 | Saturday | | | | | |
+| 2025-11-23 | Sunday | | | | | |
+| 2025-11-24 | Monday | | | | | |
+| 2025-11-25 | Tuesday | | | | | |
+| 2025-11-26 | Wednesday | | | | | |
+| 2025-11-27 | Thursday | | | | | |
+| 2025-11-28 | Friday | | | | | |
+| 2025-11-29 | Saturday | | | | | |
+| 2025-11-30 | Sunday | | | | | |
 
 
 

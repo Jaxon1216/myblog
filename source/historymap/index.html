@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-cn" class="h-100">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=10;IE=11">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <title>唐宋文学编年地图</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/dist-jquery.min.js"></script>
+    <script src="js/js-bootstrap.bundle.min.js"></script>
+    <script src="js/echarts-echarts.min.js"></script>
+    <script type="text/javascript" src="js/sheetjs-spreadsheet.min.js"></script>
+    <script src="js/js-lib.js"></script>
+    <link rel="stylesheet" href="css/css-common.css">
+    <link rel="stylesheet" type="text/css" href="css/sheetjs-spreadsheet.min.css">
+    <style>
+      a {
+      text-decoration: none;
+      }
+    </style>
+  </head>
+  <body class="bg-default d-flex flex-column h-100">
+    <nav class="navbar navbar-expand-lg navbar-light border-bottom" aria-label="主菜单" style="background-color: whitesmoke;">
+      <div class="container-fluid">
+        <a href="javascript: void(0)" class="me-lg-4 navbar-brand">
+          <img src="images/images-logo.png" style="height: 56px;" class="me-3">
+          <img src="images/images-sitename.png" style="height: 40px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#commonMenu" aria-controls="commonMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse mb-2 mb-lg-0" id="commonMenu">
+          <div class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+            <a class="nav-link px-2 link-dark" href="javascript: NewView('scope=&author=苏轼&beginYear=0&endYear=0');">苏轼南贬之路</a>
+            
+          </div>
+        </div>
+      </div>
+    </nav>
+    <main role="main" class="pb-3 flex-shrink-0" id="main">
+      <style type="text/css">
+        img.icon {
+        height: 60px;
+        }
+        img.full {
+        max-width: 600px;
+        }
+        img.inline {
+        max-width: 40%;
+        float: left;
+        margin: 0 8px 8px 0;
+        }
+        td, th {
+        text-align: left;
+        }
+        .marked {
+        border: 2px solid gold;
+        }
+      </style>
+      <script src="https://webapi.amap.com/maps?v=2.0&key=5b4cc69c7ee13364ae8541d9db328fee"></script>
+      <script src="https://webapi.amap.com/loca?v=2.0.0&key=5b4cc69c7ee13364ae8541d9db328fee"></script>
+      <div id="poetLifeSummary" class="bg-light text-secondary border container-fluid rounded" style="max-height: 484px; overflow-y: auto;"></div>
+      <div class="offcanvas offcanvas-start d-flex " data-bs-scroll="true" tabindex="-1" id="menu" aria-labelledby="menuLabel">
+        <div class="offcanvas-header border-bottom border-info">
+          <h5 class="offcanvas-title" id="menuLabel">唐宋文学编年地图</h5>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <form method="get" action="/Map/PoetLife">
+            <div class="input-group my-3">
+              <span class="input-group-text">从</span>
+              <input type="search" class="form-control" placeholder="公元年或地名" id="Begin" name="Begin" value="">
+            </div>
+            <div class="input-group my-3">
+              <span class="input-group-text">至</span>
+              <input type="search" class="form-control" placeholder="公元年或地名" id="End" name="End" value="">
+              <button class="btn btn-primary" type="submit">查询</button>
+            </div>
+          </form>
+          <div class="input-group mt-3">
+            <input name="key" id="key" type="search" class="form-control" placeholder="关键词">
+            <button class="btn btn-primary" onclick="Filter()" type="button">搜索</button>
+          </div>
+          <div id="poetList">
+            <div id="poetSearchBox" class="form-floating me-2 mb-3"></div>
+            <div id="categoryList"></div>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid mt-3">
+        <div class="row g-3">
+          <!--
+          <div class="col-lg-1">
+            <nav class="navbar navbar-light rounded" aria-label="Menu">
+              <div>
+                <button class="navbar-toggler position-relative" type="button" data-bs-toggle="offcanvas" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="position-absolute top-0 start-10 translate-middle p-1 bg-danger border border-light rounded-circle"></span>
+                <span class="navbar-toggler-icon"></span>
+                </button>
+              </div>
+            </nav>
+            <nav class="navbar navbar-light navbar-expand-lg rounded" aria-label="Menu">
+              <div class="collapse navbar-collapse">
+                <img src="images/images-TangSong_V.png" class="w-75">
+              </div>
+            </nav>
+          </div>-->
+          <div class="col-lg-8">
+            <script src="js/js-poetlife.js"></script>
+            <style>
+              .amap-info-contentContainer {
+                width: 400px;
+                max-width: 400px;
+              }
+              .amap-info-content {
+                width: 400px;
+              }
+            </style>
+            <script type="text/javascript">
+              var modernLayers = [];
+              var lastLayer;
+              isXianTang = false;
+              
+              $(document).ready(CreatePoetLifeMap);
+              
+              function ShowModernLayers() {
+                  $.each(modernLayers, function(index, layer) {
+                      map.addLayer(layer);
+                  });
+              }
+              
+              function SwitchTile() {
+                  if (lastLayer) {
+                      map.removeLayer(lastLayer);
+                      lastLayer = null;
+                  }
+              
+                  var tileName = document.getElementById("bgMap").value;
+                  
+                  if (tileName == "satellite") {
+                      lastLayer = new AMap.TileLayer.Satellite();
+                  }
+                  // else if (tileName) {
+                  //     lastLayer = new AMap.TileLayer({
+                  //         getTileUrl: 'https://t.cnkgraph.com/' + tileName + '/[z]/[x]/[y].png',
+                  //         zooms: [5, 11],
+                  //         zIndex: 4
+                  //     });
+                  // }
+              
+                  if (lastLayer) {
+                      map.addLayer(lastLayer);
+                  }
+              }
+              
+              function CreatePoetLifeMap() {
+                  var dynasty = "";
+                  beginYear = 0;
+                  endYear = 0;
+                  map = PrepareMap("poetLifeMapRegion", dynasty.length > 0 ? dynasty : null, modernLayers);
+                  var loca = new Loca.Container({
+                          map,
+                      });
+              
+                  lightMarkLayer = new Loca.ScatterLayer({
+                    zIndex: 120,
+                    opacity: 0.7
+                  });
+                  lightMarkLayer.setSource(new Loca.GeoJSONSource({
+                    data: {},
+                  }));
+                  lightMarkLayer.setStyle({
+                    unit: 'px',
+                    size: [80, 80],
+                    texture: './Map/breath_red.png',
+                    animate: true,
+                    duration: 1000,
+                  });
+                  loca.add(lightMarkLayer);
+                  loca.animate.start();
+              
+                  var uploadedTrace = null;
+                  if (uploadedTrace && uploadedTrace.Traces)
+                  {
+                      if (uploadedTrace.Traces.length == 1)
+                      {
+                          ShowTrace(uploadedTrace);
+                      }
+                      else
+                      {
+                          travelData = uploadedTrace;
+                          for (var i = 0; i < uploadedTrace.Traces.length; i++) {
+                              selectedPoets.push(i);
+                          }
+                          ShowSelectedPoetsRoute();
+                      }
+                  }
+                  else
+                  {
+                      $.getJSON('./Api/travelData.json').done(function (data) {
+                          travelData = data;
+                      // 支持从 URL 读取作者与时间范围参数
+                      var params = new URLSearchParams(location.search);
+                      var author = params.get('author') || '';
+                      var beginYearFromQuery = Number(params.get('beginYear') || 0);
+                      var endYearFromQuery = Number(params.get('endYear') || 0);
+              
+                          ShowCategoryList(travelData.Traces);
+                      if (author && author.length > 0) {
+                          NewView("scope=&author=" + author + "&beginYear=" + beginYearFromQuery + "&endYear=" + endYearFromQuery);
+                          }
+                          else {
+                              ShowTraceByIndex(0);
+                          }
+                      });
+                  }
+              }
+            </script>
+            <div style="position: relative;">
+              <!--<div class="bg-white" style="position: absolute; z-index: 10; inset: auto 10px 10px auto;">
+                <div class="input-group">
+                  <span class="input-group-text">背景地图</span>
+                  <select class="form-select border-primary text-primary" aria-label="背景地图" onchange="SwitchTile()" id="bgMap">
+                    <option selected value="">当代简易地形图</option>
+                    <option value="satellite">卫星地图</option>
+                    <option value="Xia">夏</option>
+                    <option value="Shang">商</option>
+                    <option value="XiZhou">西周</option>
+                    <option value="ChunQiu">春秋</option>
+                    <option value="XiHan">西汉</option>
+                    <option value="DongHan">东汉</option>
+                    <option value="SanGuo">三国</option>
+                    <option value="XiJin">西晋</option>
+                    <option value="DongJin">东晋</option>
+                    <option value="NanBei">南北朝</option>
+                    <option value="Sui">隋</option>
+                    <option value="tang">唐开元廿九年</option>
+                    <option value="houliang">后梁开平二年</option>
+                    <option value="houtang">后唐清泰元年</option>
+                    <option value="houjin">后晋天福八年</option>
+                    <option value="houhan">后汉乾祐二年</option>
+                    <option value="HouZhou">后周</option>
+                    <option value="beisong">北宋</option>
+                    <option value="nansong">南宋</option>
+                  </select>
+                  <span class="input-group-text">当代地名</span>
+                  <button class="btn btn-outline-primary" onclick="ShowModernLayers()">显示</button>
+                </div>
+              </div>-->
+              <div id="poetLifeMapRegion" class="w-100 mapColumn"></div>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div id="poetLifeDetail" class="column"></div>
+          </div>
+        </div>
+      </div>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="referedData" aria-labelledby="referedDataLabel" style="min-width: 50%;">
+        <div class="offcanvas-header border-bottom border-info">
+          <h5 class="offcanvas-title" id="referedDataLabel"></h5>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body bg-default">
+          <div class="container" id="referedContent"></div>
+        </div>
+      </div>
+    </main>
+    <footer class="border-top footer text-muted py-2 mt-auto" style="background-color: whitesmoke;">
+      <div class="container-fluid">
+        <a href="https://beian.miit.gov.cn/" target="_blank" class="text-muted me-2">苏ICP备2022002981号</a> © 2025 - 苏州图谱信息技术有限公司版权所有 - 
+        <a class="link-dark" href="About.html">关于本站</a>
+        <a href="mailto:cozychen@hotmail.com" class="ms-3 link-dark">联系我们</a>
+      </div>
+    </footer>
+  </body>
+</html>

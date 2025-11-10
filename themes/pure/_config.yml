@@ -9,6 +9,7 @@ menu:
   Links: links  # 友链
   About: about  # 关于
   Demo: lab  # 练习页
+  HistoryMap: historymap  # 唐宋文学编年地图
 
 # Enable/Disable menu icons
 menu_icons:
@@ -22,6 +23,7 @@ menu_icons:
   links: icon-friendship
   about: icon-cup-fill
   demo: icon-code
+  historymap: icon-location
 
 # rss
 rss: /atom.xml

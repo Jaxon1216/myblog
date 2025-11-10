@@ -1,0 +1,2694 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+.b-example-divider {
+    height: 3rem;
+    background-color: rgba(0, 0, 0, .1);
+    border: solid rgba(0, 0, 0, .15);
+    border-width: 1px 0;
+    box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+}
+
+.form-control-dark {
+    color: #fff;
+    background-color: var(--bs-dark);
+    border-color: var(--bs-gray);
+}
+
+    .form-control-dark:focus {
+        color: #fff;
+        background-color: var(--bs-dark);
+        border-color: #fff;
+        box-shadow: 0 0 0 .25rem rgba(255, 255, 255, .25);
+    }
+
+.bi {
+    vertical-align: -.125em;
+    fill: currentColor;
+}
+
+.text-small {
+    font-size: 85%;
+}
+
+.dropdown-toggle {
+    outline: 0;
+}
+
+.feature-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    color: #fff;
+    border-radius: .75rem;
+}
+
+.icon-link {
+    display: inline-flex;
+    align-items: center;
+}
+
+    .icon-link > .bi {
+        margin-top: .125rem;
+        margin-left: .125rem;
+        transition: transform .25s ease-in-out;
+        fill: currentColor;
+    }
+
+    .icon-link:hover > .bi {
+        transform: translate(.25rem);
+    }
+
+.icon-square {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.5rem;
+    border-radius: .75rem;
+}
+
+.rounded-4 {
+    border-radius: .5rem;
+}
+
+.rounded-5 {
+    border-radius: 1rem;
+}
+
+.text-shadow-1 {
+    text-shadow: 0 .125rem .25rem rgba(0, 0, 0, .25);
+}
+
+.text-shadow-2 {
+    text-shadow: 0 .25rem .5rem rgba(0, 0, 0, .25);
+}
+
+.text-shadow-3 {
+    text-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .25);
+}
+
+.card-cover {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+/*sou-yun.com*/
+.group {
+    border-bottom: 1px solid gainsboro;
+    text-indent: 0.5rem;
+    padding-bottom: 3px;
+    margin: 1rem 0;
+}
+
+.text-reading {
+    letter-spacing: 1px;
+}
+
+.bg-default {
+    background-color: #fcfcf1;
+}
+
+/* Original from sou-yun.com */
+img {
+    max-width: 100%;
+}
+
+.link, .wordLink, .regionLink, .sceneryLink, .flowerLink, .fruitLink, .plantLink, .aliasLink, .peopleLink, .timeLink, .titleLink, .tuneLink, .countAndIndexLink, .allusionLink {
+    cursor: pointer;
+}
+
+.poemLink {
+    cursor: pointer;
+    background-color: azure;
+    color: darkgray;
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 2px;
+}
+
+.linkHide, .wordLinkHide, .regionLinkHide, .sceneryLinkHide, .timeLinkHide, .flowerLinkHide, .fruitLinkHide, .plantLinkHide, .aliasLinkHide, .peopleLinkHide, .titleLinkHide, .tuneLinkHide, .countAndIndexHide {
+    cursor: pointer;
+}
+
+.bold {
+    padding-bottom: 2px;
+    border-bottom: 1px solid gray;
+    margin: 0 2px;
+}
+
+input, select
+{
+    border-color: lightblue;
+}
+
+a:hover
+{
+color: blue;
+}
+
+.bar {
+    background-color: #f4f4ee;
+    color: black;
+    border-bottom: 1px solid #ddd;
+    width: 100%;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
+    padding-bottom: 4px;
+}
+
+.bar a, .bar a:link, .bar a:visited
+{
+  text-decoration:none;
+  color: #444;
+}
+
+.bar a:hover
+{
+color: blue;
+}
+
+.markerLabel {
+    background-color: LightGoldenRodYellow;
+    padding: 3px;
+}
+
+.yearLabel {
+    background-color: aliceblue;
+    border-radius: 4px;
+    color: gray;
+    padding: 4px 8px;
+}
+
+.mLabel
+{
+    padding: 2px 3px 2px 3px;
+    background-color: #808050;
+    border-radius: 3px;
+    color: white;
+    opacity: 0.6;
+}
+
+div.category
+{
+    margin: 0.5em 0;
+    padding-left: 1em;
+}
+
+span.category
+{
+    color: #848A8F;
+}
+
+.categoryLabel
+{
+    padding: 4px;
+    border: 1px solid #eae1bf;
+    background-color: #f6f6eb;
+    border-radius: 3px 12px;
+}
+
+.subBar{
+	background-color: #f6f6eb;
+}
+
+.lrBar
+{
+    left: 0;
+    height: 24px;
+    top: 0;
+    width: 100%;
+}
+
+.rlBar
+{
+    right: 0;
+    top: 0;
+    width: 24px;
+    height: 100%;
+}
+
+.readerBar
+{
+    text-indent: 0.5em;
+    position: fixed;
+    line-height: 1.4em;
+    background-color: #A0A0A0;
+    color: #F0F0F0;
+}
+
+.bar a, .bar a:link, .bar a:visited
+{
+  text-decoration:none;
+}
+
+.readerBar a, .readerBar a:link, .readerBar a:visited
+{
+  text-decoration:none;
+  color: #F0F0F0;
+}
+
+.rlBar a:hover
+{
+color: white;
+}
+
+.options
+{
+    top: 0;
+    float: right;
+    height: 30px;
+}
+
+.rlOptions
+{
+    height: auto;
+    width: 24px;
+    padding: 0.5em 0 0.8em 0;
+}
+
+.lrOptions
+{
+    width: auto;
+    height: 24px;
+    padding: 0 0.8em 0 0.5em;
+}
+
+.readerOptions
+{
+    float: right;
+    background-color: #808080;
+    color: #F0F0F0;
+}
+
+.rlContent
+{
+    height: 100%; 
+    margin: auto 0; 
+    max-height: 674px;
+}
+
+.lrContent
+{
+    width: 100%; 
+    margin: 0 auto; 
+}
+
+.rlWaterMark
+{
+    opacity: 0.5;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 70px;
+    height: 70px;
+}
+
+.navLink
+{
+	margin-right: 4px;
+    line-height: 1.8em;
+    vertical-align: middle;
+    text-wrap: avoid;
+}
+
+.mnavLink
+{
+	margin-right: 10px;
+    line-height: 32px;
+    vertical-align: middle;
+    text-wrap: avoid;
+}
+
+.curNavLink{
+    padding: 0 0 4px 0;
+    border-bottom: 1px solid #72b352;
+}
+
+div.head
+{
+	height: 220px;
+    margin: 0px;
+    width: 100%;
+    vertical-align: middle;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 1260px;
+    min-width: 1016px;
+    margin: 0 auto;
+}
+
+div.white
+{
+    background-color: white;
+}
+
+.logo
+{
+    width: 130px; 
+    margin-right: 18px;
+}
+
+.logo2
+{
+    text-align: center;
+    width: 130px;
+    height: 200px;
+    float: left;
+    padding: 8px 8px 4px 0px;
+}
+
+.sLogoImg
+{
+    width: 54px;
+}
+
+.authorLogo {
+    float: left;
+    margin: 0 0.5em 0.5em 0;
+    max-height: 160px;
+    max-width: 120px;
+}
+
+.authorWithLogo {
+    min-height: 160px;
+}
+
+.articleLink2
+{
+    float: left;
+    padding: 4px 2px 4px 2px;
+    margin: 4px 2px 4px 2px;
+    height: 170px;
+    width: 112px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.articleImg2
+{
+    height: 120px;
+    max-width: 110px;
+    padding: 1px;
+    border: 1px solid #dfddbf;
+}
+
+.articleLink
+{
+    float: left;
+    padding: 4px;
+    margin: 4px;
+    height: 192px;
+    width: 148px;
+    text-align: center;
+}
+
+.articleImg
+{
+    height: 152px;
+    max-width: 104px;
+    padding: 1px;
+    border: 1px solid #dfddbf;
+}
+
+.dailyArticleMain {
+    border-bottom: .25rem solid #f5f5f5;
+    overflow: hidden;
+    width: 100%;
+    max-width: 550px;
+    max-height: 200px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.dailyArticleMain1 {
+    overflow: hidden;
+    height: 216px;
+    padding: 8px 0 8px 0;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.dailyArticleMainImg {
+    width: 100%;
+    max-width: 550px;
+    overflow: hidden;
+}
+
+.dailyArticleMinor {
+    height: 60px;
+    display: table;
+    padding: 2px 0;
+    text-indent: 8px;
+    border-bottom: .25rem solid #f5f5f5;
+    overflow: hidden;
+    width: 100%;
+    max-width: 550px;
+    vertical-align: middle;
+}
+
+.dailyArticleMinorImg {
+    margin-top: 2px;
+    width: 80px;
+    clip: rect(0, 80px, 52px, 0);
+    float: right;
+    max-height: 56px;
+}
+
+.dailyArticleMinor1 {
+    padding-top: 1rem;
+    height: 120px;
+    overflow: hidden;
+    width: 100%;
+    line-height: 1.8em;
+}
+
+.dailyArticleMinorImg1 {
+    margin: 0 1em 0 0;
+    width: 165px;
+    max-height: 112px;
+    clip: rect(0, 165px, 112px, 0);
+    float: left;
+}
+
+.t-h1 {
+    color: white;
+    font-size: 16px;
+    margin: 0 4px;
+    bottom: 8px;
+    position: absolute;
+    word-wrap: break-word;
+}
+
+.t-h2 {
+    color: white;
+    font-size: 16px;
+    margin: 0 10px;
+    bottom: 24px;
+    position: absolute;
+    word-wrap: break-word;
+    font-size: 18px;
+}
+
+.textOnImage {
+    z-index: 2;
+    color: white;
+    font-size: large;
+    background-color: black;
+    opacity: 0.6;
+    text-indent: 1em;
+    margin-top: -3.4em;
+}
+
+.textOnLeftTop {
+    z-index: 2;
+    color: white;
+    top: 8px;
+    left: 12px;
+    font-size: small;
+    position: absolute;
+}
+
+.textOnRightBottom {
+    z-index: 2;
+    color: lightgray;
+    bottom: 4px;
+    right: 12px;
+    position: absolute;
+    font-size: small;
+}
+
+.textOnImage1 {
+    z-index: 2;
+    background-color: black;
+    color: white;
+    font-size: large;
+    opacity: 0.7;
+    text-indent: 1em;
+    margin-top: -1.8em;
+}
+
+.bottom-more {
+    height: 2.25rem;
+    text-align: center;
+    font-size: .7rem;
+    line-height: 2.25rem;
+    color: #999;
+    font-size: medium;
+    cursor: pointer;
+    background: #fff;
+}
+
+.activeBullet {
+    background-color: white;
+}
+
+.pageHead {
+    min-width: 1016px;
+    width: 1016px;
+    margin: 0 auto;
+}
+
+.searchBox{
+    width: 350px; 
+    padding: 20px 0px 16px 16px;
+    line-height: 2em;
+    float: left;
+}
+
+.headAdv
+{
+    margin: 4px 0px 4px 0px;
+    width: 100%;
+    padding: 0px 4px 0px 0px;
+}
+
+div.news
+{
+    background-color: #F9F9F9;
+    padding: 4px 0px 4px 4px;
+    margin-top: 8px;
+    border: 1px solid lightgray;
+    width: 100%;
+}
+
+.topic
+{  
+     padding: 8px 4px 4px 8px;
+     height: 200px;
+}
+
+.major{
+    width: 740px;
+    margin-right: 14px;
+}
+
+.minor{
+    width: 254px;
+    float: left;
+}
+
+div.textCenter
+{
+    text-align: center;
+    line-height: 1.5em;
+}
+
+div.inline
+{
+    display: inline-block;
+}
+
+.inline1
+{
+    display: inline-block;
+    padding: 2px;
+}
+
+.picSlideShow {width: 614px; height: 440px; border: 1px solid lightgray; padding: 4px; margin-bottom: 8px;}
+.picSSLeft {width: 106px; height: 432px; float: left; overflow-y: scroll; overflow-x: hidden;}
+.picSSRight {width: 500px; height: 432px; margin: 2px; float: left; position: relative; overflow: hidden;}
+.picSSMove {width: 500px; position: absolute; left: 0px; top: 0px; text-align: center;}
+.picSSIcon {width: 80px; margin: 2px 0 2px 0;}
+.picSSImg { max-width: 500px; max-height: 400px; vertical-align: central; margin: 2px;}
+.picSSOn {border: 2px solid #0CF;}
+.referImg { vertical-align: top; margin: 2px;}
+.picComment {
+    margin: 2px;
+}
+
+.referImgIcon { max-height: 100px; }
+.referImgIcon1 { max-height: 200px; }
+.referImgIcon2 { max-height: 140px; }
+
+.referImages {
+    float: right; width: 400px; margin: 0 0 0.5em 0.5em; height: 130px; text-wrap: none; text-align: center; overflow-x: hidden; overflow-y: hidden; 
+    color: olive; font-size: small;
+}
+.referImages1 {
+    float: right; width: 400px; margin: 0 0 0.5em 0.5em; height: 230px; text-wrap: none; text-align: center; color: olive; font-size: small;
+}
+.referImages2 {
+    float: right; width: 400px; margin: 0 0 0.5em 0.5em; height: 170px; text-wrap: none; text-align: center; color: olive; font-size: small;
+}
+.iconList {
+    text-wrap: none; overflow-x: hidden; height: 100px; margin-bottom: 0.5em; border-right: solid 1px lightblue;
+}
+.iconList1  {
+    height: 200px;  margin-bottom: 0.5em; 
+}
+
+.iconList2  {
+    height: 140px;  margin-bottom: 0.5em;
+}
+
+.readLayer {
+    width: 100%;
+    height: 310px;
+}
+
+.toolLayer {
+    width: 100%;
+    height: 430px;
+}
+
+.picLink {
+    padding: 0px 8px 0px 8px;
+}
+.newPoem { 
+    height: 216px; 
+}
+
+.tile1 {
+    margin-right: 16px;
+    width: 424px;
+    height: 100%;
+}
+
+.tile2 { 
+    width: 300px;
+    height: 100%;
+}
+
+.index
+{
+background-color: #90201D;
+color: white;
+font-weight: bold;
+padding: 4px 6px 4px 6px;
+margin: 2px 4px 2px 4px;
+}
+
+div.pageContent
+{
+	margin: 0px 1em;
+}
+
+.pageMinWidth
+{
+	min-width: 900px;
+}
+
+a.list
+{
+    padding-right: 4px;
+    margin-right: 4px;
+    text-decoration:none;
+}
+
+a.inline
+{
+	color: #494949;
+	border-bottom: dashed 2px #0991d9;
+}
+
+a.focus
+{
+  color: white;
+  background-color: #0992d9;
+}
+
+a.comment {
+    font-size: small;
+}
+
+input
+{
+  font-size: medium;
+  padding: 4px;
+  border: 1px solid #b4b7be;
+}
+
+select {
+  font-size: medium;
+  border: 1px solid #b4b7be;
+}
+
+textarea
+{
+  font-size: medium;
+  border: 1px solid #b4b7be;
+}
+
+.Error
+{
+	color:Red;
+}
+
+div.pageContent1
+{
+	margin: 0px 1em 0px 1em;
+    width: 70%;
+}
+
+div.pageFooter
+{
+	border-top: 1px solid #dbdbdb;
+	text-align: center;	
+}
+
+div.poem
+{
+	padding: 8px;
+	line-height: 1.8em;
+}
+
+.grey {
+}
+
+.grey1 {
+    background-color: #f5f5f5;
+}
+
+div.underBar {
+    height: 30px;
+    width: 100%;
+}
+
+div.full {
+    width: 100%;
+}
+
+div.fullBlock
+{	
+	padding: 8px 8px 8px 8px;
+}
+
+div.list
+{	
+	padding: 8px 8px 8px 8px;
+	line-height: 1.5em;
+}
+
+div.list1
+{
+	padding: 8px 8px 8px 8px;
+	line-height: 1.5em;
+}
+
+div.left
+{
+	padding: 6px;
+	line-height: 1.5em;
+	float: left;
+	width: 15%;
+}
+
+div.middle
+{
+	line-height: 1.2em;
+	float: left;
+	width: 40%;
+	padding-left: 0.5em;
+}
+
+div.right
+{
+	line-height: 1.2em;
+	float: left;
+	width: 40%;
+	padding-left: 0.5em;
+}
+
+div.title {
+    color: #3b6e3a;
+    background-color: #f6f6eb;
+    padding: 2px 0px 2px 0px;
+    margin: 0 0 0.8em 0;
+    text-indent: 4px;
+    line-height: 1.5em;
+}
+
+.lightBottomLine
+{
+    border-bottom: 1px solid #ddd;
+}
+
+.arrow
+{
+    background-image: url('../images/images-ico.gif');
+    background-repeat: no-repeat;
+    padding-left: 1em;
+    background-position: left center;
+}
+
+div.titleNote
+{
+	text-indent: 1em;
+	background-color: #f6f6eb;		
+	padding: 2px 4px 2px 4px;
+    line-height: 1.5em;
+}
+
+div.allusionNote
+{
+	margin-left: 1em;
+	margin-right: 1em;
+	background-color: #f6f6eb;		
+	padding: 2px 4px 2px 4px;
+}
+
+div.content
+{
+	color: #111111;
+	padding: 2px 4px 2px 4px;
+	font-size: medium;
+    left: 0px;
+    width: 100%;
+    line-height: 1.5em;
+}
+
+div.commentPanel
+{
+	margin-bottom: 0.5em;
+	margin-top: 0.5em;
+    background-color: #f6f6eb;
+    border-bottom: solid 1px lightgray;
+}
+
+div.comment
+{
+	background-color: #f6f6eb;		
+	padding: 2px 4px 2px 4px;
+    line-height: 1.5em;
+}
+
+div.commentBlock
+{
+    padding: 0.5em;
+    color: #555;
+    border-left: 3px solid lightgray;
+    opacity: 0.8;
+}
+
+.inlineCommentLabel
+{
+    margin-left: 1em;
+    color: maroon;
+}
+
+div.small
+{
+    height: 4px;
+    width: 4px;
+}
+
+div.footer
+{
+	text-indent: 1em;
+	background-color: #f6f6eb;			
+	padding: 4px 4px 4px 4px;
+	line-height: 1.3em;
+}
+
+div.status
+{
+	background-color: #f6f6eb;			
+	padding: 4px 4px 4px 4px;
+	color: Red;
+	visibility: hidden;
+}
+
+div.note
+{
+	background-color: #f6f6eb;			
+	padding: 4px 4px 4px 4px;
+	color: Gray;
+	font-style: italic;
+	visibility: hidden;
+}
+
+div.allusion
+{
+}
+
+div.sideNote
+{
+	padding: 0.3em;
+}
+
+div.allusionBlock {
+    background-color: #f6f6eb;
+    border-radius: 4px;
+    line-height: 1.8rem;
+    padding: 1em;
+}
+
+div.resultSummary
+{	
+	background-color: #f6f6eb;			
+	padding: 4px 4px 4px 4px;
+}
+
+div.allusionSummary
+{				
+	padding: 4px 4px 4px 4px;
+	line-height: 1.4em;
+}
+
+div.ciTune
+{
+	padding: 8px 8px 8px 8px;
+}
+
+div.ciTuneDesc
+{
+	padding: 4px 4px 4px 4px;
+	color: #494949;
+}
+
+div.ciTuneFormat
+{
+	background-color: #f6f6eb;
+	padding: 4px 4px 4px 4px;
+	margin-left: 1em;
+	margin-right: 1em;
+}
+
+div.introduction
+{
+	line-height: 1.8em;
+	margin: 8px 1em;
+}
+
+div.ciTunePrompt
+{
+	width: 500px;
+	text-align: right;
+	float: left;
+}
+
+div.ciTuneQueryButton
+{
+	margin-left: 500px;
+}
+
+div.summary
+{
+	padding: 4px 4px 4px 4px;
+	float: left;
+}
+
+div.update
+{
+    margin-left: 2em;
+}
+
+div.mainForm
+{
+    margin-left: 3em;
+}
+
+div.header
+{
+    text-indent: 0.5em;
+    background-color: #f6f6eb;
+    line-height: 2em;
+}
+
+div.closeButton
+{
+    float: right;
+    background-color: #F5F5F5;
+}
+
+div.partHeader
+{
+    margin: 0px 1em 0px 1em;
+    padding: 4px 4px 4px 4px;
+    border-bottom: solid #F49492 1pt;
+    min-width: 1016px;
+}
+
+div.partContent
+{
+    margin: 4px 1em 0px 230px;
+    padding: 4px 4px 4px 4px;
+}
+
+div.partContentNoIndent
+{
+    margin: 4px 1em 0px 1em;
+    padding: 4px 4px 4px 4px;
+}
+
+div.partIndex
+{
+    margin: 8px 0px 0px 1em;
+    padding: 4px 4px 4px 4px;
+    width: 200px;
+     
+    
+    float: left;
+    line-height: 1.4em;
+}
+
+div.pagination
+{
+	padding: 4px 4px 4px 4px;
+    margin: 4px 1em 4px 1em;
+}
+
+div.charPagination
+{
+	background-color: #EDF9FF;
+	padding: 4px 4px 4px 1em;
+	color: #393939;
+	margin: 0px 0 4px 0;
+}
+
+div.s2tInput
+{
+    padding: 4px 4px 4px 4px; 
+    float: left; 
+    width: 40%;
+}
+
+div.s2tOutput
+{
+    height: 250px; 
+    overflow: scroll; 
+    width: 99%;
+}
+
+div.s2tExplain {
+    margin-left: 41%;
+    padding: 4px 4px 4px 4px;
+    visibility: hidden;
+}
+
+div.hide
+{
+	display: none;
+}
+
+div.panel
+{
+	font-size: medium;
+    padding: 8px 0px 8px 0px;
+}
+
+div.rhymeList
+{
+	padding: 8px 8px 8px 8px;
+	font-size: medium;
+	line-height: 1.3em;
+	letter-spacing: 0.2em;
+}
+
+div.box {padding: 6px; min-height: 350px;}
+
+div.char
+{
+	padding: 8px 8px 8px 0;
+	margin-bottom: 4px;
+	color: #393939;
+	font-size: medium;
+	line-height: 1.3em;
+}
+
+div.info
+{
+	background-color: #EDF9FF;
+	padding: 4px 4px 4px 4px;
+	color: #393939;
+	margin: 0.5em 1em 0.5em 1em;
+}
+
+div.menu
+{
+	padding: 4px 4px 4px 1em;
+	margin: 0px 0px 4px 0px;
+}
+
+div.tabMenu
+{
+    padding-left: 1em;
+    border-bottom: 1px solid #d8d8d8;
+}
+
+.navButton {
+    width: 2.7rem;
+    background-color: white;
+    border: none;
+    height: 44px;
+    cursor: pointer;
+    outline: 0;
+    float: left;
+}
+
+.navButtonBar {
+    width: 1.2rem;
+    height: 1px;
+    background: #333;
+    margin: 0 auto .35rem;
+}
+
+.rotate90 {
+    -ms-transform: rotate(90deg); /* IE 9 */
+    -webkit-transform: rotate(90deg); /* Safari 3-8 */
+    transform: rotate(90deg);
+}
+
+.nums {
+    position: absolute;
+    margin-top: 10px;
+    font-style: normal;
+    color: #fff;
+    background-color: #f63756;
+    border-radius: 50px;
+    width: 6px;
+    height: 6px;
+    padding: 0;
+    margin-left: 18px;
+    z-index: 10;
+}
+
+.bar1 {
+    background-color: white;
+    color: #444;
+    border-bottom: 1px solid #ddd;
+    width: 100%;
+    max-width: 560px;
+    height: 50px;
+    margin: 0 auto;
+    padding: 4px 2px 0 0;
+}
+
+.expandMenu {
+    display: none;
+    background-color: white;
+    border-bottom: .25rem solid #f5f5f5;
+    max-width: 560px;
+    margin: 0 auto;
+    padding-left: 4px;
+}
+
+.logo-box {
+    float: left;
+    margin-left: 20%;
+    margin-top: .2rem;
+}
+
+.logo-box2 {
+    float: left;
+    margin-left: 20%;
+    margin-top: .1rem;
+}
+
+div.innerPanel
+{
+    max-height: 380px; overflow-y: scroll;
+}
+
+a.tab {
+	display:		inline;
+	padding:		2px 6px 3px 6px;
+	background:		#f6f6eb;
+	border:			1px solid #d8d8d8;
+	border-bottom:	1px solid #fcfcf1;
+}
+
+a.tabselected {
+	border-left: 1px solid #0941d9;
+    border-right: 1px solid #0941d9;
+    border-bottom: 3px solid #fcfcf1;
+	border-top: 3px solid #0941d9;
+	padding:		3px 6px 3px 6px;
+	margin:			1px -3px 0px -3px;
+	background:		#fffef4;
+    z-index: 2;
+}
+
+div.topBorder
+{
+    border-top: 1px solid lightgray;
+}
+
+div.error
+{
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+	border-left: 3px solid red;
+	padding-left: 0.5em;
+    background-color: #FFFFCE;
+    margin: 0.5em 0 0.5em 0;
+}
+
+div.notify
+{
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+	border-left: 3px solid darkred;
+	padding-left: 0.5em;
+    background-color: #FFFFCE;
+    margin: 0.5em 0 0.5em 0;
+}
+
+.titleHint {
+    padding-left: 0.5em;
+    border-left: 3px solid darkred;
+}
+
+.articleTitle {
+    margin: 0.8em 0 0.8em 0.8em;
+    color: darkgoldenrod;
+}
+
+div.notify1
+{
+	background-color: #FFFFCE;
+	padding: 4px 8px 4px 8px;
+	margin: 4px 0px 4px 0px;
+    border: solid 1px lightgray;
+}
+
+div.notify1
+{
+	background-color: #FFFFCE;
+	padding: 4px 8px 4px 8px;
+	margin: 4px 0px 4px 0px;
+    border: solid 1px lightgray;
+}
+
+div.itemListArea
+{
+	margin: 0px 1em 0px 370px;
+	height: 200px;
+	overflow: auto;
+	border-top: solid 1px #666666;
+}
+
+div.rhymeSeachStatus
+{
+	background-color: #f6f6eb;			
+	margin: 0px 1em 0px 370px;
+	padding: 4px 4px 4px 4px;
+	color: Red;
+	visibility: hidden;
+}
+
+div.fixComment {
+    position: absolute;
+    right: 2em;
+    top: 15em;
+    width: 25%;
+    padding: 4px;
+    border: 2px solid lightgray;
+    box-shadow: 0px 10px 14px -7px gray;
+    background: #FFFFDE;
+    z-index: 2;
+}
+
+.commentCloser
+{
+    position: absolute;
+    right: 2.1em;
+    top: 15.8em;
+    z-index: 3;
+}
+
+div.popupBar
+{
+    background-color: #333333;
+    color: white;
+    text-indent: 1.5em;
+    line-height: 1.4em;
+    margin-right: -24px;
+    z-index: 2;
+}
+
+div.innerContainer
+{
+    height: 90%; 
+    width: 90%;
+    background-color: #FFFFCE;	
+    position: relative;
+    z-index: 2;
+}
+
+.rlIC
+{
+    margin: auto 24px auto 0px; 
+    max-height: 674px;
+}
+
+.lrIC
+{
+    margin: 24px auto 0px auto; 
+    max-width: 900px;
+}
+
+.rlICO
+{
+width: 90%;
+}
+
+.lrICO
+{
+height: 90%;
+}
+
+.innerContent
+{
+    padding: 0.5em;
+    overflow: scroll;
+}
+
+.h2
+{
+    font-size: x-large;
+    margin: 1rem 0;
+}
+
+.h3 {
+    font-size: large;
+    margin: 1rem 0;
+}
+
+.h4 {
+    font-size: medium;
+    margin: 0.8rem 0;
+}
+
+.h5 {
+    font-size: medium;
+    margin: 0.8rem 0;
+}
+
+.mapColumn {
+    overflow: hidden;
+    height: 83vh !important;
+}
+
+.column {
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 82vh !important;
+}
+
+div.rlFS
+{
+    top: 0;
+    right: 0;
+}
+
+div.lrFS
+{
+    top: 0;
+    left: 0;
+}
+
+div.fsComment
+{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: -1;
+}
+
+div.shade
+{
+    background-color: black;
+    opacity: 0.7;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+}
+
+span.new
+{
+    color: Red;
+}
+
+span.name
+{
+    border-bottom: solid 1px Black;
+}
+
+span.emphase1
+{
+    font-size: large;
+    color: #141580;
+    border-bottom: dotted 2px Olive;
+    padding-bottom: 2px;
+}
+
+span.emphase2
+{
+    font-size: large;
+    color: #141580;
+    border-bottom: solid 2px Olive;
+    padding-bottom: 2px;
+}
+
+span.IU
+{
+    border-bottom: solid 1px Black;
+    font-style: italic;
+}
+
+span.leadChar
+{
+	font-size: x-large;
+	color:Black;
+	padding-right: 16px;
+}
+
+span.charType
+{
+    font-size: small;
+	color: Olive;
+}
+
+span.scomment
+{
+    font-size: small;
+	color: #cccccc;
+}
+
+span.xsmall
+{
+    font-size: x-small;
+}
+
+.small
+{
+    font-size: small;
+}
+
+.normal
+{
+    font-size: 14px;
+}
+
+.bookTitle
+{
+    font-size: 24px;
+    color: darkblue;
+    text-indent: 38px;
+    vertical-align: central;
+    line-height: 35px;
+    margin: 8px;
+}
+
+.bookTitleImg
+{
+    background-image: url('../images/images-publish.png');
+    background-repeat: no-repeat;
+    background-size: 35px;
+}
+
+.rlBookTitle
+{
+    background-position: right top;
+}
+
+.publishImg
+{
+    height: 28px;
+}
+
+span.xlarge
+{
+    font-size: x-large;
+}
+
+span.large
+{
+    font-size: large;
+}
+
+span.example
+{
+	color: #141580;
+}
+
+.example1
+{
+	color: #141580;
+    font-size: large;
+}
+
+span.poemSentence
+{
+	color: #141580;
+}
+
+span.item
+{
+	color: Black;
+}
+
+span.ciTuneName
+{
+	color: black;
+	padding: 0px 16px 0px 0px;
+}
+
+span.rhymeName
+{
+	color: #FF7A2A;
+	padding: 0px 16px 0px 0px;
+	font-size: medium;
+	font-weight: bold;
+}
+
+span.rhymeComment
+{
+	color: #494949;
+	padding: 0px 4px 0px 0px;
+	font-size: small;
+	letter-spacing: normal;
+}
+
+span.quote
+{
+	color: #494949;
+	margin-left: 2em;
+}
+
+.quote1
+{
+    margin: 0.8rem 0px 0.8rem 1rem; 
+    line-height: 1.8em;
+}
+
+span.label
+{
+	color: Maroon;
+}
+
+.squareLabel1
+{
+    padding: 2px;
+    border: 1px solid darkred;
+    border-radius: 3px;
+    color: darkred;
+    opacity: 0.6;
+}
+
+.squareLabel
+{
+    padding: 2px;
+    background-color: darkred;
+    border-radius: 3px;
+    color: white;
+    opacity: 0.6;
+}
+
+.squareLink
+{
+    padding: 2px 0.5em 2px 0.5em;
+    border: 1px solid darkred;
+    border-radius: 3px;
+    color: darkred;
+    margin-right: 1em;
+    opacity: 0.6;
+}
+
+.hightlightedPanel {
+    border-radius: 5px;
+    background-color: #f6f6eb;
+    padding: 4px 0 4px 0;
+}
+
+div.zindex2
+{
+    z-index: 2;
+}
+
+ul.sentences
+{
+	line-height: 1.5em;
+}
+
+ul.example
+{
+    list-style-type: circle;
+}
+
+li.none
+{
+    list-style-type: none;
+    text-indent: -1em;
+}
+
+li.number {
+    list-style-type: decimal;
+    list-style-position: outside;
+    color: gainsboro;
+
+}
+
+div.leftColumn {
+    width: 48%;
+}
+
+div.rightColumn
+{
+    margin-left: 50%;
+    width: 48%;
+    position: absolute;
+    top: 0;
+}
+
+div.topColumn
+{
+    height: 48%;
+}
+
+div.bottomColumn
+{
+    margin-top: 50%;
+    height: 48%;
+    position: absolute;
+    right: 0;
+}
+
+li.label
+{
+    list-style-type: none;
+    margin-left: -2em;
+   	color: Black;
+}
+
+.volume
+{
+    border: 1px solid lightgray;
+    text-indent: 1em;
+}
+
+li.spell
+{
+	color: Maroon;
+}
+
+li.explain {
+    color: #141580;
+    margin: 0.4rem 0;
+    list-style-position: inside;
+    line-height: 1.8em;
+}
+
+li.example {
+    color: #141580;
+    margin: 0.4rem 0;
+    list-style-type: circle;
+    line-height: 1.5em;
+}
+
+li.note
+{
+    color: #333333;
+    list-style-type: none;
+    list-style-position: inside;
+}
+
+span.error
+{
+    color: Red;
+}
+
+span.unknownTone
+{
+    font-weight: bold;
+    color: Blue;
+}
+
+span.needConfirm
+{
+    font-weight: bold;
+    color: Green;
+}
+
+span.charError {
+    font-weight: bold;
+    color: goldenrod;
+}
+
+span.toneError
+{
+    font-weight: bold;
+    color: Red;
+}
+
+span.rhymeError
+{
+    font-weight: bold;
+    color: Fuchsia;
+}
+
+span.needDelete
+{
+    border: solid 1px Red;
+    margin: 1px;
+    padding: 1px;
+}
+
+span.needInsert
+{
+    border: solid 1px Green;
+    margin: 1px;
+    padding: 1px;
+}
+
+span.indentLabel
+{
+	color: Maroon;
+	padding: 0px 8px 0px 8px;
+}
+
+span.rightIndentLabel
+{
+	color: Maroon;
+	padding: 0px 8px 0px 0px;
+}
+
+span.comment
+{
+	color: #444;
+}
+
+span.inlineComment
+{
+	border-bottom: 2px dashed Orange;
+}
+
+.inlineComment1
+{
+    color: grey;
+    font-size: medium;
+}
+
+.inlineComment2
+{
+    color: grey;
+    font-size: small;
+}
+
+.inlineComment3
+{
+    border-bottom: 1px solid #ccc;
+    margin: 0 0.5em 4px 0.5em;
+    padding-bottom: 2px;
+}
+
+.inlineComment4 {
+    color: grey;
+    font-size: small;
+    margin-left: 0.5rem;
+}
+
+.highlighted {
+    background-color: #FDE4D0;
+    padding: 1px 0.2em;
+}
+
+.highlighted1
+{
+	background-color: #FFFFBE;
+	padding: 1px;
+	margin: 1px;
+}
+
+.highlighted2 {
+    background-color: #fbe2ce;
+    padding: 0 2px;
+}
+
+span.keyword
+{
+	color: Blue;
+}
+
+span.book
+{
+}
+
+span.bookContent
+{
+	color: #5b5b5b;
+}
+
+span.rhythm
+{
+	color: #FF8688;
+}
+
+span.tone
+{
+	color: Gray;
+}
+
+span.tuneFormatDesc
+{
+	color: #AE8668;
+}
+
+.tuneGroup {
+    font-weight: bold;
+    color: goldenrod;
+}
+
+.tuneSubGroup {
+    font-weight: bold;
+}
+
+.tunePause {
+    margin-right: 1rem;
+}
+
+.quTuneLabel {
+    display: inline-block;
+    width: 150px;
+}
+
+.quTuneName {
+    margin: 0 0.5rem;
+}
+
+.quTuneFormat {
+    line-height: 3em;
+}
+
+.quAid {
+    color: gray;
+}
+
+ruby {
+    margin: 0 6px;
+    line-height: 2em;
+}
+
+rt {
+    font-size: small;
+    color: gray;
+}
+
+span.title {
+    color: #3b6e3a;
+}
+
+span.unknownTone
+{
+    color: Blue;
+}
+
+table.sentences
+{
+	table-layout:auto;
+}
+
+td.author
+{
+	width: 60px;
+}
+
+td.title
+{
+	width: 180px;
+}
+
+td.key
+{
+	width: 60px;
+}
+
+p.medium
+{
+	margin-bottom: 4px;
+}
+
+p.mSize
+{
+	margin-top: 8px;
+	margin-bottom: 8px;
+	font-size: medium;
+	color: #494949;
+}
+
+.rlLine
+{
+    border-right: 2px solid lightgray; 
+    padding-right: 8px;
+
+}
+
+.rlCenter
+{
+    margin: auto 0 auto 0;
+}
+
+.lrCenter
+{
+    margin: 0 auto 0 auto;
+}
+
+.lrLine
+{
+    border-top: 2px solid lightgray; 
+    padding-top: 8px;
+}
+
+.tb-rl {
+    -webkit-writing-mode: vertical-rl;
+    writing-mode: tb-rl;
+    writing-mode: vertical-rl;
+}
+
+hr.small
+{
+	height: 1px;
+}
+
+hr.title
+{
+	height: 1px;
+	color: lightgray;
+	width: 100%;
+}
+
+div.label
+{
+	border-bottom: 2px solid #F49492;
+	padding-bottom: 4px;
+	margin: 0.5em 0px 4px 0px;
+}
+
+div.label1
+{
+	color: #3b6e3a;
+	border-bottom: solid 1px lightgray;
+	margin: 0.8em 0px;
+}
+
+div.preface
+{
+    background-color: #FFFACA;
+	padding: 8px;
+	margin: 0.5em 1em 0.5em 1em;
+    border: solid 1px lightgray;
+}
+
+a.expand
+{
+    margin-right: 8px;
+    text-decoration:none;
+	padding: 0px 4px;
+}
+
+table.general
+{
+    border: 0px;
+}
+
+table.full
+{
+    border: 0px;
+    width: 100%;
+}
+
+div.noSpacing
+{
+    letter-spacing: 0;
+}
+
+.dynamic-tab-pane-control .tab-row {
+	z-index:		1;
+	white-space:	nowrap;
+	height:			1.85em;
+}
+
+div.mScreen
+{
+    width: 100%; max-width: 800px; margin: 0px auto 0px auto;
+}
+
+div.mContent
+{
+    padding: 0 4px 0 4px;
+    max-width: 560px;
+    margin: 0 auto;
+}
+
+img.mTile
+{
+    height: 40px; float: left; margin-right: 0.5em; max-width: 60px;
+}
+
+img.mCover
+{
+    height: 60px; float: left; margin-right: 0.5em; width: 90px;
+}
+
+img.mCoverV
+{
+    height: 40px; float: left; margin-right: 0.5em; width: 30px;
+}
+
+.poetIcon
+{
+    border-radius: 50%; 
+    height: 48px; width: 48px; margin-right: 6px; border: 1px solid #e8e8e8;
+    float: left;
+}
+
+div.mArticle
+{
+    min-height: 60px; margin-bottom: 1em;
+}
+
+div.mArticleV
+{
+    min-height: 40px; margin-bottom: 1em;
+}
+
+.myButton {
+    -moz-box-shadow: 0px 10px 14px -7px #3e7327;
+    -webkit-box-shadow: 0px 10px 14px -7px #3e7327;
+    box-shadow: 0px 10px 14px -7px #3e7327;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #77b55a), color-stop(1, #72b352));
+    background: -moz-linear-gradient(top, #77b55a 5%, #72b352 100%);
+    background: -webkit-linear-gradient(top, #77b55a 5%, #72b352 100%);
+    background: -o-linear-gradient(top, #77b55a 5%, #72b352 100%);
+    background: -ms-linear-gradient(top, #77b55a 5%, #72b352 100%);
+    background: linear-gradient(to bottom, #77b55a 5%, #72b352 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#77b55a', endColorstr='#72b352',GradientType=0);
+    background-color: #77b55a;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    border: 1px solid #4b8f29;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff !important;
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 6px 12px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #5b8a3c;
+}
+
+.myButton:hover {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #72b352), color-stop(1, #77b55a));
+    background: -moz-linear-gradient(top, #72b352 5%, #77b55a 100%);
+    background: -webkit-linear-gradient(top, #72b352 5%, #77b55a 100%);
+    background: -o-linear-gradient(top, #72b352 5%, #77b55a 100%);
+    background: -ms-linear-gradient(top, #72b352 5%, #77b55a 100%);
+    background: linear-gradient(to bottom, #72b352 5%, #77b55a 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#72b352', endColorstr='#77b55a',GradientType=0);
+    background-color: #72b352;
+}
+
+.myButton:active {
+    position: relative;
+    top: 1px;
+}
+
+.poemCommentLink {
+    padding: 2px;
+}
+
+.showDetail {
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 24px;
+}
+
+.inDetail {
+}
+
+.poemTitle {
+    color: #3b6e3a;
+    background-color: #f6f6eb;
+    padding: 0.3rem 0.5rem;
+    line-height: 1.8em;
+}
+
+.titleComment {
+    background-color:#f0f0f0;
+    margin: 1rem 0;
+    padding: 0.5rem;
+    text-indent: 0.8rem;
+    line-height: 1.5em;
+    border-radius: 4px;
+    color: #555;
+}
+
+.poemContent {
+    color: #111111;
+    padding: 2px 0.8rem;
+    font-size: medium;
+    left: 0px;
+    width: 100%;
+    line-height: 2em;
+    margin: 0.5em 0 1em 0;
+}
+
+.poemNote {
+    background-color: #f4f4f4;
+    margin: 1rem 4px 1rem 0.5rem;
+    padding: 0.5rem;
+    line-height: 1.6em;
+    border-radius: 4px;
+    max-height: 400px;
+    overflow-y: auto;
+    color: #555;
+    width: calc(100% - 2rem);
+}
+
+.poemComment {
+    background-color: #f0f0f0;
+    margin: 1rem;
+    padding: 0.5rem;
+    line-height: 1.5em;
+    border-radius: 4px;
+}
+
+.titleIndent {
+    margin-left: 3em;
+    color: gray;
+    font-size: small;
+}
+
+div.poemSentence {
+
+}
+
+div.articleSentence {
+    text-indent: 2em;
+    margin-bottom: 0.6em;
+}
+
+.authorDate {
+    font-size: small;
+    color: gray;
+    margin-left: 0.5em;
+}
+
+.poemAuthor {
+    margin-left: 1em;
+}
+
+.authorHeader {
+    line-height: 1.8em;
+}
+
+.hl0 {
+    background-color: lightsalmon;
+    border-bottom: 1px solid lightgray;
+    margin: 2px;
+    padding: 2px;
+}
+
+.hl1 {
+    background-color: blanchedalmond;
+    border-bottom: 1px solid lightgray;
+    margin: 2px;
+    padding: 2px;
+}
+
+.hl2 {
+    background-color: khaki;
+    border-bottom: 1px solid lightgray;
+    margin: 2px;
+    padding: 2px;
+}
+
+.hl3 {
+    background-color: burlywood;
+    border-bottom: 1px solid lightgray;
+    margin: 2px;
+    padding: 2px;
+}
+
+.hl4 {
+    background-color: honeydew;
+    border-bottom: 1px solid lightgray;
+    margin: 2px;
+    padding: 2px;
+}
+
+.hl5 {
+    background-color: darkseagreen;
+    border-bottom: 1px solid lightgray;
+    margin: 2px;
+    padding: 2px;
+}
+
+.hl6 {
+    background-color: azure;
+    border-bottom: 1px solid lightgray;
+    margin: 2px;
+    padding: 2px;
+}
+
+.hl7 {
+    background-color: chartreuse;
+    border-bottom: 1px solid lightgray;
+    margin: 2px;
+    padding: 2px;
+}
+
+.hl8 {
+    background-color: lightgreen;
+    border-bottom: 1px solid lightgray;
+    margin: 2px;
+    padding: 2px;
+}
+
+.hl9 {
+    background-color: lightyellow;
+    border-bottom: 1px solid lightgray;
+    margin: 2px;
+    padding: 2px;
+}
+
+.hl10 {
+    background-color: cyan;
+    border-bottom: 1px solid lightgray;
+    margin: 2px;
+    padding: 2px;
+}
+
+.hl11 {
+    background-color: aquamarine;
+    border-bottom: 1px solid lightgray;
+    margin: 2px;
+    padding: 2px;
+}
+
+.hl12 {
+    background-color: lightgoldenrodyellow;
+    border-bottom: 1px solid lightgray;
+    margin: 2px;
+    padding: 2px;
+}
+
+.hl13 {
+    background-color: lightgray;
+    border-bottom: 1px solid lightgray;
+    margin: 2px;
+    padding: 2px;
+}
+
+.hl14 {
+    background-color: lightskyblue;
+    border-bottom: 1px solid lightgray;
+    margin: 2px;
+    padding: 2px;
+}
+
+.hl15 {
+    background-color: lightsteelblue;
+    border-bottom: 1px solid lightgray;
+    margin: 2px;
+    padding: 2px;
+}
+
+.hl16 {
+}
+
+.hl17 {
+    background-color: palegreen;
+    border-bottom: 1px solid lightgray;
+    margin: 2px;
+    padding: 2px;
+}
+
+.hl18 {
+    background-color: palegoldenrod;
+    border-bottom: 1px solid lightgray;
+    margin: 2px;
+    padding: 2px;
+}
+
+.hl19 {
+    background-color: bisque;
+    border-bottom: 1px solid lightgray;
+    margin: 2px;
+    padding: 2px;
+}
+
+.labelInfo {
+    margin: 0.5em 1em;
+}
+
+.labelTag {
+    border: 1px solid lightgray;
+    padding: 4px;
+    margin-right: 1em;
+    background-color: lightgray;
+    color: white;
+    border-radius: 4px;
+}
+
+.blankLine {
+    line-height: 1em;
+}
+
+.sortDictItem {
+    width: 154px;
+    padding: 10px 2px;
+    margin: 0 6px;
+    display: inline-block;
+}
+
+.sortDictHeader {
+    padding: 0.5em;
+    line-height: 2em;
+    margin: 1em 0;
+    background-color: #fdfdfd;
+}
+
+.sortDictCategory {
+    margin: 1em 0;
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 4px;
+    color: darkgoldenrod;
+}
+
+.kanripoPage {
+    line-height: 1.8em;
+    background-color: #fdfdfd;
+    border: 1px solid lightgray;
+    padding: 6px 6px 6px 1rem;
+    font-size: 18px;
+    max-width: 900px;
+}
+
+.pageImage {
+    float: right;
+    margin-left: 1.5rem;
+    max-height: 500px;
+    max-width: 460px;
+}
+
+.pageHasImage {
+    min-height: 520px;
+}
+
+.kanripoComment {
+    margin: 0 0.5em;
+    font-size: medium;
+    color: #777;
+}
+
+.bookCategory {
+    margin: 0.5em 0;
+    padding: 1em;
+    background-color: #fdfdfd;
+    border: 1px solid lightgray;
+    width: 620px;
+    max-width: 100%;
+}
+
+.pageBreak {
+    color: white;
+    padding: 0.2rem 20px;
+    font-size: medium;
+    text-align: right;
+    background-color: lightgray;
+    max-width: 900px;
+}
+
+.kanripoText {
+    font-size: 20px;
+    line-height: 1.8em;
+}
+
+.kanripoComment {
+    margin: 0 0.5em;
+    font-size: medium;
+    color: #777;
+}
+
+.resourceSummary {
+    margin-left: 1em;
+}
+
+.commonCard {
+    padding: 0.5em;
+    width: 300px;
+    height: 200px;
+    display: inline-block;
+    position: relative;
+    margin: 0 20px 10px 0;
+    overflow: hidden;
+}
+
+.dataSet {
+    position: relative;
+    padding: 1em 1em 0em 1em;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.source {
+    bottom: 0;
+    position: absolute;
+    right: 1em;
+    color: #bbb;
+    font-size: small;
+}
+
+.close {
+    top: 0;
+    right: 4px;
+    position: absolute;
+    color: #bbb;
+    font-size: x-large;
+}
+
+.close:hover {
+    cursor: pointer;
+}
+
+div.infoWin {
+    background-color: white;
+    padding: 6px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 340px;
+}
+
+.switch {
+    color: #444;
+    font-weight: bold;
+    border: 1px solid #999;
+    margin-right: 8px;
+    font-size: 10px;
+}
+
+.cell {
+    border: 1px solid lightgray;
+    padding: 4px;
+}
+
+.authorInfo {
+    border-top: 1px solid lightgray;
+    padding-top: 1rem;
+    margin-bottom: 3rem;
+}
+
+.charWithTone {
+    display: inline-block;
+    height: 74px;
+    width: 2.5em;
+    margin-bottom: 0.2em;
+}
+
+.charPart {
+    height: 1.2em;
+    font-size: 24px;
+}
+
+.tonePart {
+    margin-top: 0.4em;
+    font-size: 12px;
+    line-height: 1.2em;
+    color: gray;
+}
+
+.ruTone {
+    color: lightcoral;
+}
+
+.labelizedPanel {
+    line-height: 1.8em;
+    margin-bottom: 0.5rem;
+    text-indent: 2em;
+}
+
+.wikiLabel {
+    color: gray;
+}
+
+.wikiProperNoun {
+    border-bottom: 1px solid;
+    margin: 0 2px;
+    padding-bottom: 2px;
+}
+
+.wikiWave {
+    padding-bottom: 2px;
+    margin: 0 2px;
+    text-decoration: underline;
+    text-decoration-style: wavy;
+    text-decoration-color: gray;
+    -moz-text-decoration-style: wavy;
+    -moz-text-decoration-color: gray;
+}
+
+.wikiUDots {
+    padding-bottom: 2px;
+    border-bottom: 2px dotted
+}
+
+table.wikitable, table.prettytable {
+    background: #f9f9f9;
+    border: 1px #aaaaaa solid;
+    border-collapse: collapse;
+    margin-top: 1em;
+    margin-bottom: 1em
+}
+
+table.wikitable th, table.wikitable td, table.prettytable th, table.prettytable td {
+    border: 1px #aaaaaa solid;
+    padding: 0.2em
+}
+
+table.wikitable th, table.prettytable th {
+    background: #f2f2f2;
+    text-align: center
+}
+
+table.wikitable caption, table.prettytable caption {
+    margin-left: inherit;
+    margin-right: inherit
+}
+
+.wikiHighLight {
+    color: black;
+    border-bottom: 1px dotted red;
+    background: linen;
+}
+
+.references-small {
+    font-size: 90%;
+}
+
+.reference {
+    white-space: nowrap;
+}
+
+.hiddenChar {
+    color: transparent;
+    font-size: 0px
+}
+
+.wikiComment {
+    color: #966;
+    font-size: 90%;
+}
+
+.mw-cite-backlink, .cite-accessibility-label {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.tipContainer {
+    border: 1px solid #b4ddea;
+    background-color: #f7faff;
+    margin-bottom: 5px;
+    width: auto;
+    display: block;
+    padding: 6px;
+    color: gray;
+}
+
+.dateTimeLabel {
+    padding: 2px 6px;
+    font-size: 12px;
+    color: rgba(0,0,0,.55);
+    background-color: rgba(239,246,252,1);
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    margin: 0.5rem;
+}
+
+.dateTimeLabels {
+    margin: 0.5rem 0 0.5rem -1rem;
+}
+
+.dateTimeLine {
+    margin-left: 0.5rem;
+}
+
+.amap-marker-label {
+    border: 1px solid lightblue;
+    padding: 0;
+}
+
+.ol-popup {
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #cccccc;
+    bottom: 12px;
+    left: -50px;
+    min-width: 280px;
+    max-width: 80%;
+    max-height: 80%;
+    overflow-y: auto;
+}
+
+.ol-popup:after, .ol-popup:before {
+    top: 100%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.ol-popup:after {
+    border-top-color: white;
+    border-width: 10px;
+    left: 48px;
+    margin-left: -10px;
+}
+
+.ol-popup:before {
+    border-top-color: #cccccc;
+    border-width: 11px;
+    left: 48px;
+    margin-left: -11px;
+}
+
+.ol-popup-closer {
+text-decoration: none;
+position: absolute;
+top: 2px;
+right: 8px;
+}
+
+.ol-popup-closer:after {
+    content: "✖";
+}
