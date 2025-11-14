@@ -1,6 +1,7 @@
 ---
 title: 用 Vercel + Hexo + GitHub 打造自动更新发布的个人网站（以 jiangxu.net 为例）
 date: 2025-09-18 12:00:00
+updated: 2025-09-28 22:47:34
 categories:
 - 技术
 tags:

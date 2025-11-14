@@ -1,12 +1,14 @@
 ---
 title: blog stuff
 date: 2025-10-02 19:45:06
+updated: 2025-11-04 23:10:42
 tags:
 ---
 ## 目录
 - [x] [linkformat](#linkformat)
 - [x] [Google analysis](#配置Google-analysis)
-- [] [Comment System](#comment-system)
+- [x] [Comment System](#comment-system)
+- [x] [Auto Update Time](#文章时间自动更新)
 ---
 ## linkformat
 ### 把文章链接改成 postname，无日期（已实操，已注释）
@@ -310,3 +312,312 @@ flowchart LR
   end
   C -. 读取主题配置 .- B
 ```
+
+---
+## 文章时间自动更新
+### 我的说明
+
+我在写博客时遇到一个痛点：每次更新文章内容，front-matter 里的 `date` 字段不会自动变化。读者看不出文章是新写的还是更新过的，我也要手动改日期很麻烦。后来配置了 Hexo 的 `updated` 字段，它会自动使用文件的修改时间，现在我只要编辑保存，更新时间就自动记录了，再也不用手动改了。
+
+我用到的：
+- **date**：文章创建时间（固定不变）
+- **updated**：文章更新时间（自动使用文件修改时间）
+- **updated_option**：Hexo 配置项，控制 updated 的来源
+- **mtime**：文件修改时间（操作系统记录的）
+- **front-matter**：文章开头的元数据区域
+- **scaffold**：文章模板，控制新建文章的默认内容
+
+### 具体的技术问题
+
+1) 这是什么，为什么要用它？
+- Hexo 支持两个时间字段：`date`（创建时间）和 `updated`（更新时间）。`date` 是固定的，记录文章首次发布；`updated` 可以自动跟随文件修改时间变化。这样读者能看到"这篇文章最近更新过"，搜索引擎也能识别内容的新鲜度。
+
+2) 名词解释
+- [x] **date**：文章创建/发布时间，写在 front-matter 里，除非手动改否则不变。
+- [x] **updated**：文章更新/修改时间，可以自动使用文件的 mtime。
+- [x] **mtime**（modification time）：操作系统记录的文件最后修改时间，每次保存文件都会更新。
+- [x] **updated_option**：Hexo 主配置里的选项，决定 updated 从哪里取值：
+  - `'mtime'`：使用文件修改时间（推荐）
+  - `'date'`：使用 date 字段的值
+  - `'empty'`：不设置 updated
+- [x] **front-matter**：文章开头 `---` 包围的区域，存放标题、日期、分类、标签等元数据。
+- [x] **scaffold**：模板文件（`scaffolds/post.md`），`hexo new` 创建文章时会复制它的结构。
+
+3) 工作原理（时间更新流程）
+
+```
+编辑文章并保存
+    ↓
+操作系统更新文件的 mtime
+    ↓
+运行 hexo generate
+    ↓
+Hexo 读取 updated_option 配置
+    ↓
+如果是 'mtime'，读取文件的 mtime 作为 updated
+    ↓
+生成 HTML 时同时显示 date 和 updated
+    ↓
+读者能看到"发布于 2025-10-01，更新于 2025-11-12"
+```
+
+4) 如何配置（已经配好，这里是记录）
+
+**步骤 1：主配置文件** (`_config.yml`)
+```yaml
+# Date / Time format
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+updated_option: 'mtime'  # 关键配置：使用文件修改时间
+```
+
+**步骤 2：文章模板** (`scaffolds/post.md`)
+```yaml
+---
+title: {{ title }}
+date: {{ date }}
+updated: {{ date }}  # 新增这一行
+categories:
+tags:
+---
+```
+
+**步骤 3：为现有文章批量添加 updated 字段**
+
+我写了个 Node.js 脚本自动处理所有文章：
+
+```javascript
+// add_updated_field.js
+const fs = require('fs');
+const path = require('path');
+const postsDir = path.join(__dirname, 'source/_posts');
+
+function formatDate(date) {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+  const hours = String(date.getHours()).padStart(2, '0');
+  const minutes = String(date.getMinutes()).padStart(2, '0');
+  const seconds = String(date.getSeconds()).padStart(2, '0');
+  return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+}
+
+function processFile(filePath) {
+  const content = fs.readFileSync(filePath, 'utf8');
+  const stats = fs.statSync(filePath);
+  const mtime = formatDate(stats.mtime);
+  
+  // 检查 front matter 并添加 updated 字段
+  const frontMatterRegex = /^---\n([\s\S]*?)\n---/;
+  const match = content.match(frontMatterRegex);
+  if (!match || match[1].includes('updated:')) return;
+  
+  const dateRegex = /(date:\s*[^\n]+)/;
+  const newFrontMatter = match[1].replace(dateRegex, `$1\nupdated: ${mtime}`);
+  const newContent = content.replace(frontMatterRegex, `---\n${newFrontMatter}\n---`);
+  
+  fs.writeFileSync(filePath, newContent, 'utf8');
+  console.log(`✓ 已更新 ${path.basename(filePath)}`);
+}
+
+// 处理所有 .md 文件
+fs.readdirSync(postsDir)
+  .filter(f => f.endsWith('.md'))
+  .forEach(f => processFile(path.join(postsDir, f)));
+```
+
+运行：
+```bash
+node add_updated_field.js
+```
+
+结果：
+```
+✓ 已更新 tools.md: updated = 2025-11-12 17:31:25
+✓ 已更新 summary.md: updated = 2025-11-11 15:46:33
+✓ 已更新 blog-stuff.md: updated = 2025-11-04 23:10:42
+... (所有文章)
+✅ 完成！
+```
+
+5) 文章 front-matter 对比
+
+**修改前：**
+```yaml
+---
+title: tools
+date: 2025-10-01 15:20:10
+categories:
+  - study
+tags:
+  - git
+  - md
+---
+```
+
+**修改后：**
+```yaml
+---
+title: tools
+date: 2025-10-01 15:20:10
+updated: 2025-11-12 17:31:25  # 自动使用文件修改时间
+categories:
+  - study
+tags:
+  - git
+  - md
+---
+```
+
+6) 生成的 HTML 元数据验证
+
+```html
+<!-- 创建时间 -->
+<meta property="article:published_time" content="2025-10-01T07:20:10.000Z">
+
+<!-- 更新时间（自动）-->
+<meta property="article:modified_time" content="2025-11-12T09:31:25.000Z">
+
+<!-- 显示在页面上 -->
+<time datetime="2025-10-01T07:20:10.000Z">发布于: 2025-10-01</time>
+<time datetime="2025-11-12T09:31:25.000Z">更新于: 2025-11-12</time>
+```
+
+7) 使用场景与最佳实践
+
+**场景 1：创建新文章**
+```bash
+hexo new "我的新文章"
+# 自动生成包含 date 和 updated 的 front-matter
+```
+
+**场景 2：更新现有文章**
+- 直接编辑文章内容
+- 保存文件（Cmd+S）
+- **updated 自动使用新的文件修改时间**
+- 无需手动改任何时间字段！
+
+**场景 3：小改动（错别字），不想更新时间**
+```yaml
+---
+title: 文章标题
+date: 2025-10-01 15:20:10
+updated: 2025-10-01 15:20:10  # 手动固定，不会自动更新
+---
+```
+
+**场景 4：手动指定更新时间**
+```yaml
+---
+title: 文章标题
+date: 2025-10-01 15:20:10
+updated: 2025-11-15 10:00:00  # 手动指定具体时间
+---
+```
+
+8) 常见问题（遇到看这里）
+
+- **updated 没有自动更新？**
+  - 检查 `_config.yml` 中 `updated_option` 是否为 `'mtime'`
+  - 确认 front-matter 中有 `updated` 字段
+  - 运行 `hexo clean && hexo generate` 重新生成
+
+- **主题没有显示更新时间？**
+  - Pure 主题默认会显示，如果没有可能需要在主题配置中启用
+  - 检查主题模板中是否有 `post.updated` 的渲染逻辑
+
+- **date 和 updated 相同？**
+  - 正常现象，新创建的文章两者相同
+  - 编辑保存后，updated 会自动变化
+
+- **Git 提交后时间会变吗？**
+  - Git 本身不会改变文件的 mtime
+  - 但 `git clone` 或 `git checkout` 可能重置时间
+  - 建议在部署前本地生成，保持 mtime 准确
+
+- **批量重置所有文章的 updated？**
+  ```bash
+  # 更新所有文章的 mtime 为当前时间
+  find source/_posts -name "*.md" -exec touch {} \;
+  ```
+
+9) 我能学到的技术点
+
+- **配置驱动的功能**：不改代码，通过修改 `_config.yml` 实现功能变化。
+- **文件系统 API**：理解 mtime、读写文件、Node.js fs 模块的使用。
+- **模板与变量替换**：scaffold 如何用 `{{ date }}` 占位符生成实际内容。
+- **批量处理脚本**：用简单脚本自动化处理大量文件的重复操作。
+- **元数据与 SEO**：`article:modified_time` 告诉搜索引擎内容的新鲜度。
+- **Git 工作流整合**：理解文件时间戳在版本控制中的表现。
+
+### 字段对比表
+
+| 字段 | 用途 | 更新方式 | 显示位置 | SEO 意义 |
+| --- | --- | --- | --- | --- |
+| date | 文章创建/发布时间 | 手动（通常固定） | 文章头部、归档页 | 首次发布时间 |
+| updated | 文章更新/修改时间 | 自动（mtime）或手动 | 文章头部"更新于" | 内容新鲜度 |
+| 无 updated | 只有创建时间 | - | 看起来像"从未更新" | 搜索引擎不知道是否有更新 |
+| updated = date | 表示从未更新过 | - | 通常只显示发布时间 | 表明是原创首发 |
+
+### 时间更新数据流图
+
+```
+┌─────────────────┐
+│ 你编辑文章并保存  │
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────┐
+│ 操作系统更新      │
+│ 文件的 mtime     │
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────┐
+│ hexo generate   │
+│ 读取配置文件      │
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────┐
+│ updated_option  │
+│ = 'mtime'?      │
+└────────┬────────┘
+         │ Yes
+         ▼
+┌─────────────────┐
+│ 读取文件 mtime   │
+│ 作为 updated 值  │
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────┐
+│ 生成 HTML 时     │
+│ 渲染两个时间      │
+│ - date (发布)   │
+│ - updated (更新) │
+└────────┬────────┘
+         │
+         ▼
+┌─────────────────┐
+│ 读者看到:        │
+│ 发布于 2025-10-01│
+│ 更新于 2025-11-12│
+└─────────────────┘
+```
+
+### 核心优势
+
+✅ **完全自动化** - 编辑保存即可，无需手动改时间
+✅ **语义清晰** - date 表示创建，updated 表示更新
+✅ **SEO 友好** - 搜索引擎能识别文章更新时间，提升排名
+✅ **读者友好** - 读者能判断内容是否新鲜
+✅ **版本控制友好** - Git 记录真实的文件修改历史
+✅ **向后兼容** - 已有文章不受影响，可以逐步迁移
+
+---
+
+**解决的痛点**：每次更新文章时 front-matter 里的 date 不能自动更新  
+**解决方案**：配置 `updated_option: 'mtime'` + 添加 `updated` 字段  
+**核心原理**：Hexo 自动读取文件修改时间作为更新时间  
+**最大收益**：彻底告别手动改时间，专注内容创作

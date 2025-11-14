@@ -1,6 +1,7 @@
 ---
 title: Nature of University
 date: 2025-10-03 00:47:06
+updated: 2025-10-05 15:42:22
 tags: 
 ---
 #### 声明
