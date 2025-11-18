@@ -1,13 +1,20 @@
 ---
-title: STL常用容器与算法
+title: STL
 date: 2025-11-17 20:51:48
 updated: 2025-11-17 20:51:48
 categories:
-tags:
----
-**C++ 标准模板库 (STL, Standard Template Library)**：包含一些常用数据结构与算法的模板的 C++ 软件库。其包含四个组件——算法 (Algorithms)、容器 (Containers)、仿函数 (Functors)、迭代器 (Iterators).
+    - study
+tags: 
+    - c++
+    - algorithm
 
+---
+
+本文介绍C++标准模板库(STL)在算法竞赛中的常用容器及其使用方法，包括vector、stack、queue等。
 <!--more-->
+
+
+**C++ 标准模板库 (STL, Standard Template Library)**：包含一些常用数据结构与算法的模板的 C++ 软件库。其包含四个组件——算法 (Algorithms)、容器 (Containers)、仿函数 (Functors)、迭代器 (Iterators).
 
 示例：
 
@@ -16,6 +23,10 @@ tags:
 - 仿函数：`greater<int>()`
 - 迭代器：`vector<int>::iterator it = a.begin()`
 
+>参考来源：
+    - https://oiwiki.com/
+    - https://zh.cppreference.com
+    - https://io.zouht.com/
 ## 目录
 
 - [1 前言](#1-前言)
