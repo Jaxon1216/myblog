@@ -1,0 +1,64 @@
+<main class="main" role="main">
+  <article class="article article-type-normal" itemscope="">
+    <header class="article-header">
+      <h1 itemprop="title"><%= page.title %></h1>
+      <% if(page.description) { %>
+      <p class="text-muted"><%= page.description %></p>
+      <% } %>
+    </header>
+    
+    <div class="article-body">
+      <!-- 联系方式卡片 -->
+      <div class="contact-cards row">
+        <% if(theme.social && theme.social.email) { %>
+        <div class="col-md-6 col-sm-6">
+          <div class="panel panel-default contact-card">
+            <div class="panel-body text-center">
+              <i class="icon-email" style="font-size: 2em; color: #4a89dc;"></i>
+              <h4>电子邮件</h4>
+              <p><a href="mailto:<%= theme.social.email %>"><%= theme.social.email %></a></p>
+            </div>
+          </div>
+        </div>
+        <% } %>
+        
+        <% if(theme.social && theme.social.github) { %>
+        <div class="col-md-6 col-sm-6">
+          <div class="panel panel-default contact-card">
+            <div class="panel-body text-center">
+              <i class="icon-github" style="font-size: 2em; color: #333;"></i>
+              <h4>GitHub</h4>
+              <p><a href="<%= theme.social.github %>" target="_blank">@<%= theme.github.username %></a></p>
+            </div>
+          </div>
+        </div>
+        <% } %>
+        
+        <% if(theme.social && theme.social.tiktok) { %>
+        <div class="col-md-6 col-sm-6">
+          <div class="panel panel-default contact-card">
+            <div class="panel-body text-center">
+              <i class="icon-video" style="font-size: 2em; color: #000;"></i>
+              <h4>TikTok</h4>
+              <p><a href="<%= theme.social.tiktok %>" target="_blank">@jaxon1216</a></p>
+            </div>
+          </div>
+        </div>
+        <% } %>
+        
+        <div class="col-md-6 col-sm-6">
+          <div class="panel panel-default contact-card">
+            <div class="panel-body text-center">
+              <i class="icon-location" style="font-size: 2em; color: #48cfad;"></i>
+              <h4>位置</h4>
+              <p><%= theme.profile.location || 'Beijing, China' %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <%- page.content %>
+    </div>
+  </article>
+</main>
+

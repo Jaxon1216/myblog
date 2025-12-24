@@ -1,0 +1,31 @@
+<%- partial('_partial/sidebar-about', {post: page}) %>
+<main class="main" role="main">
+  <article class="article archives-about article-type-normal" itemscope="">
+    <header class="article-header">
+      <h1 itemprop="title"><%= page.title %></h1>
+      <% if(page.description) { %>
+      <p class="text-muted"><%= page.description %></p>
+      <% } %>
+    </header>
+    
+    <!-- GitHub 贡献热力图 -->
+    <% if(theme.github && theme.github.username) { %>
+    <div class="github-contribution">
+      <h3><i class="icon-project"></i> GitHub 贡献</h3>
+      <div class="github-chart-wrapper">
+        <img src="https://ghchart.rshah.org/<%= theme.github.username %>" alt="GitHub Contribution Graph" class="github-chart" />
+      </div>
+      <p class="text-center">
+        <a href="https://github.com/<%= theme.github.username %>" target="_blank" class="btn btn-default">
+          <i class="icon-github"></i> 查看 GitHub 主页
+        </a>
+      </p>
+    </div>
+    <% } %>
+    
+    <div class="article-body">
+      <%- page.content %>
+    </div>
+  </article>
+</main>
+

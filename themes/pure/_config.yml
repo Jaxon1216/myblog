@@ -4,9 +4,12 @@ menu:
   Archives: archives  # 归档
 # Categories: categories  # 分类
   Tags: tags  # 标签
-  Repository: repository  # github repositories
-  Books: books  # 豆瓣书单
-  Links: links  # 友链
+  Projects: projects  # 项目经验
+  Resume: resume  # 在线简历
+  Contact: contact  # 联系方式
+# Repository: repository  # github repositories
+# Books: books  # 豆瓣书单
+# Links: links  # 友链
   About: about  # 关于
 
 # Enable/Disable menu icons
@@ -16,6 +19,9 @@ menu_icons:
   archives: icon-archives-fill
   categories: icon-folder
   tags: icon-tags
+  projects: icon-project
+  resume: icon-article
+  contact: icon-email
   repository: icon-project
   books: icon-book-fill
   links: icon-friendship
@@ -252,3 +258,31 @@ profile:
   # My Personal Projects
   projects:
     cofess/hexo-theme-pure: https://github.com/cofess/hexo-theme-pure
+
+# GitHub 配置（用于热力图）
+github:
+  username: Jaxon1216
+
+# 社交链接
+social:
+  email: your-email@example.com
+  github: https://github.com/Jaxon1216
+  tiktok: https://www.tiktok.com/@jaxon1216
+
+# 项目列表（用于 Projects 页面）
+project_list:
+  - name: 个人博客
+    description: 基于 Hexo 搭建的个人技术博客，记录学习心得与技术分享。
+    link: https://jiangxu.net
+    github: https://github.com/Jaxon1216
+    tags:
+      - Hexo
+      - JavaScript
+      - CSS
+  - name: 项目示例
+    description: 这是一个项目示例，可以在配置文件中修改。
+    link: 
+    github: 
+    tags:
+      - Tag1
+      - Tag2
