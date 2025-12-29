@@ -1,0 +1,50 @@
+<header class="header header-top" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="container">
+    <div class="header-inner">
+      <!-- Logo & 头像区域 -->
+      <div class="header-brand">
+        <% if(theme.profile && theme.profile.enabled) { %>
+        <% var profile = theme.profile; %>
+        <a href="<%- url_for('/') %>" class="brand-link">
+          <img class="brand-avatar" src="<%= ( profile.gravatar ? gravatar(profile.gravatar, 64) : url_for(profile.avatar)) %>" alt="<%= profile.author %>">
+          <span class="brand-name"><%= profile.author %></span>
+        </a>
+        <% } else { %>
+        <a href="<%- url_for('/') %>" class="brand-link">
+          <span class="brand-name"><%= config.title %></span>
+        </a>
+        <% } %>
+      </div>
+
+      <!-- 移动端菜单按钮 -->
+      <button class="navbar-toggle" type="button" id="menu-toggle" aria-label="Toggle navigation">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <!-- 导航菜单 -->
+      <nav class="header-nav" id="header-nav" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+        <ul class="nav-list">
+          <% for (var i in theme.menu){ %>
+          <% var itemName = i.toLowerCase(); %>
+          <li class="nav-item">
+            <a href="<%- url_for(theme.menu[i]) %>" class="nav-link">
+              <% if(theme.menu_icons.enable) { %>
+              <i class="icon <%= theme.menu_icons[itemName] %>"></i>
+              <% } %>
+              <span><%= __('menu.'+i) %></span>
+            </a>
+          </li>
+          <% } %>
+        </ul>
+      </nav>
+
+      <!-- 社交链接 -->
+      <div class="header-social">
+        <%- partial('_common/social', null, {cache: !config.relative_link}) %>
+      </div>
+    </div>
+  </div>
+</header>
+

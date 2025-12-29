@@ -23,14 +23,17 @@ tags:
 1. todomvc
 - 先从0用vue？实现，可以对比不同框架
 - 都过一遍之后，选一种进行深入：
+  - 路线进度表
+  - 倒数日
   - 配置ai问答窗口，
   - Google登陆，
   - Supabase
 - 鱼骨图
-- 进度表
+
 - 参考番茄todo倒计时
+- echarts可视化
 2. 开源博客模版
-- 更丰富，参考mengjian.site
+- 更丰富，参考mengjian.site有：在线简历，项目经验，联系方式主栏目，https://www.mengjian.site/
 - 色调保留
 - 添加详细readme
 - 添加GitHub贡献功能等

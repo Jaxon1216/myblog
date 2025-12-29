@@ -15,13 +15,6 @@ blog/
 └── package.json         # 项目依赖
 ```
 
-## 双仓库部署方案
-
-本项目采用双仓库部署方案：
-
-1. **源码仓库** (`blog-source`): 存储 Hexo 项目源代码
-2. **部署仓库** (`Jaxon1216.github.io`): 存储生成的静态文件，用于 GitHub Pages 部署
-
 ## 开发流程
 
 ### 本地开发
@@ -35,7 +28,7 @@ hexo server
 # 生成静态文件
 hexo generate
 ```
-
+可以设置快捷键:`npm run start`
 ### 部署到 GitHub Pages
 ```bash
 # 部署（会自动推送到 Jaxon1216.github.io 仓库）
