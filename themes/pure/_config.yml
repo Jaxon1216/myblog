@@ -210,9 +210,9 @@ profile:
   articleSelfBlock: false # 关闭文章下方的自我介绍
   avatar: images/avatar.png
   gravatar: # Gravatar email address, if you enable Gravatar, your avatar config will be overriden
-  author: Jaxon
-  author_title: Student at CUGB.
-  author_description: ENTP
+  author: 江旭 (Jaxon)
+  author_title: 中国地质大学（北京）· 大二
+  author_description: 自学转码中的大二学生，目标进大厂或外企
   location: Beijing, China
   follow: https://github.com/Jaxon1216
   # Social Links
@@ -220,44 +220,44 @@ profile:
     links:
       github: "https://github.com/Jaxon1216"
       tiktok: "https://www.tiktok.com/@jaxon1216"
-      # weibo: 
-      #twitter: 
-      # facebook: /
-      # dribbble: /
     link_tooltip: true # enable the social link tooltip, options: true, false
-  # My Skills 
+  # My Skills
   skills:
+    HTML5/CSS3: ★★★☆☆
+    JavaScript (ES6+): ★★★☆☆
+    Vue 3: ★★★☆☆
     Git: ★★★☆☆
-    # Gulp: ★★★☆☆
-    # Javascript: ★★★☆☆
-    #HTML+CSS: ★★★☆☆
-    # Bootstrap: ★★★☆☆
-    # ThinkPHP: ★★★☆☆
-    # 平面设计: ★★★☆☆
+    Docker: ★★☆☆☆
   # My Personal Links
   links:
-    Github: https://github.com/Jaxon1216
-    Blog: https://jiangxu.net/
-    TikTok: https://www.tiktok.com/@jaxon1216
-    # 微博: 
-    # 花瓣: 
-    # Behance: 
+    GitHub: https://github.com/Jaxon1216
+    Blog: https://www.jiangxu.net/
+    Notes: https://notes.jiangxu.net/
+    Email: mailto:jiangxu05@outlook.com
+    悟空的朋友圈: https://wk.jiangxu.net/
   # My Personal Labels
   labels:
-    - 乱写的还没改
-    - 前端
+    - 自学转码
     - 前端开发
-    - 前端重构
-    - Web前端
-    - 网页重构
+    - Vue 3
+    - JavaScript
+    - 数学建模
+    - CUGB
   # My Personal Works
   works:
-    name:
-      link: https://jiangxu.net/
+    个人博客:
+      link: https://www.jiangxu.net/
+      date: 2025
+    学习笔记:
+      link: https://notes.jiangxu.net/
+      date: 2025
+    悟空的朋友圈:
+      link: https://wk.jiangxu.net/
       date: 2025
   # My Personal Projects
   projects:
-    cofess/hexo-theme-pure: https://github.com/cofess/hexo-theme-pure
+    Jaxon1216/wkmoments: https://github.com/Jaxon1216/wkmoments
+    Jaxon1216/myblog: https://github.com/Jaxon1216
 
 # GitHub 配置（用于热力图）
 github:
@@ -265,7 +265,7 @@ github:
 
 # 社交链接
 social:
-  email: your-email@example.com
+  email: jiangxu05@outlook.com
   github: https://github.com/Jaxon1216
   tiktok: https://www.tiktok.com/@jaxon1216
 
